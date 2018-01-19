@@ -1,0 +1,149 @@
+body {
+	background-image: url(http://nhocgiftshop.com/tp/T0131/img/gr.jpg);
+	z-index: -1;
+}
+
+.form-control {
+	border: none;
+	margin-top: 10px;
+	padding-top: 13px;
+}
+.input-text {
+	width: 30%;
+}
+
+.Product {
+	margin-top: 30px;
+	padding: 5px;
+}
+.panel {
+	border: none !important;
+	padding-bottom: 10px;
+}
+
+.proV-color {
+	padding-right: 10px;
+}
+
+.proV-color ul li a {
+    clear: both;
+    background: #333e48;
+    float: left;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+.proV-color ul li:nth-child(1) a {
+    background: #10b9b9;
+}
+
+.proV-color ul li:nth-child(2) a {
+    background: #FFFF00;
+}
+
+.proV-color ul li:nth-child(3) a {
+    background: #7FFF00;
+}
+
+.proV-color ul li:nth-child(4) a {
+    background: #FFFFF0;
+}
+
+.proV-color ul li:nth-child(5) a {
+    background: #E0FFFF;
+}
+
+.proV-color ul li:nth-child(6) a {
+    background: #CD853F;
+}
+
+.proV-size {
+	padding: 0;
+	margin: 0;
+}
+
+.btnCart {
+/*	margin-left: 100px;*/
+}
+
+.form-control>label {
+	color: #ff2c51;
+}
+
+.thumbnail>img {
+	border: none;
+	margin: 0 !important;
+}
+
+.btnCart {
+	margin-top: 30px;
+	margin-left: 180px;
+	width: 30%;
+}
+
+.panel-body>h2 {
+	font-family:tahoma;
+	margin-left: 20px;
+}
+
+.price {
+	font-size: 20px;
+	color: #81cfdc;
+}
+
+.andress {
+	border: 1px solid pink;
+	border-radius: 5px;
+	padding:0 0 5px 5px;
+}
+
+.content-andress{
+	padding-bottom: 10px;
+}
+
+input:focus {
+	outline: 0;
+}
+
+img {
+	border: none;
+}
+
+.ProInfo-Content {
+	padding: 15px;
+	margin-left: 13px;
+	height: auto;
+}
+
+.ProInfo-Content>div{
+	padding-bottom: 5px;
+}
+
+@media only screen and (max-width: 320px) {
+	.form-horizontal>fieldset {
+		width: 100%;
+	}
+
+	.form-control>label{
+		width: 100%;
+		font-size: 10px;
+	}
+
+	.proV-size>label{
+		margin-right: 30px;
+	}
+
+	.proV-size>label>input {
+		font-size: 10px;
+	}
+
+	.btnCart {
+		margin-top: 50px;
+	}
+}
+
+
