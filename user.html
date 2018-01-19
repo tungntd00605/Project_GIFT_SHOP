@@ -1,10 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="vn">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Đăng Nhập</title>
+
+	<!-- Start Font -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- End Font -->
+
+	<!-- Start link css -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/user.css">
+	<!-- End link css -->
 </head>
 <body>
 
+	<!-- Bắt đầu button đăng nhập -->
+	<header class="container-fluid">
+		<nav class="col-lg-3 col-md-4 col-sm-4 col-xs-12 navbar navbar-brand navbar-right" >
+			<div class="row" id="register">
+				<button href="#" class="btn btn-primary" id="login" data-target="#modal-login-form" data-toggle="modal">
+					<span class="glyphicon glyphicon-user"></span>
+					Đăng nhập
+				</button>
+				<a href="assgiment-register.html" class="btn btn-default">
+					<span class="glyphicon glyphicon-log-in"></span>
+					Đăng kí
+				</a>
+			</div>
+		</nav>
+	</header>
+	<!-- Kết thúc button đăng nhập -->
+
+	
+	<nav>
+		<fieldset>
+			<!-- Bắt đầu modal đăng nhập -->
+			<form class="modal fade" id="modal-login-form" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" name="modal-login-form">
+				<span class="error-msg" id="total-msg"></span>
+				<div class="modal-dialog modal-sm" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" id="close-form">&times;</span></button>
+							<h4 class="modal-title" id="gridSystemModalLabel">ĐĂNG NHẬP</h4>
+						</div>
+						<div class="modal-body">
+							<div class="form-group">
+								<label class="control-label" id="email">Email</label>
+								<input type="email" class="form-control" name="email" placeholder="Nhập địa chỉ email (ví dụ: abc@gmail.com)" id="username" aria-describedby="usernamestatus">
+								<span class="error-msg"></span>
+
+							</div>
+							<div class="form-group">
+								<label for="password" class="control-label">Mật khẩu</label>
+								<input type="password" class="form-control" name="password" placeholder="Nhập mật khẩu" id="password" aria-describedby="passwordstatus">
+								<span class="error-msg"></span>
+							</div>
+							<a href="#" class="forgotPass">Quên mật khẩu?</a>
+						</div>
+						<div class="modal-footer form-group">
+							<button type="button" class="btn btn-primary" id="btnSubmit">Đăng nhập</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal" id="exit-form-login">Thoát</button>
+						</div>	
+					</div>
+				</div>		
+			</form>
+			<!-- Kết thúc modal đăng nhập -->
+		</fieldset>
+	</nav>
+	<footer>
+		<p>nguyencong</p>
+	</footer>
+	
+	
+
+
+	<!-- Start link js -->
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/user.js"></script>
+	<!-- End link js -->
 </body>
 </html>

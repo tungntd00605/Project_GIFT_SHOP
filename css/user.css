@@ -1,0 +1,110 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	/*background-image: url(http://anhnendep.net/wp-content/uploads/2016/02/hinh-nen-canh-dong-hoa-dep-nhat-the-gioi-01.jpg);*/
+	/*background-repeat: no-repeat;*/
+	background-size: 1343px; /* fix cứng để khi modal khung login sẽ không bị thay đổi kích cỡ background*/
+}
+header {
+	height: 200px;
+}
+
+nav {
+	height: 500px;
+}
+.modal-content {
+	color: white;
+	background-color: #4785967d;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.59);
+	-webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+}
+.modal-sm {
+	font-family: tahoma;
+	/*background-color: #579497;*/
+}
+
+.modal-sm {
+	width: 450px;
+}
+.modal-title {
+	font-size: 26px;
+	text-align: center;
+}
+.form-control {
+	height: 40px;
+	background-color: #09121547;
+	color: white
+}
+
+.forgotPass {
+	color: #ef950a;
+	text-decoration: none;
+}
+.forgotPass:hover {
+	color: #ef950a;
+	text-decoration: underline;
+}
+.form-group {
+	font-size: 22px;
+	color: white;
+}
+.form-group label {
+	padding-bottom: 8px;
+}
+
+.error-msg {
+	color: red;
+	font-size: 16px;
+}
+
+.success-msg {
+	color: green;
+	font-size: 16px;
+}
