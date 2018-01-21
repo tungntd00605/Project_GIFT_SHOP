@@ -94,6 +94,7 @@ nav {
 	color: #01121b;
 }
 
+/*Bắt đầu quên mật khẩu*/
 .forgotPass {
 	margin-left: 5px;
 	color: #0764c5;
@@ -103,29 +104,24 @@ nav {
 	color: #0764c5;
 	text-decoration: underline;
 }
+/*Kết thúc quên mật khẩu*/
+
+
+/*Bắt đầu chung 2 form 'login' và 'register'*/
 .form-group {
 	color: #462808e8;
 	font-size: 22px;
 	margin-bottom: 20px;
 }
-.form-group label:first-child {
-	width: 35%;
-	float: left;
-}
 
-.form-group label {
-	margin-left: 5px;
-	padding-bottom: 8px;
-	float: left;
+.form-group {
+	color: #462808e8;
+	font-size: 22px;
+	margin-bottom: 20px;
 }
 
 .form-group input {
 	font-size: 18px;
-}
-
-.form-group span {
-	float: left;
-	margin-top: 5px;
 }
 
 .form-group .form-control {	
@@ -133,13 +129,58 @@ nav {
 	border-radius: 30px;
 }
 
-
 .form-group::after {
 	content: "";
 	clear: both;
 	display: table;
 }
+/*Kết thúc chung 2 form 'login' và 'register'*/
 
+
+/*Bắt đầu login form*/
+.login label:first-child {
+	width: 100%;
+	float: left;
+}
+
+.login label {
+	margin-left: 5px;
+	padding-bottom: 8px;
+	float: left;
+}
+
+.login span {
+	float: left;
+	margin-top: 5px;
+}
+/*Kết thúc login form*/
+
+
+/*Bắt đầu register form*/
+.register label:first-child {
+	width: 35%;
+	float: left;
+}
+
+.register label {
+	margin-left: 5px;
+	padding-bottom: 8px;
+	float: left;
+}
+
+.register span {
+	width: 100%;
+	font-size: 18px;
+	float: left;
+	margin-left: 280px;
+	margin-top: 5px;
+}
+/*Kết thúc register form*/
+
+
+
+
+/* Bắt đầu thông báo error và success.*/
 .error-msg {
 	color: red;
 	font-size: 16px;
@@ -150,8 +191,9 @@ nav {
 	color: green;
 	font-size: 16px;
 }
+/* Kết thúc thông báo error và success.*/
 
-/*Căn chỉnh khung đăng ký.*/
+/*Bắt đầu căn chỉnh khung đăng ký.*/
 .registerContent {
 	width: 800px;
 	margin: auto;
@@ -161,13 +203,13 @@ nav {
 .regisLable {
 	padding: 9px 35px;
 }
-/*Căn chỉnh khung đăng ký.*/
+/*Kết thúc căn chỉnh khung đăng ký.*/
 
 .long-input {
 	width: 50%;
 }
 .normal-input {
-	width: 30%;
+	width: 35%;
 }
 
 .short-input {

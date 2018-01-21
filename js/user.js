@@ -15,17 +15,6 @@ if(btnSubmit != null){
 	}
 };
 
-// Gán sự kiện cho nút đăng ký.
-// if(registerBtn != null){
-// 	registerBtn.onclick = function(){
-// 		ValidateForm();
-// 		if(){
-
-// 		};
-// 	}
-// };
-
-
 //=============================Bắt đầu xử lý validate login==================================//
 $(document).ready(function(){
 	//Xử lý nút đăng nhập.
@@ -55,11 +44,11 @@ $(document).ready(function(){
 
 
 	// ==============Bắt đầu xử lý nút 'Làm Lại'===================//
-	$("#resetBtn").click(function(){
-		resetBtn();
+	$("#resetLogin").click(function(){
+		resetLogin();
 	});
 
-	function resetBtn(){
+	function resetLogin(){
 		$("#checkEmailLogin").html("");
 		$("#checkPwdLogin").html("");
 
@@ -72,58 +61,83 @@ $(document).ready(function(){
 
 
 // //==================================Bắt đầu xử lý validate register=============================//
-// $(document).ready(function(){
-// 	//Xử lý nút đăng nhập.
-// 	$("#registerBtn").click(function(){
-// 		if(isValidForm()){
-// 			Register();
-// 		}
-// 	});
-// 	//Check thông tin đăng nhâp trước khi gửi lên server.
-// 	function isValidRegister(){
-// 		if($("[name='lastname']").val() == null
-// 			||$("[name='lastname']") == null){
-// 			$("#checkErrorRegister").html("Mục này bắt buộc phải nhập.");
-// 			$("#checkErrorRegister").show();
-// 		// return false;
-// 		}
-// 		if($("[name='firstname']").val() == null
-// 			||$("[name='firstname']") == null){
-// 			$("#checkErrorRegister").html("Mục này bắt buộc phải nhập.");
-// 			$("#checkErrorRegister").show();
-// 		// return false;
-// 		}
+$(document).ready(function(){
+	//Xử lý nút đăng nhập.
+	$("#registerBtn").click(function(){
+		if(isValidRegister()){
+			Register();
+		}
+	});
+	//Check thông tin đăng nhâp trước khi gửi lên server.
+	function isValidRegister(){
+		if($("[name='lastname']").val() == null
+			||$("[name='lastname']") == null
+			||$("[name='lastname']").val().length < 8){
+			$("#checkLastNameRegister").html("Mục này bắt buộc phải nhập.");
+			$("#checkLastNameRegister").show();
+		// return false;
+		}
+		if($("[name='firstname']").val() == null
+			||$("[name='firstname']") == null
+			||$("[name='firstname']").val().length < 8){
+			$("#checkFirstNameRegister").html("Mục này bắt buộc phải nhập.");
+			$("#checkFirstNameRegister").show();
+		// return false;
+		}
 
-// 		if($("[name='email-address']").val() == null
-// 			||$("[name='email-address']") == null
-// 			||$("[name='email-address']").val().length < 8){
-// 			$("#checkErrorRegister").html("Mục này bắt buộc nhập trên 8 ký tự.");
-// 			$("#checkErrorRegister").show();
-// 		// return false;
-// 		}
-// 		if($("[name='password']").val() == null
-// 			||$("[name='password']") == null
-// 			||$("[name='password']").val().length < 8){
-// 			$("#checkErrorRegister").html("Mật khẩu phải lớn hơn 8 kí tự.");
-// 			$("#checkErrorRegister").show();
-// 		// return false;
-// 		}
+		if($("[name='email-address']").val() == null
+			||$("[name='email-address']") == null
+			||$("[name='email-address']").val().length < 8){
+			$("#checkEmailRegister").html("Mục này bắt buộc nhập trên 8 ký tự.");
+			$("#checkEmailRegister").show();
+		// return false;
+		}
+		if($("[name='password']").val() == null
+			||$("[name='password']") == null
+			||$("[name='password']").val().length < 8){
+			$("#checkPassRegister").html("Mật khẩu phải lớn hơn 8 kí tự.");
+			$("#checkPassRegister").show();
+		// return false;
+		}
 
-// 		if($("[name='re-password']").val() != $("[name='password']").val() || $("[name='re-password']").val().length==0){		
-// 			isValidRePassword=false;
-// 			$("[name='re-password']").next().addClass("text-danger");
-// 			$("[name='re-password']").next().text("Mật khẩu không trùng khớp.");
-// 		}
+		if($("[name='re-password']").val() != $("[name='password']").val() || $("[name='re-password']").val().length==0){		
+			isValidRePassword=false;
+			$("#checkRe-passRegister").html("Mật khẩu không trùng khớp.");
+			$("#checkRe-passRegister").show();
+		}
 
 
-// 		if($("[name='phone']").val() == null
-// 			||$("[name='phone']") == null){
-// 			$("#checkErrorRegister").html("Mục này bắt buộc phải nhập.");
-// 			$("#checkErrorRegister").show();
-// 		// return false;
-// 		}
-// 	};
-// 	// ============Kết thúc xử lý validate login===================
+		if($("[name='phonenumber']").val().length == null
+			||$("[name='lastname']") == null
+			||$("[name='lastname']").val().length < 8){
+			$("#checkPhoneRegister").html("Mục này bắt buộc phải nhập.");
+			$("#checkPhoneRegister").show();
+		// return false;
+		}
+	};
+	// ==============Bắt đầu xử lý nút 'Làm Lại'===================//
+	$("#resetRegister").click(function(){
+		resetRegister();
+	});
+
+	function resetRegister(){
+		$("#checkLastNameRegister").html("");
+		$("#checkFirstNameRegister").html("");
+		$("#checkEmailRegister").html("");
+		$("#checkPassRegister").html("");
+		$("#checkRe-passRegister").html("");
+		$("#checkPhoneRegister").html("");
+
+		$("[name='lastname']").html("");
+		$("[name='firstname']").html("");
+		$("[name='email-address']").html("");
+		$("[name='password']").html("");
+		$("[name='re-password']").html("");
+		$("[name='phonenumber']").html("");	
+	}
+	// ==============Kết thúc xử lý nút 'Làm Lại'===================//
+});
+// 	// ============Kết thúc xử lý validate register===================//
 
 
 // 	// ==============Bắt đầu xử lý nút 'Làm Lại'===================//
