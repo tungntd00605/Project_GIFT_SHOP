@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Product Detail</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+	<link href="img/logo.png" rel="shortcut icon" type="img/logo.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/Product-detail.css">
+</head>
+<body style="font-family:arial,helvetica,sans-serif,verdana,'Open Sans'">
+<script src="js/jssor.slider-26.9.0.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	jssor_1_slider_init = function() {
+
+	    var jssor_1_SlideshowTransitions = [
+	      {$Duration:1200,$Zoom:1,$Easing:{$Zoom:$Jease$.$InCubic,$Opacity:$Jease$.$OutQuad},$Opacity:2},
+	      {$Duration:1000,$Zoom:11,$SlideOut:true,$Easing:{$Zoom:$Jease$.$InExpo,$Opacity:$Jease$.$Linear},$Opacity:2},
+	      {$Duration:1200,$Zoom:1,$Rotate:1,$During:{$Zoom:[0.2,0.8],$Rotate:[0.2,0.8]},$Easing:{$Zoom:$Jease$.$Swing,$Opacity:$Jease$.$Linear,$Rotate:$Jease$.$Swing},$Opacity:2,$Round:{$Rotate:0.5}},
+	      {$Duration:1000,$Zoom:11,$Rotate:1,$SlideOut:true,$Easing:{$Zoom:$Jease$.$InQuint,$Opacity:$Jease$.$Linear,$Rotate:$Jease$.$InQuint},$Opacity:2,$Round:{$Rotate:0.8}},
+	      {$Duration:1200,x:0.5,$Cols:2,$Zoom:1,$Assembly:2049,$ChessMode:{$Column:15},$Easing:{$Left:$Jease$.$InCubic,$Zoom:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+	      {$Duration:1200,x:4,$Cols:2,$Zoom:11,$SlideOut:true,$Assembly:2049,$ChessMode:{$Column:15},$Easing:{$Left:$Jease$.$InExpo,$Zoom:$Jease$.$InExpo,$Opacity:$Jease$.$Linear},$Opacity:2},
+	      {$Duration:1200,x:0.6,$Zoom:1,$Rotate:1,$During:{$Left:[0.2,0.8],$Zoom:[0.2,0.8],$Rotate:[0.2,0.8]},$Opacity:2,$Round:{$Rotate:0.5}},
+	      {$Duration:1000,x:-4,$Zoom:11,$Rotate:1,$SlideOut:true,$Easing:{$Left:$Jease$.$InQuint,$Zoom:$Jease$.$InQuart,$Opacity:$Jease$.$Linear,$Rotate:$Jease$.$InQuint},$Opacity:2,$Round:{$Rotate:0.8}},
+	      {$Duration:1200,x:-0.6,$Zoom:1,$Rotate:1,$During:{$Left:[0.2,0.8],$Zoom:[0.2,0.8],$Rotate:[0.2,0.8]},$Opacity:2,$Round:{$Rotate:0.5}},
+	      {$Duration:1000,x:4,$Zoom:11,$Rotate:1,$SlideOut:true,$Easing:{$Left:$Jease$.$InQuint,$Zoom:$Jease$.$InQuart,$Opacity:$Jease$.$Linear,$Rotate:$Jease$.$InQuint},$Opacity:2,$Round:{$Rotate:0.8}},
+	      {$Duration:1200,x:0.5,y:0.3,$Cols:2,$Zoom:1,$Rotate:1,$Assembly:2049,$ChessMode:{$Column:15},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Zoom:$Jease$.$InCubic,$Opacity:$Jease$.$OutQuad,$Rotate:$Jease$.$InCubic},$Opacity:2,$Round:{$Rotate:0.7}},
+	      {$Duration:1000,x:0.5,y:0.3,$Cols:2,$Zoom:1,$Rotate:1,$SlideOut:true,$Assembly:2049,$ChessMode:{$Column:15},$Easing:{$Left:$Jease$.$InExpo,$Top:$Jease$.$InExpo,$Zoom:$Jease$.$InExpo,$Opacity:$Jease$.$Linear,$Rotate:$Jease$.$InExpo},$Opacity:2,$Round:{$Rotate:0.7}},
+	      {$Duration:1200,x:-4,y:2,$Rows:2,$Zoom:11,$Rotate:1,$Assembly:2049,$ChessMode:{$Row:28},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Zoom:$Jease$.$InCubic,$Opacity:$Jease$.$OutQuad,$Rotate:$Jease$.$InCubic},$Opacity:2,$Round:{$Rotate:0.7}},
+	      {$Duration:1200,x:1,y:2,$Cols:2,$Zoom:11,$Rotate:1,$Assembly:2049,$ChessMode:{$Column:19},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Zoom:$Jease$.$InCubic,$Opacity:$Jease$.$OutQuad,$Rotate:$Jease$.$InCubic},$Opacity:2,$Round:{$Rotate:0.8}}
+	    ];
+
+	    var jssor_1_options = {
+	      $AutoPlay: 1,
+	      $Cols: 1,
+	      $Align: 0,
+	      $SlideshowOptions: {
+	        $Class: $JssorSlideshowRunner$,
+	        $Transitions: jssor_1_SlideshowTransitions,
+	        $TransitionsOrder: 1
+	      },
+	      $ArrowNavigatorOptions: {
+	        $Class: $JssorArrowNavigator$
+	      },
+	      $ThumbnailNavigatorOptions: {
+	        $Class: $JssorThumbnailNavigator$,
+	        $Rows: 2,
+	        $Cols: 6,
+	        $SpacingX: 14,
+	        $SpacingY: 12,
+	        $Orientation: 2,
+	        $Align: 156
+	      }
+	    };
+
+	    var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+	    /*#region responsive code begin*/
+
+	    var MAX_WIDTH = 960;
+
+	    function ScaleSlider() {
+	        var containerElement = jssor_1_slider.$Elmt.parentNode;
+	        var containerWidth = containerElement.clientWidth;
+
+	        if (containerWidth) {
+
+	            var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+	            jssor_1_slider.$ScaleWidth(expectedWidth);
+	        }
+	        else {
+	            window.setTimeout(ScaleSlider, 30);
+	        }
+	    }
+
+	    ScaleSlider();
+
+	    $Jssor$.$AddEvent(window, "load", ScaleSlider);
+	    $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+	    $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+	    /*#endregion responsive code end*/
+	};
+</script>
+<div class="container">
+	<div class="row" style="padding-bottom: 10px;">
+		<div class="Product col-xs-12">
+			<!-- silde ảnh của sản phẩm -->
+			<div class="col-md-8 col-xs-12">
+			  <div id="jssor_1" style="position:relative;width:900px;height:480px;overflow:hidden;visibility:hidden;background-color:#fff;" class="col-xs-12">
+			        <!-- Loading Screen -->
+			        <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+			            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
+			        </div>
+			        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:240px;width:720px;height:480px;overflow:hidden;" class="col-xs-12">
+			            <div data-p="150.00">
+			                <img data-u="image" src="img/gautruc.jpg" />
+			                <img data-u="thumb" src="img/gautruc.jpg" />
+			            </div>
+			            <div data-p="150.00">
+			                <img data-u="image" src="img/gautruc1.jpg" />
+			                <img data-u="thumb" src="img/gautruc1.jpg" />
+			            </div>
+			            <div data-p="150.00">
+			                <img data-u="image" src="img/gautruc2.jpg" />
+			                <img data-u="thumb" src="img/gautruc2.jpg" />
+			            </div>
+			            <div data-p="150.00">
+			                <img data-u="image" src="img/gautruc3.jpg" />
+			                <img data-u="thumb" src="img/gautruc3.jpg" />
+			            </div>
+			            <div data-p="150.00">
+			                <img data-u="image" src="img/gautruc4.jpg" />
+			                <img data-u="thumb" src="img/gautruc4.jpg" />
+			            </div>
+			        </div>
+			        <!-- Thumbnail Navigator -->
+			        <div data-u="thumbnavigator" class="jssort101 col-xs-12" style="position:absolute;left:0px;top:0px;width:240px;height:480px;background-color:#fff2f2;" data-autocenter="2" data-scale-left="0.75">
+			            <div data-u="slides">
+			                <div data-u="prototype" class="p" style="width:99px;height:80px;">
+			                    <div data-u="thumbnailtemplate" class="t"></div>
+			                    <!-- <svg viewbox="0 0 16000 16000" class="cv">
+			                        <circle class="a" cx="8000" cy="8000" r="3238.1"></circle>
+			                        <line class="a" x1="6190.5" y1="8000" x2="9809.5" y2="8000"></line>
+			                        <line class="a" x1="8000" y1="9809.5" x2="8000" y2="6190.5"></line>
+			                    </svg> -->
+			                </div>
+			            </div>
+			        </div>
+			        <!-- Arrow Navigator -->
+			        <div data-u="arrowleft" class="jssora093" style="width:50px;height:50px;top:0px;left:270px;" data-autocenter="2">
+			            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+			                <circle class="c" cx="8000" cy="8000" r="5920"></circle>
+			                <polyline class="a" points="7777.8,6080 5857.8,8000 7777.8,9920 "></polyline>
+			                <line class="a" x1="10142.2" y1="8000" x2="5857.8" y2="8000"></line>
+			            </svg>
+			        </div>
+			        <div data-u="arrowright" class="jssora093" style="width:50px;height:50px;top:0px;right:30px;" data-autocenter="2">
+			            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+			                <circle class="c" cx="8000" cy="8000" r="5920"></circle>
+			                <polyline class="a" points="8222.2,6080 10142.2,8000 8222.2,9920 "></polyline>
+			                <line class="a" x1="5857.8" y1="8000" x2="10142.2" y2="8000"></line>
+			            </svg>
+			        </div>
+			    </div>
+			    <!-- kết thúc slide ảnh sp -->
+			</div>
+			<div class="panel panel-default col-md-4 col-xs-12">
+			  <div class="panel-body">
+			    <h2>Gấu trúc bông Cute!</h2>
+			    <form class="form-horizontal">
+			    	<fieldset>
+			    		<div class="col-xs-12">
+			    			<div class="form-control" style="clear: both;">
+			    				<label for="" class="col-xs-12 col-md-7">
+			    					<i class="fa fa-heart"></i>
+			    					Giá Sản Phẩm:
+			    				</label>
+			    				<div class="col-xs-12 col-md-5">
+			    					<div class="proV-price">
+			    						<p class="price">240.000 $</p>
+			    					</div>
+			    				</div>
+			    			</div>
+			    			<div class="form-control" style="clear: both;">
+			    				<label for="" class="col-xs-12 col-md-7">
+			    					<i class="fa fa-heart"></i>
+			    					Trạng thái :
+			    				</label>
+			    				<div class="col-md-5 col-xs-12">
+			    					<div class="text">
+			    						Còn hàng
+			    					</div>
+			    				</div>
+			    			</div>
+			    			<div class="form-control" style="clear: both;">
+			    				<label for="" class="col-xs-12 col-md-6">
+			    					<i class="fa fa-heart"></i>
+			    					Kích Thước:
+			    				</label>
+			    				<div class="col-xs-12 col-md-6">
+			    					<div class="text">
+			    						50 x 30 x 20cm
+			    					</div>
+			    				</div>
+			    			</div>
+			    			<div class="form-control" style="clear: both;">
+			    				<label for="" class="col-xs-12 col-md-6">
+			    					<i class="fa fa-heart"></i>
+			    					Hãng :
+			    				</label>
+			    				<div class="col-xs-12 col-md-6">
+			    					<div class="text">
+			    						Burberry
+			    					</div>
+			    				</div>
+			    			</div>
+			    			<div class="form-control" style="clear: both;">
+			    				<label for="" class="col-xs-6">
+			    					<i class="fa fa-heart"></i>
+			    					Số Lượng:
+			    				</label>
+			    				<div class="col-xs-6">
+			    					<div class="quantity">
+			    						<input type="number" step="1" min="1" max name="quantity" value="1" title="Số Lượng" class="input-text" size="4" style="border-radius: 5px; padding-left: 5px;">
+			    					</div>
+			    				</div>
+			    			</div>
+			    		</div>
+			    	</fieldset>
+			    	<div class="btnOder">
+			    		<button type="button" class="btn btn-warning btnCart">So Sánh</button>
+			    		<button type="button" class="btn btn-success btnCart">Đặt hàng</button>
+			    	</div>
+			    </form>
+			  </div>
+			</div>
+		</div>
+		<div class="col-md-12 col-xs-12 col-sm-12 andress" >
+		  	<fieldset>
+		  		<legend>
+		  			<div class="col-md-12 col-xs-12 col-sm-12 content-andress" >
+				  		<h3 style="color: #ff2c51;"><i class="fa fa-heart"></i> Chi nhánh cửa hàng</h3>
+				  	</div>
+		  		</legend>
+
+			  	<div class="col-md-12 col-xs-12 col-sm-12 content-andress">
+			  		<img src="http://c.fastcdn.co/t/eb6c86bd/fa35eb19/1513240521-22355586-23x22-11586978-23x22-icon-1.png">
+			  		&nbsp;08 Tôn Thất Thuyết, Mỹ Đình, Hà Nội
+			  	</div>
+
+			  	<div class="col-md-12 col-xs-12 col-sm-12 content-andress">
+			  		<img src="http://c.fastcdn.co/t/eb6c86bd/fa35eb19/1513240521-22355586-23x22-11586978-23x22-icon-1.png">
+			  		&nbsp;125 Phùng Hưng, Cửa Đông, Hoàn Kiếm, Hà Nội
+			  	</div>
+
+			  	<div class="col-md-12 col-xs-12 col-sm-12 content-andress">
+			  		<img src="http://c.fastcdn.co/t/eb6c86bd/fa35eb19/1513240521-22355586-23x22-11586978-23x22-icon-1.png">
+			  		&nbsp;252 Phúc Diễn, Hà Nội
+			  	</div>
+
+			  	<div class="col-md-12 col-xs-12 col-sm-12 content-andress">
+			  		<img src="http://c.fastcdn.co/t/eb6c86bd/fa35eb19/1513240521-22355586-23x22-11586978-23x22-icon-1.png">
+			  		&nbsp;10 Trần Hữu Dực, Mỹ Đình, Hà Nội
+			  	</div>
+		  	</fieldset>
+		</div>
+	</div>
+	<div class="row">
+		<div class="Product-Info panel panel-default col-md-9">
+			<div class="col-md-12 col-xs-12 col-sm-12">
+		  		<img src="img/title.png" width="100%">
+		  	</div>
+			<div class="panel-body">
+			  	<div class="col-md-12 ProInfo-Content" style="line-height: 23px;">
+			  		<div style="font-weight: bold;" class="col-md-12 col-xs-12 col-sm-12">
+			  			Kiểu dáng gấu trúc nhồi bông
+			  		</div>
+			  		<div class="col-md-12 col-xs-12 col-sm-12">
+			  			Gấu trúc Panda - Hình ảnh một chú gấu trúc béo ú, lười biếng nhất thung lũng Thanh Bình nhưng vô cùng tốt bụng và cực kỳ mê võ kungfu đã trở lên rất đỗi quen thuộc với mọi người, đặc biệt là những em nhỏ. Trong tư thế nằm mới lạ, bạn gấu trúc bông này đã trở lên rất lạ vì em gấu này mới vừa ra đời thôi. Thân hình căng tròn mập mạp, đôi mắt tròn to làm cho em gấu bông này càng mũm mĩm và đáng yêu hơn
+			  		</div>
+			  		<div class="col-md-12 col-xs-12 col-sm-12">
+			  			<img src="http://shopgaubong.net/wp-content/uploads/2015/01/gau-truc-bong-mac-ao-len-04.jpg" width="100%">
+			  			<div style="text-align: center;"><i>Gấu trúc bông</i></div>
+			  		</div>
+			  		<div class="col-md-12 col-xs-12 col-sm-12">
+			  			<strong>Chất liệu làm gấu trúc nằm nhồi bông</strong>
+						Gấu trúc nằm nhồi bông được làm từ những nguyên liệu chọn lọc: Bên ngoài là lớp lông ngắn siêu mềm mịn, bên trong là 100% bông trắng tinh khiết. Tất cả đều là những nguyên liệu cao cấp, được nhập khẩu từ nước ngoài. Vì vậy, chúng tôi cam kết đây là những sản phẩm tốt nhất thị trường, đảm bảo không xù lông, không rụng lông, không xẹp và an toàn tuyệt đối
+						,<br>
+						<strong>Màu sắc và kích thước:</strong> Màu trắng - đen, với 3 size khác nhau cho bạn chọn
+			  		</div>
+			  	</div>	
+			</div>
+		</div>
+
+		<div class="category col-md-3">
+			<!-- Lọc theo danh mục -->
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h2 style="color: green; " >Danh Mục</h2>
+					<ul class="list-group">
+					    <li class="list-group-item"><a href="#">Gấu bông</a> <span class="badge">120</span></li>
+					    <li class="list-group-item"><a href="#">Phụ kiện thời trang</a> <span class="badge">50</span></li>
+					    <li class="list-group-item"><a href="#">Quà tặng</a> <span class="badge">269</span></li>
+					    <li class="list-group-item"><a href="#">Phụ kiện Hi-Tech</a> <span class="badge">65</span></li>
+					    <li class="list-group-item"><a href="#">Hộp quà</a> <span class="badge">32</span></li>
+					</ul>
+				</div>
+			</div>
+			<!-- kết thúc lọc theo danh mục -->
+
+			<!-- lọc theo hãng -->
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h2 style="color: green; " >Hãng Sản Phẩm</h2>
+					<ul class="list-group">
+					    <li class="list-group-item"><a href="#">Burberry</a> <span class="badge">112</span></li>
+					    <li class="list-group-item"><a href="#">Tom Ford</a> <span class="badge">30</span></li>
+					    <li class="list-group-item"><a href="#">Louis Vuitton</a> <span class="badge">279</span></li>
+					    <li class="list-group-item"><a href="#">Prada, Gucci</a> <span class="badge">77</span></li>
+					    <li class="list-group-item"><a href="">Paul Smith</a> <span class="badge">50</span></li>
+					</ul>
+				</div>
+			</div>
+			<div class="ProInfo-Content">
+		  		<img src="img/content.png" width="100%">
+		  	</div>	
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 col-xs-12 col-sm-12">
+			<div class="col-md-12 col-xs-12 col-sm-12" style="margin-bottom: 10px;">
+				<i class="fa fa-heart" style="color: #ff2c51; font-size: 20px;"></i>
+				<i style="color: #ff2c51; font-size: 19px;"> CÓ THỂ BẠN SẼ THÍCH</i>
+			</div>
+			<div id="jssor_2" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:200px;overflow:hidden;visibility:hidden; background-color: #fff; margin:auto;">
+		        <!-- Loading Screen -->
+		        <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7); border: 1px solid red;">
+		            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:40px;" src="img/spin.svg" />
+		        </div>
+		        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:200px;overflow:hidden;">
+		            <div data-p="43.75" style="border: 1px solid #dcdcdc;">
+		                <a href="#">
+		                	<img data-u="image" src="img/gaubong.jpg" title="Gấu Bông Đẹp" />
+		                </a>
+		            </div>
+		            <div data-p="43.75">
+						<a href="#" style="border: 1px solid #dcdcdc;"> 
+							<img data-u="image" src="img/gaubong1.jpg" title="Gấu Bông Đẹp" />
+							
+						</a>
+		            </div>
+		            <div data-p="43.75">	
+		                <a href="#"><img data-u="image" src="img/gaubong2.jpg" title="Gấu Bông Đẹp"/>Gấu Bông đẹp</a>
+		            </div>
+		            <div data-p="43.75">
+	                	<a href="#"><img data-u="image" src="img/gaubong3.jpg" title="Gấu Bông Đẹp"/>Gấu Bông đẹp</a>
+		            </div>
+		            <div data-p="43.75">
+	                	<a href="#"><img data-u="image" src="img/gaubong4.jpg" title="Gấu Bông Đẹp"/>Gấu Bông đẹp</a>
+		            </div>
+		            <div data-p="43.75">
+                		<a href="#"><img data-u="image" src="img/gaubong6.jpg" title="Gấu Bông Đẹp"/>Gấu Bông đẹp</a>
+		            </div>
+		            <div data-p="43.75">
+	                	<a href="#"><img data-u="image" src="img/gaubong7.jpg" title="Gấu Bông Đẹp"/>Gấu Bông đẹp</a>
+		            </div>
+		            <div data-p="43.75">
+	                	<a href="#"><img data-u="image" src="img/gaubong.jpg" title="Gấu Bông Đẹp"/>Gấu Bông đẹp</a>
+		            </div>
+		            <div data-p="43.75">
+	                	<a href="#"><img data-u="image" src="img/gaubong1.jpg" title="Gấu Bông Đẹp"/>Gấu Bông đẹp</a>
+		            </div>
+		            <div data-p="43.75">
+						<a href="#"><img data-u="image" src="img/gaubong2.jpg" title="Gấu Bông Đẹp"/>Gấu Bông đẹp</a>
+		            </div>
+		            <div data-p="43.75">
+		                	<a href="#"><img data-u="image" src="img/gaubong3.jpg" title="Gấu Bông Đẹp"/>Gấu Bông đẹp</a>
+		            </div>
+		            <div data-p="43.75">
+		                	<a href="#"><img data-u="image" src="img/gaubong4.jpg" title="Gấu Bông Đẹp"/>Gấu Bông đẹp</a>
+		            </div>
+		        </div>
+		        <!-- Bullet Navigator -->
+		        <div data-u="navigator" class="jssorb057" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+		            <div data-u="prototype" class="i" style="width:16px;height:16px;">
+		                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+		                    <circle class="b" cx="8000" cy="8000" r="5000"></circle>
+		                </svg>
+		            </div>
+		        </div>
+		        <!-- Arrow Navigator -->
+		        <div data-u="arrowleft" class="jssora073 btnLeft" style="width:50px;height:50px;top:0px;left:30px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+		            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+		                <path class="a" d="M4037.7,8357.3l5891.8,5891.8c100.6,100.6,219.7,150.9,357.3,150.9s256.7-50.3,357.3-150.9 l1318.1-1318.1c100.6-100.6,150.9-219.7,150.9-357.3c0-137.6-50.3-256.7-150.9-357.3L7745.9,8000l4216.4-4216.4 c100.6-100.6,150.9-219.7,150.9-357.3c0-137.6-50.3-256.7-150.9-357.3l-1318.1-1318.1c-100.6-100.6-219.7-150.9-357.3-150.9 s-256.7,50.3-357.3,150.9L4037.7,7642.7c-100.6,100.6-150.9,219.7-150.9,357.3C3886.8,8137.6,3937.1,8256.7,4037.7,8357.3 L4037.7,8357.3z"></path>
+		            </svg>
+		        </div>
+		        <div data-u="arrowright" class="jssora073" style="width:50px;height:50px;top:0px;right:30px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+		            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+		                <path class="a" d="M11962.3,8357.3l-5891.8,5891.8c-100.6,100.6-219.7,150.9-357.3,150.9s-256.7-50.3-357.3-150.9 L4037.7,12931c-100.6-100.6-150.9-219.7-150.9-357.3c0-137.6,50.3-256.7,150.9-357.3L8254.1,8000L4037.7,3783.6 c-100.6-100.6-150.9-219.7-150.9-357.3c0-137.6,50.3-256.7,150.9-357.3l1318.1-1318.1c100.6-100.6,219.7-150.9,357.3-150.9 s256.7,50.3,357.3,150.9l5891.8,5891.8c100.6,100.6,150.9,219.7,150.9,357.3C12113.2,8137.6,12062.9,8256.7,11962.3,8357.3 L11962.3,8357.3z"></path>
+		            </svg>
+		        </div>
+		    </div>
+		</div>
+	</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/product-detail.js"></script>
+<script type="text/javascript">jssor_1_slider_init();</script>
+</body>
+</html>
