@@ -6,6 +6,10 @@
 	background-image: url(../img/bg-header.png);
 }
 
+#slide-show {
+	margin-top: 10px;
+}
+
 .thumbnail {
 	margin-top: 15px;
 	border: none;
