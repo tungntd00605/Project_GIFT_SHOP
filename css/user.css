@@ -59,15 +59,17 @@ header {
 nav {
 	height: 500px;
 }
+
+
 .modal-content {
-	color: white;
-	background-color: #4785967d;
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.59);
-	-webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+	color: #666;
+	box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.46);
+	background-image: url(../img/loginbg.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
 }
 .modal-sm {
 	font-family: tahoma;
-	/*background-color: #579497;*/
 }
 
 .modal-sm {
@@ -76,35 +78,113 @@ nav {
 .modal-title {
 	font-size: 26px;
 	text-align: center;
+	text-transform: uppercase;
 }
 .form-control {
 	height: 40px;
-	background-color: #09121547;
-	color: white
+	background-color: #edf1f3b0;
+	color: #01121b;
 }
 
 .forgotPass {
-	color: #ef950a;
+	margin-left: 5px;
+	color: #0764c5;
 	text-decoration: none;
 }
 .forgotPass:hover {
-	color: #ef950a;
+	color: #0764c5;
 	text-decoration: underline;
 }
 .form-group {
+	color: #462808e8;
 	font-size: 22px;
-	color: white;
+	margin-bottom: 20px;
 }
+.form-group label:first-child {
+	width: 35%;
+	float: left;
+}
+
 .form-group label {
+	margin-left: 5px;
 	padding-bottom: 8px;
+	float: left;
+}
+
+.form-group input {
+	font-size: 18px;
+}
+
+.form-group span {
+	float: left;
+	margin-top: 5px;
+}
+
+.form-group .form-control {	
+	float: left;
+	border-radius: 30px;
+}
+
+
+.form-group::after {
+	content: "";
+	clear: both;
+	display: table;
 }
 
 .error-msg {
 	color: red;
 	font-size: 16px;
+	font-style: italic;
 }
 
 .success-msg {
 	color: green;
 	font-size: 16px;
 }
+
+/*Căn chỉnh khung đăng ký.*/
+.registerContent {
+	width: 800px;
+	margin: auto;
+}
+
+
+.regisLable {
+	padding: 9px 35px;
+}
+/*Căn chỉnh khung đăng ký.*/
+
+.long-input {
+	width: 50%;
+}
+.normal-input {
+	width: 30%;
+}
+
+.short-input {
+	width: 20%;
+}
+
+/*#login-form {
+	width: 50%;
+}*/
+
+/*Tạo responsive cho màn hình 360px trở lên*/
+@media screen and (max-width: 360px) {
+	.modal-sm {
+		width: 100%;
+		margin-top: 35%;
+		margin-left: 0;
+	}
+}
+
+/*Tạo responsive cho màn hình 768px trở lên*/
+@media screen and (max-width: 768px) {
+	.modal-sm {
+		width: 50%;
+		margin: 30% auto;
+		/*margin-left: 0;*/
+	}
+}
+
