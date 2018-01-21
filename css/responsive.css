@@ -1,0 +1,49 @@
+@media (max-width: 1199px) {
+	#header{
+		border-bottom:1px solid #0c569f;
+		}
+	.navbar-brand{
+		padding:10px 15px;
+		}
+	.navbar-brand>img{
+		height:68px;
+		}
+	.navTop{
+		margin:10px 0;
+		overflow:hidden;
+		}
+	.navbar-nav>li{
+		border:none;
+		}
+	#prodGrid .col-lg-3:nth-child(4n+1){
+		clear:none;
+		}
+}
+
+
+@media (max-width: 991px) {
+	#boxSearch{
+		margin-bottom:15px;
+		}
+	#prodGrid .col-lg-3:nth-child(2n+1){
+		clear:both;
+		}
+	#prodGrid  .nav-tabs li>a, #prodDetail-desc .nav-tabs>li>a, .nav-footer{
+		font-size:13px;
+		}
+	.shopHd-tl h3{
+		font-size:14px;
+		font-weight:bold;
+		}
+	.shopHd-tl .small{
+		font-size:12px;
+		}
+}
+@media (max-width: 450px) {
+	.newsFocus img{
+		margin:0;
+		float:none;
+		width:100%;
+		}
+}
+
