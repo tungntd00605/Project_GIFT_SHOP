@@ -80,6 +80,14 @@ nav {
 	text-align: center;
 	text-transform: uppercase;
 }
+
+.modal-footer .btn {
+	font-size: 15px;
+	margin-top: 15px;
+	margin-left: 10px;
+	float: left;
+}
+
 .form-control {
 	height: 40px;
 	background-color: #edf1f3b0;
@@ -165,10 +173,6 @@ nav {
 .short-input {
 	width: 20%;
 }
-
-/*#login-form {
-	width: 50%;
-}*/
 
 /*Tạo responsive cho màn hình 360px trở lên*/
 @media screen and (max-width: 360px) {
