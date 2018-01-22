@@ -11,14 +11,14 @@
 	margin-top: 10px;
 }
 
-.viet-thumbnail {
+.logo-thumbnail {
 	margin-top: 15px;
 	border: none;
 	box-shadow: 0 0px 0px rgba(0,0,0,0);
 	border-radius: 100%;
 }
 
-.viet-thumbnail>img {
+.logo-thumbnail>img {
 	border-radius: 5%;
 }
 
