@@ -9,8 +9,6 @@
  #map {
 	height: 345px;
 /*	width: 50%;*/
-	border-top-left-radius:30px;
-	border-bottom-right-radius: 30px; 
 }
 
 .p-content-footer>a{
