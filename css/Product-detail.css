@@ -143,6 +143,11 @@ body {
 
 }
 
+.product-detail .breadcrumb {
+	padding-bottom: 5px;
+	background-color: #fbe8cd;
+}
+
 /*slider cua sp*/ 
 
 /* jssor slider loading skin spin css */
