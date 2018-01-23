@@ -331,6 +331,9 @@ img{
 	}
 /**/
 /*CSS Product-list*/
+.product-list{
+	margin-top: 20px;
+}
 .category-list{
 	margin-bottom: 30px;	
 }
@@ -341,40 +344,21 @@ img{
 	font-size:16px;
 	font-weight:bold;
 	border-bottom:1px solid #ddd;
-	color: blue;
+	color: #978CFA;
 }
 .category-list h3 .glyphicon{
-	color:#FFC1C1;
+	color:#CEBBFC;
 	margin-right:5px;
 }
 .category-list ul{
 	margin: 0px;
 	padding: 0px;
-	margin-left: 10px;
+	margin-left: 5px;
 }
 .category-list li{
 	list-style:none;
-	margin-bottom: 1px;
+	margin-bottom: 5px;
 	font-size:14px;
-}
-.category-list li.odd a{
-	text-decoration: none;
-	line-height: 25px;
-	display: block;
-	background-color: #F6DFFA;
-}
-.category-list li.even a{
-	text-decoration: none;
-	line-height: 25px;
-	display: block;
-	background-color: #CAF8F9;
-}
-.category-list li.even a:hover,.category-list li.odd a:hover{
-	background-color: #ECEDEE;
-}
-
-.filter{
-
 }
 label{
     font-weight:normal;
@@ -392,7 +376,7 @@ label{
 	color: blue;
 	}
 .widgetProd h3 .glyphicon{
-	color:#777;
+	color:#CEBBFC;
 	margin-right:5px;
 	}
 .widgetProd ul{
@@ -403,8 +387,9 @@ label{
 	margin-bottom:10px;
 	font-size:14px;
 	}
-.widgetProd li label{
+.widgetProd li label, .category-list li label{
 	margin-bottom:0;
+	color: blue;
 	}
 .widgetProd ul li label input{
 	background-color: blue;
@@ -419,5 +404,10 @@ label{
 	color: blue;
 }
 
-
+.pagination{
+	float: right;
+	position: relative;
+	margin-top: 0px;
+	margin-right: 3px;
+}
 
