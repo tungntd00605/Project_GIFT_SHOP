@@ -15,13 +15,13 @@ body {
 }
 
 .product-detail .Product {
-	margin-top: 30px;
+	margin-top: 10px;
 
 }
 
 .product-detail .panel {
 	border: none !important;
-	padding-bottom: 10px;
+	padding: 0;
 }
 
 .proV-size {
@@ -137,6 +137,11 @@ body {
 		display: none;
 	}
 
+}
+
+.product-detail .breadcrumb {
+	padding-bottom: 5px;
+	background-color: #fbe8cd;
 }
 
 /*slider cua sp*/ 
