@@ -11,6 +11,10 @@
 /*	width: 50%;*/
 }
 
+.p-content-footer{
+	color: #000;
+}
+
 .p-content-footer>a{
 	color: #000;
 	margin-bottom: 5px;
