@@ -227,7 +227,7 @@ img{
 .prodItem h2{
 	font-size:16px;
 	height:25px;
-	overflow:hidden;
+	/*overflow:hidden;*/
 	margin:0 0 15px 0;
 	text-align: center;
 	}
@@ -236,22 +236,23 @@ img{
 }
 .prodItem-bt{
 	color:#999;
-	font-size:75%;}
+	font-size:75%;
+}
 .star{
 	display:inline-block;
-	}
+}
 .star.star-small{
 	height:9px;
 	width:55px;
 	display:inline-block;
 	background:url(../img/star-small.gif) repeat-x 0 0;
-	}
+}
 .star.star-medium{
 	height:14px;
 	width:90px;
 	display:inline-block;
 	background:url(../img/start-medium.gif) repeat-x 0 0;
-	}
+}
 .star span{
 	display:block;
 	float:left;
