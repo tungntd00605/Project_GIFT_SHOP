@@ -38,7 +38,7 @@
 	display: none;
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 410px) {
 	#Main .andress {
 		display: none;
 	}
@@ -61,7 +61,22 @@
 		font-size: 12px;
 	}
 	#Main .form-control>p{
-		font-size: 12px;
+		font-size: 10px;
+	}
+}
+
+
+
+@media only screen and (min-width: 100px) {
+	.Additional-information{
+		text-align: center;
+		background-color: #50c7fd;
+		display: block;
+		padding: 3px;
+		margin:auto;
+		color: #fff;
+		border-radius: 20px;
+		margin-bottom: 10px;
 	}
 }
 
@@ -76,22 +91,6 @@
 	#Main .form-control>label{
 		color: red;
 		font-size: 12px;
-	}
-	#Main .form-control>p{
-		font-size: 10px;
-	}
-}
-
-@media only screen and (min-width: 100px) {
-	.Additional-information{
-		text-align: center;
-		background-color: #50c7fd;
-		display: block;
-		padding: 3px;
-		margin:auto;
-		color: #fff;
-		border-radius: 20px;
-		margin-bottom: 10px;
 	}
 	#Main .form-control>p{
 		font-size: 10px;
