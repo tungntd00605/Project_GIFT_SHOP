@@ -129,16 +129,16 @@
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" id="close-form">&times;</span></button>
 							<h4 class="modal-title" id="gridSystemModalLabel">Đăng Nhập</h4>
 						</div>
-						<div class="modal-body">
-							<div class="form-group login">
+						<div id="loginForm" class="modal-body">
+							<div id="checkErrorLogin" class="form-group login">
 								<label class="control-label" id="email" for="email">Email</label>
 								<input type="email" id="email-address" class="form-control" name="email-address" placeholder="Nhập địa chỉ email (ví dụ: abc@gmail.com)">
-								<span id="checkEmailLogin" class="error-msg"></span>					
+								<span id="checkEmailLogin"></span>					
 							</div>
 							<div class="form-group login">
 								<label class="control-label" for="password">Mật khẩu</label>
 								<input type="password" id="password" class="form-control" name="password" placeholder="Nhập mật khẩu">
-								<span id="checkPwdLogin" class="error-msg "></span>
+								<span id="checkPwdLogin"></span>
 							</div>
 							<a href="#" class="forgotPass">Quên mật khẩu?</a>
 						</div>
@@ -161,37 +161,36 @@
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" id="close-form">&times;</span></button>
 							<h4 class="modal-title">Đăng Ký Tài Khoản</h4>
 						</div>
-						<div class="modal-body">
-							<div class="form-group register">
+						<div id="registerForm" class="modal-body">
+							<div id="checkErrorRegister" class="form-group register">
 								<label class="control-label regisLable" for="lastname">Họ :</label>
 								<input type="text" class="form-control normal-input" name="lastname" placeholder="Nhập họ của bạn.">
-								<span id="checkLastNameRegister" class="error-msg" aria-hidden="true"></span>
+								<span id="checkLastNameRegister"></span>
 							</div>
-							<div class="form-group register">
+							<div id="checkErrorRegister" class="form-group register">
 								<label class="control-label regisLable" for="firstname">Tên :</label>
 								<input type="text" class="form-control normal-input" name="firstname" placeholder="Nhập tên của bạn.">
-								<span id="checkFirstNameRegister" class="error-msg" aria-hidden="true"></span>
+								<span id="checkFirstNameRegister"></span>
 							</div>
-							<div class="form-group register">
-								<label class="control-label regisLable" for="email-address">Email :</label>
-								<input type="email" class="form-control long-input" name="email-address" placeholder="Nhập email đăng nhập của bạn.">
-								
-								<span id="checkEmailRegister" class="error-msg" aria-hidden="true"></span>
+							<div id="checkErrorRegister" class="form-group register">
+								<label class="control-label regisLable" for="email">Email :</label>
+								<input type="email" class="form-control long-input" name="email" placeholder="Nhập email đăng nhập của bạn.">
+								<span id="checkEmailRegister"></span>
 							</div>
-							<div class="form-group register">
+							<div id="checkErrorRegister" class="form-group register">
 								<label class="control-label regisLable" for="password">Mật khẩu :</label>
 								<input type="password" class="form-control normal-input" name="password" placeholder="Nhập mật khẩu.">								
-								<span id="checkPassRegister" class="error-msg" aria-hidden="true"></span>
+								<span id="checkPassRegister"></span>
 							</div>
-							<div class="form-group register">
+							<div id="checkErrorRegister" class="form-group register">
 								<label class="control-label regisLable" for="re-password">Nhập lại mật khẩu :</label>
 								<input type="password" class="form-control normal-input" name="re-password" placeholder="Xác nhận mật khẩu.">
-								<span id="checkRe-passRegister" class="error-msg" aria-hidden="true"></span>
+								<span id="checkRe-PassRegister"></span>
 							</div>
-							<div class="form-group register">
+							<div id="checkErrorRegister" class="form-group register">
 								<label class="control-label regisLable" for="phone">Số điện thoại :</label>
-								<input type="text" class="form-control normal-input" name="phonenumber" placeholder="Nhập số điện thoại.">
-								<span id="checkPhoneRegister" class="error-msg" aria-hidden="true"></span>
+								<input type="text" class="form-control normal-input" name="phone" placeholder="Nhập số điện thoại.">
+								<span id="checkPhoneRegister"></span>
 							</div>
 							<div>
 								<div class="form-group register">
@@ -207,9 +206,9 @@
 									<label class="control-label regisLable">Ngày sinh :</label>
 									<input type="date" class="form-control normal-input" name="birthday" style="width: 30%;">
 								</div>
-								<div class="regisLable">
+								<div id="checkErrorRegister" class="regisLable">
 									<input type="checkbox" name="checkbox">&ensp;Đồng ý điều khoản sử dụng
-									<span id="checkErrorRegister" class="error-msg" aria-hidden="true"></span>
+									<span id="checkErrorRegister"></span>
 								</div>
 								<div class="modal-footer">
 									<input type="button" name="submit" id="registerBtn" class="btn btn-primary" value="Đăng Ký">

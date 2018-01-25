@@ -114,13 +114,7 @@ nav {
 .form-group {
 	color: #462808e8;
 	font-size: 22px;
-	margin-bottom: 20px;
-}
-
-.form-group {
-	color: #462808e8;
-	font-size: 22px;
-	margin-bottom: 20px;
+	/*margin-bottom: 20px;*/
 }
 
 .form-group input {
@@ -154,7 +148,7 @@ nav {
 
 .login span {
 	float: left;
-	margin-top: 5px;
+	/*margin-top: 5px;*/
 }
 /*Kết thúc login form*/
 
@@ -175,8 +169,9 @@ nav {
 	width: 100%;
 	font-size: 18px;
 	float: left;
+	text-align: left;
 	margin-left: 280px;
-	margin-top: 5px;
+
 }
 /*Kết thúc register form*/
 
@@ -184,163 +179,175 @@ nav {
 
 
 /* Bắt đầu thông báo error và success.*/
-.error-msg {
-	color: red;
+.form-control-feedback {
+	position: relative;
+	width: 400px;
+	height: 30px;
 	font-size: 16px;
 	font-style: italic;
 }
 
-.success-msg {
+.has-feedback label~.form-control-feedback {
+	top: 0;
+}
+
+/*.error-msg {
+	color: red;
+	font-size: 16px;
+	font-style: italic;
+	}*/
+
+/*.success-msg {
 	color: green;
 	font-size: 16px;
-}
-/* Kết thúc thông báo error và success.*/
+	}*/
+	/* Kết thúc thông báo error và success.*/
 
-/*Bắt đầu căn chỉnh khung đăng ký.*/
-.registerContent {
-	width: 800px;
-	margin: auto;
-}
-
-
-.regisLable {
-	padding: 9px 35px;
-}
-/*Kết thúc căn chỉnh khung đăng ký.*/
-
-.long-input {
-	width: 50%;
-}
-.normal-input {
-	width: 35%;
-}
-
-.short-input {
-	width: 20%;
-}
-
-/*Tạo responsive cho màn hình 360px trở lên*/
-@media screen and (max-width: 360px) {
-	.modal-sm {
-		width: 100%;
-		margin-top: 35%;
-		margin-left: 0;
+	/*Bắt đầu căn chỉnh khung đăng ký.*/
+	.registerContent {
+		width: 800px;
+		margin: auto;
 	}
-}
 
-/*Tạo responsive cho màn hình 768px trở lên*/
-@media screen and (max-width: 768px) {
-	.modal-sm {
+
+	.regisLable {
+		padding: 9px 35px;
+	}
+	/*Kết thúc căn chỉnh khung đăng ký.*/
+
+	.long-input {
 		width: 50%;
-		margin: 30% auto;
-		/*margin-left: 0;*/
 	}
-}
-
-/*Bắt đầu Header*/
-#top-header {
-	background-image: url(../img/bg-header.png);
-}
-
-#slide-show {
-	margin-top: 10px;
-}
-
-.thumbnail {
-	margin-top: 15px;
-	border: none;
-	box-shadow: 0 0px 0px rgba(0,0,0,0);
-	border-radius: 100%;
-}
-
-.thumbnail>img {
-	border-radius: 5%;
-}
-
-.bIcon {
-	background-image: url(../img/bicon.png);
-	padding: 9px 9px 0px 8px;
-    color: #fff;
-    font-size: 11px;
-    line-height: 60px;
-}
-
-.text-bicon {
-	font-family: sans-serif;
-	font-size: 16px;
-	text-transform: uppercase;
-}
-
-.list-unstyled>li {
-	display: inline-block;
-}
-
-#header-content a {
-	color: #000;
-	padding-left: 5px;
-}
-
-.andress {
-	font-size: 18px;
-	color: red;
-	font-family: segoe script;
-	display: inline-block;
-	padding: 30px 0 30px 0;
-}
-
-.contractIcon>a>img:hover {
-	opacity: 0.8;
-}
-
-.contractIcon {
-	text-align: right;
-	margin-left: 20px;
-	float: left;
-}
-
-.search-and-user {
-	padding-top: 10px;
-}
-
-.user {
-	text-align: right;
-	margin-left: 90px;
-}
-
-@media only screen and (max-width: 500px) {
-	.andress {
-		display: none;
+	.normal-input {
+		width: 35%;
 	}
-	.user {
-		text-align: center;
+
+	.short-input {
+		width: 20%;
+	}
+
+	/*Tạo responsive cho màn hình 360px trở lên*/
+	@media screen and (max-width: 360px) {
+		.modal-sm {
+			width: 100%;
+			margin-top: 35%;
+			margin-left: 0;
+		}
+	}
+
+	/*Tạo responsive cho màn hình 768px trở lên*/
+	@media screen and (max-width: 768px) {
+		.modal-sm {
+			width: 50%;
+			margin: 30% auto;
+			/*margin-left: 0;*/
+		}
+	}
+
+	/*Bắt đầu Header*/
+	#top-header {
+		background-image: url(../img/bg-header.png);
+	}
+
+	#slide-show {
 		margin-top: 10px;
 	}
-}
 
-@media only screen and (max-width: 768px) {
+	.thumbnail {
+		margin-top: 15px;
+		border: none;
+		box-shadow: 0 0px 0px rgba(0,0,0,0);
+		border-radius: 100%;
+	}
+
+	.thumbnail>img {
+		border-radius: 5%;
+	}
+
+	.bIcon {
+		background-image: url(../img/bicon.png);
+		padding: 9px 9px 0px 8px;
+		color: #fff;
+		font-size: 11px;
+		line-height: 60px;
+	}
+
+	.text-bicon {
+		font-family: sans-serif;
+		font-size: 16px;
+		text-transform: uppercase;
+	}
+
+	.list-unstyled>li {
+		display: inline-block;
+	}
+
+	#header-content a {
+		color: #000;
+		padding-left: 5px;
+	}
+
 	.andress {
-		display: none;
+		font-size: 18px;
+		color: red;
+		font-family: segoe script;
+		display: inline-block;
+		padding: 30px 0 30px 0;
 	}
+
+	.contractIcon>a>img:hover {
+		opacity: 0.8;
+	}
+
+	.contractIcon {
+		text-align: right;
+		margin-left: 20px;
+		float: left;
+	}
+
+	.search-and-user {
+		padding-top: 10px;
+	}
+
 	.user {
-		text-align: center;
-
-	}
-	.input-group{
-		margin-bottom: 10px;
-	}
-	.list-unstyled>li::last {
-		display: none;
-	}
-}
-
-@media only screen and (max-width: 1024px) {
-	.andress {
-		padding: 0 0 0 0;
-	}
-	.user {
-		text-align: left;
-		margin-left: 13px;
+		text-align: right;
+		margin-left: 90px;
 	}
 
-}
-/*Kết thúc Header*/
+	@media only screen and (max-width: 500px) {
+		.andress {
+			display: none;
+		}
+		.user {
+			text-align: center;
+			margin-top: 10px;
+		}
+	}
+
+	@media only screen and (max-width: 768px) {
+		.andress {
+			display: none;
+		}
+		.user {
+			text-align: center;
+
+		}
+		.input-group{
+			margin-bottom: 10px;
+		}
+		.list-unstyled>li::last {
+			display: none;
+		}
+	}
+
+	@media only screen and (max-width: 1024px) {
+		.andress {
+			padding: 0 0 0 0;
+		}
+		.user {
+			text-align: left;
+			margin-left: 13px;
+		}
+
+	}
+	/*Kết thúc Header*/
