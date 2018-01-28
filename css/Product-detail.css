@@ -3,6 +3,10 @@ body {
 	z-index: -1;
 }
 
+.product-detail {
+	margin-bottom: 10px;
+}
+
 .product-detail .form-control {
 	border: none;
 	margin-top: 10px;

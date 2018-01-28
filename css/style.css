@@ -72,22 +72,3 @@
 	text-align: right;
 }
 
-@media only screen and (max-width: 320px) {
-	.andress {
-		display: none;
-	}
-	.search-and-user>span {
-		margin-bottom: 10px;
-	}
-}
-
-@media only screen and (max-width: 768px) {
-	.andress {
-		display: none;
-	}
-	.search-and-user>span {
-		margin-bottom: 10px;
-	}
-}
-
-

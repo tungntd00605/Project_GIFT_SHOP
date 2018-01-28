@@ -1,3 +1,10 @@
+$(document).ready(function(){
+  $("#compareBtn").click(function(){
+    window.location.href = "product-compare.html";
+  });
+});
+
+
 jssor_1_slider_init = function() {
 
   var jssor_1_SlideshowTransitions = [

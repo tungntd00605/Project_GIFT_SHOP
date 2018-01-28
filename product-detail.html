@@ -68,7 +68,7 @@
 
 					<div class="search-and-user">
 						<!-- Start Search Bar -->
-						<span class="col-md-5 col-sm-12 col-xs-12 search" style="float: left;">
+						<span class="col-md-5 col-sm-12 col-xs-12" style="float: left;">
 							<div class="input-group">
 								<input type="text" class="form-control" placeholder="Bạn muốn mua gì?">
 								<span class="input-group-btn">
@@ -125,21 +125,14 @@
 		<!-- Bắt đầu slide ảnh và thông tin sản phẩm-->
 		<div class="row" style="padding-bottom: 10px;">
 			<div class="Product col-xs-12">
-				<div>
-					<ol class="breadcrumb">
-					    <li><a href="index.html">Trang Chủ</a></li>
-					    <li><a href="#">Gấu Bông</a></li>
-					    <li class="active">Gấu trúc bông Cute!</li>       
-					</ol>
-				</div>
 				<!-- bắt đầu silde ảnh của sản phẩm -->
 				<div class="col-md-8 col-xs-12">
 					<div id="jssor_1" style="position:relative;width:900px;height:480px;overflow:hidden;visibility:hidden;background-color:#fff;" class="col-xs-12">
 						<!-- Loading Screen -->
 						<div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
-							<img style="margin-top:-19px;position:relative;top:30%;width:38px;height:38px;" src="img/spin.svg" class="col-md-3" />
+							<img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
 						</div>
-						<div data-u="slides" style="cursor:default;position:relative;top:0px;left:240px;width:720px;height:480px;overflow:hidden;" class="col-xs-12 col-md-9">
+						<div data-u="slides" style="cursor:default;position:relative;top:0px;left:240px;width:720px;height:480px;overflow:hidden;" class="col-xs-12">
 							<div data-p="150.00">
 								<img data-u="image" src="img/gautruc.jpg" />
 								<img data-u="thumb" src="img/gautruc.jpg" />
@@ -195,7 +188,7 @@
 						<form class="form-horizontal">
 							<fieldset>
 								<div class="col-xs-12">
-									<div class="form-control" style="clear: both; margin: 0;">
+									<div class="form-control" style="clear: both;">
 										<label for="" class="col-xs-12 col-md-6">
 											<i class="fa fa-heart"></i>
 											Giá Sản Phẩm:
@@ -220,7 +213,7 @@
 									<div class="form-control" style="clear: both;">
 										<label for="" class="col-xs-12 col-md-6">
 											<i class="fa fa-heart"></i>
-											Kích Thước :
+											Kích Thước:
 										</label>
 										<div class="col-xs-12 col-md-6">
 											<div class="text">
@@ -242,7 +235,7 @@
 									<div class="form-control" style="clear: both;">
 										<label for="" class="col-xs-6">
 											<i class="fa fa-heart"></i>
-											Số Lượng :
+											Số Lượng:
 										</label>
 										<div class="col-xs-6">
 											<div class="quantity">
@@ -253,10 +246,8 @@
 								</div>
 							</fieldset>
 							<div class="btnOder">
-								<a href="product-compare.html">
-									<button type="button" class="btn btn-warning btnCart">So Sánh</button>
-								</a>
-								<button type="button" class="btn btn-success btnCart">Đặt hàng</button>
+								<a href="product-compare.html"><button type="button" class="btn btn-warning btnCart" id="compareBtn">So Sánh</button></a>
+								<a href="shopCart.html"><button type="button" class="btn btn-success btnCart">Đặt hàng</button></a>
 							</div>
 						</form>
 					</div>
@@ -443,16 +434,16 @@
 	<!-- End Product Detail -->
 
 	<!-- Start Footer -->
-	<div class="container-fluid" style="margin-top: 10px;">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12 col-sm-12 col-xs-12" style="background-image:url(img/bg-header.png); margin:0;">
 				<footer>
 					<div class="col-md-3 col-sm-4 col-xs-12" style="text-align: center;">
 						<p class="title-footer">Hệ thống cửa hàng</p>
 						<br>
-						<p  class="p-content-footer"> 08 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</p>
-						<p  class="p-content-footer"> 125 Phùng Hưng, Cửa Đông, Hoàn Kiếm, Hà Nội</p>
-						<p  class="p-content-footer"> 252 Phúc Diễn, Hà Nội</p>
+						<p class="p-content-footer"> 08 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</p>
+						<p class="p-content-footer"> 125 Phùng Hưng, Cửa Đông, Hoàn Kiếm, Hà Nội</p>
+						<p class="p-content-footer"> 252 Phúc Diễn, Hà Nội</p>
 						<p class="p-content-footer"> 10 Trần Hữu Dực, Mỹ Đình, Hà Nội</p>
 						<p class="p-content-footer"> 159 Ba Cu, TP. Vũng Tàu - 0254 6550 947</p>
 						<p class="p-content-footer"> 94 Thủ Khoa Huân,TP Phan Thiết - 0252 650 2059</p>
@@ -532,6 +523,12 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- Up top page -->
+	<a id='noop-top' style=' position: fixed; bottom: 5px; right:1%; cursor:pointer;font:12px arial;'>
+		<img src='http://nhocgiftshop.com/tp/T0131/img/btTop.png'/>
+	</a>
+
 	<!-- End Footer -->
 
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
@@ -546,5 +543,24 @@
 	<script async defer
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxm0k6cV3zMz_xd2xv7ICZV46d-jG8bUg&callback=initMap">
 </script>
+
+<!-- up to the top page -->
+<script type='text/javascript'>
+	$(function(){$(window).scroll
+		(function(){
+			if($(this).scrollTop()!=0){
+				$("#noop-top").fadeIn()
+			}else{
+				$("#noop-top").fadeOut()
+			}
+		});
+		$("#noop-top").click(function(){
+			$("body,html").animate({scrollTop:0},800);
+			return false
+		})
+	});
+</script>
+
+
 </body>
 </html>
