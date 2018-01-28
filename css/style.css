@@ -72,3 +72,10 @@
 	text-align: right;
 }
 
+#noop-top>img {
+	opacity: 0.7;
+}
+
+#noop-top>img:hover {
+	opacity: 1;
+}
