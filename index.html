@@ -27,7 +27,7 @@
 			<div class="row" id="header-content">
 				<!-- Start Logo -->
 				<div class="col-md-2 col-sm-3 col-xs-12">
-					<a href="#" class="thumbnail logo-thumbnail">
+					<a href="index.html" class="thumbnail logo-thumbnail">
 						<img src="img/logo.png" width="100%">
 					</a>
 				</div>
@@ -547,7 +547,7 @@
 		<div class="row">
 			<div class="col-md-12 col-sm-12 col-xs-12" style="background-image:url(img/bg-header.png); margin:0;">
 				<footer>
-					<div class="col-md-3 col-sm-4 col-xs-12" style="text-align: center;">
+					<div class="col-md-3 col-sm-4 col-xs-12">
 						<p class="title-footer">Hệ thống cửa hàng</p>
 						<br>
 						<p class="p-content-footer"> 08 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</p>
@@ -559,7 +559,7 @@
 						<p class="p-content-footer"> 130 Nguyễn Việt Hồng, TP Cần Thơ - 0292 653 9541</p>
 						<p class="p-content-footer"> 107 Nguyễn Trãi, P2, Q.5 - 0286 686 0947</p>
 					</div>
-					<div class="col-md-3 col-sm-4 col-xs-12" style="text-align: center;">
+					<div class="col-md-3 col-sm-4 col-xs-12">
 						<p class="title-footer">HỖ TRỢ KHÁCH HÀNG</p>
 						<br>
 						<p class="p-content-footer">
@@ -591,7 +591,7 @@
 							<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Gửi Mail tại đây</a>
 						</p>
 					</div>
-					<div class="col-md-2 col-sm-4 col-xs-12" style="text-align: center;">
+					<div class="col-md-2 col-sm-4 col-xs-12">
 						<p class="title-footer">THÔNG TIN</p>
 						<br>
 						<p class="p-content-footer">
@@ -632,6 +632,12 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- Up top page -->
+	<a id='noop-top' style=' position: fixed; bottom: 5px; right:1%; cursor:pointer;font:12px arial;'>
+		<img src='http://nhocgiftshop.com/tp/T0131/img/btTop.png'/>
+	</a>
+
 	<!-- End Footer -->
 
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
@@ -643,8 +649,25 @@
 
 	<!-- Footer script -->
 	<script type="text/javascript" src="js/footer.js"></script>
-	<script async defer
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxm0k6cV3zMz_xd2xv7ICZV46d-jG8bUg&callback=initMap">
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxm0k6cV3zMz_xd2xv7ICZV46d-jG8bUg&callback=initMap">
 	</script>
+
+	<!-- up to the top page -->
+	<script type='text/javascript'>
+		$(function(){$(window).scroll
+			(function(){
+				if($(this).scrollTop()!=0){
+					$("#noop-top").fadeIn()
+				}else{
+					$("#noop-top").fadeOut()
+				}
+			});
+			$("#noop-top").click(function(){
+				$("body,html").animate({scrollTop:0},800);
+				return false
+			})
+		});
+	</script>
+
 </body>
 </html>
