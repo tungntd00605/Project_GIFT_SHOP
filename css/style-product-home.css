@@ -99,9 +99,6 @@ img{
 	float:left;
 	color:#ff5722
 }
-#trend{
-	background:#fff;
-}
 .glyphicon{
 	color: red;
 	font-size: 20px;
@@ -155,7 +152,9 @@ img{
 	box-shadow:0 1px 3px rgba(0,0,0,0.2);
 	}
 .prodItem:hover{
-	margin-top:-3px;}
+	margin-right: -2px;
+	margin-left: -2px;
+}
 #flashsale .prodItem{
 	padding:10px;
 	}
@@ -298,40 +297,19 @@ img{
 	text-align:center;
 	}
 #prodGrid .pagination>li.active>a{
-	color:#ff4800}
-#prodGrid  .nav-tabs{
-	background:#fff;
-	margin-bottom:10px;
-	}
-#prodGrid .nav-tabs li{
-	text-align:center;
-	}
-#prodGrid .nav-tabs li{
-	width:25%;
-	}
-#prodGrid  .nav-tabs li>a{
-	text-transform:uppercase;
-	color:#555;
-	border:none;
-	display:block;
-	border-bottom:2px solid transparent;
-	}
-#prodGrid .nav-tabs>li.active>a, #prodGrid .nav-tabs>li.active>a:hover, #prodGrid .nav-tabs>li.active>a:focus,
-#prodGrid  .nav-tabs>li>a:hover{
-	color:#ff4800;
-	border-bottom:2px solid #ddd
-	}
-#prodGrid  .nav-tabs .dropdown-menu{
-	width:100%;}
-#prodGrid  .nav-tabs .dropdown-menu li{
-	width:100%;
-	}
-#prodGrid  .nav-tabs .dropdown-menu a{
-	text-transform:none;
-	display:block;
-	}
+	color:#ff4800
+}
 /**/
 /*CSS Product-list*/
+#prodGrid .pagination>li>a, #prodGrid .pagination>li>span{
+	background:none;
+	color:#777;
+	}
+#prodGrid #pagination{
+	text-align:center;
+	}
+#prodGrid .pagination>li.active>a{
+	color:#ff4800}
 .product-list{
 	margin-top: 20px;
 }
@@ -411,4 +389,15 @@ label{
 	margin-top: 0px;
 	margin-right: 3px;
 }
-
+.tab-content .col-lg-3{
+	margin-bottom: 15px;
+	margin-top: 10px;	
+}
+.tab-content .prodItem{
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	-moz-box-shadow:0 1px 3px rgba(0,0,0,0.2);
+	-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.2);
+	box-shadow:0 1px 3px rgba(0,0,0,0.2);
+}
