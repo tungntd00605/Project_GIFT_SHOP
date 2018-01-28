@@ -27,7 +27,7 @@
 			<div class="row" id="header-content">
 				<!-- Start Logo -->
 				<div class="col-md-2 col-sm-3 col-xs-12">
-					<a href="#" class="thumbnail logo-thumbnail">
+					<a href="index.html" class="thumbnail logo-thumbnail">
 						<img src="img/logo.png" width="100%">
 					</a>
 				</div>
@@ -632,6 +632,12 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- Up top page -->
+	<a id='noop-top' style=' position: fixed; bottom: 5px; right:1%; cursor:pointer;font:12px arial;'>
+		<img src='http://nhocgiftshop.com/tp/T0131/img/btTop.png'/>
+	</a>
+
 	<!-- End Footer -->
 
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
@@ -643,8 +649,25 @@
 
 	<!-- Footer script -->
 	<script type="text/javascript" src="js/footer.js"></script>
-	<script async defer
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxm0k6cV3zMz_xd2xv7ICZV46d-jG8bUg&callback=initMap">
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxm0k6cV3zMz_xd2xv7ICZV46d-jG8bUg&callback=initMap">
 	</script>
+
+	<!-- up to the top page -->
+	<script type='text/javascript'>
+		$(function(){$(window).scroll
+			(function(){
+				if($(this).scrollTop()!=0){
+					$("#noop-top").fadeIn()
+				}else{
+					$("#noop-top").fadeOut()
+				}
+			});
+			$("#noop-top").click(function(){
+				$("body,html").animate({scrollTop:0},800);
+				return false
+			})
+		});
+	</script>
+
 </body>
 </html>
