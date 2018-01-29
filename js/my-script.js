@@ -2,14 +2,14 @@
 //==========================================START VALIDATION FORM CONTACT==============================================
 //======================================================================================================================
 // Get all input object
-var nameInput = document.forms['contact']['name'];
-var emailInput = document.forms['contact']['email'];
-var phoneInput = document.forms['contact']['phone'];
-var messageInput = document.forms['contact']['message'];
+var nameInput = document.forms['contact']['nameInput'];
+var emailInput = document.forms['contact']['emailInput'];
+var phoneInput = document.forms['contact']['phoneInput'];
+var messageInput = document.forms['contact']['messageInput'];
 
 // Getting all error display objects
 var name_error = document.getElementById('name_error');
-var mail_error = document.getElementById('mail_error');
+var email_error = document.getElementById('email_error');
 var phone_error = document.getElementById('phone_error');
 var message_error = document.getElementById('message_error');
 
@@ -21,79 +21,84 @@ messageInput.addEventListener('blur', messageVerify, true);
 
 // Validation function
 function contactValidation() {
-    // name validation
-    if (nameInput.value == "") {
-        nameInput.style.border = "1px solid red";
-        name_error.textContent = "Name is required";
-        nameInput.focus();
+    nameVerify();
+    emailVerify();
+    phoneVerify();
+    messageVerify();
+    if (nameVerify() == false
+        || emailVerify() == false
+        || phoneVerify() == false
+        || messageVerify() == false) {
         return false;
-    }
-
-    // email validation
-    if (emailInput.value == "") {
-        emailInput.style.border = "1px solid red";
-        email_error.textContent = "Email is required";
-        emailInput.focus();
-        return false;
-    }
-
-    // phone validation
-    if (phoneInput.value == "") {
-        phoneInput.style.border = "1px solid red";
-        phone_error.textContent = "Phone is required";
-        phoneInput.focus();
-        return false;
-    }
-    // message validation
-    if (messageInput.value == "") {
-        messageInput.style.border = "1px solid red";
-        message_error.textContent = "Message is required";
-        messageInput.focus();
-        return false;
+    }else {
+        return true;
     }
 }
 
 // event handler functions
 function nameVerify() {
-    if(nameInput.value !="") {
+    if (nameInput.value == "") {
+        nameInput.style.border = "1px solid red";
+        name_error.innerHTML = "Thông tin bắt buộc";
+        return false;
+    } else if(nameInput.value !== "") {
         nameInput.style.border = '1px solid #5E6E66';
         name_error.innerHTML = '';
         return true;
     }
 }
 function emailVerify() {
-    if(emailInput.value !="") {
         var reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (reg.test(emailInput.value) == false)
-        {
-            email_error.innerHTML = 'Invalid email address';
+        if (emailInput.value == "") {
+            emailInput.style.border = "1px solid red";
+            email_error.innerHTML = "Thông tin bắt buộc";
             return false;
+        } else if (reg.test(emailInput.value) == false) {
+            email_error.innerHTML = 'Địa chỉ email không hợp lệ';
+            return false;
+        } else {
+            emailInput.style.border = '1px solid #5E6E66';
+            email_error.innerHTML = "";
+            return true;
         }
-        emailInput.style.border = '1px solid #5E6E66';
-        email_error.innerHTML = "";
-        return true;
-    }
 }
 function phoneVerify() {
-    if(phoneInput.value !="") {
         var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-        if(phoneInput.value.match(phoneno)) {
+        if (phoneInput.value == "") {
+            phoneInput.style.border = "1px solid red";
+            phone_error.innerHTML = "Thông tin bắt buộc";
+            return false;
+        } else if(phoneInput.value.match(phoneno)) {
             phoneInput.style.border = '1px solid #5E6E66';
             phone_error.innerHTML = '';
             return true;
-        }
-        else {
-            phone_error.textContent = "Invalid phone number";
+        } else {
+            phone_error.innerHTML = "Số điện thoại không hợp lệ";
             return false;
         }
-    }
 }
 function messageVerify() {
-    if(messageInput.value !="") {
+    if (messageInput.value == "") {
+        messageInput.style.border = "1px solid red";
+        message_error.innerHTML = "Thông tin bắt buộc";
+        return false;
+    } else {
         messageInput.style.border = '1px solid #5E6E66';
         message_error.innerHTML = "";
         return true;
     }
+}
+
+function resetContact() {
+    name_error.innerHTML = "";
+    nameInput.style.border = "";
+    phone_error.innerHTML = "";
+    phoneInput.style.border = "";
+    email_error.innerHTML = "";
+    emailInput.style.border = "";
+    message_error.innerHTML = "";
+    messageInput.style.border = "";
+    document.getElementById("contactForm").reset()
 }
 
 //==========================================END VALIDATION FORM CONTACT==============================================
