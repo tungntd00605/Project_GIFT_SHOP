@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>数値のみ入力可能なフォームフィールドの例</title>
+<script>
+function numbersOnly(oToCheckField, oKeyEvent) {
+  return oKeyEvent.charCode === 0 || /\d/.test(String.fromCharCode(oKeyEvent.charCode));
+}
+</script>
+</head>
+
+<body>
+<form name="myForm">
+<p>数字のみ受け付けます: <input type="text" name="myInput" onkeypress="return numbersOnly(this, event);" onpaste="return false;" /></p>
+</form>
+</body>
+</html>

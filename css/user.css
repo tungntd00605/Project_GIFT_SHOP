@@ -60,6 +60,42 @@ nav {
 	height: 500px;
 }
 
+/*bắt đầu css login*/
+.login label {
+	color: #502708;
+	font-size: 22px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+.login input {
+	background-color: #ffffffb5;
+	font-size: 18px;
+	border-radius: 30px;
+}
+.login span {
+	padding-left: 5px;
+}
+
+/*kết thúc css login*/
+
+/*Bắt đầu css Register*/
+.register {
+	margin-bottom: 5px;
+}
+.register label {
+	color: #502708;
+	font-size: 22px;
+	padding-left: 5px;
+}
+.register input {
+	background-color: #ffffffb5;
+	font-size: 18px;
+	border-radius: 30px;
+}
+.register span {
+	padding-left: 5px;
+}
+/*Kết thúc css Register*/
 
 
 /*Bắt đầu xử lý modal*/
@@ -74,27 +110,11 @@ nav {
 	font-family: tahoma;
 }
 
-.modal-sm {
-	width: 450px;
-}
+
 .modal-title {
 	font-size: 26px;
 	text-align: center;
 	text-transform: uppercase;
-}
-
-.modal-footer .btn {
-	font-size: 15px;
-	margin-top: 15px;
-	margin-left: 10px;
-	float: left;
-}
-/*Kết thúc xử lý modal*/
-
-.form-control {
-	height: 40px;
-	background-color: #edf1f3b0;
-	color: #01121b;
 }
 
 /*Bắt đầu quên mật khẩu*/
@@ -109,75 +129,6 @@ nav {
 }
 /*Kết thúc quên mật khẩu*/
 
-
-/*Bắt đầu chung 2 form 'login' và 'register'*/
-.form-group {
-	color: #462808e8;
-	font-size: 22px;
-	/*margin-bottom: 20px;*/
-}
-
-.form-group input {
-	font-size: 18px;
-}
-
-.form-group .form-control {	
-	float: left;
-	border-radius: 30px;
-}
-
-.form-group::after {
-	content: "";
-	clear: both;
-	display: table;
-}
-/*Kết thúc chung 2 form 'login' và 'register'*/
-
-
-/*Bắt đầu login form*/
-.login label:first-child {
-	width: 100%;
-	float: left;
-}
-
-.login label {
-	margin-left: 5px;
-	padding-bottom: 8px;
-	float: left;
-}
-
-.login span {
-	float: left;
-	/*margin-top: 5px;*/
-}
-/*Kết thúc login form*/
-
-
-/*Bắt đầu register form*/
-.register label:first-child {
-	width: 35%;
-	float: left;
-}
-
-.register label {
-	margin-left: 5px;
-	padding-bottom: 8px;
-	float: left;
-}
-
-.register span {
-	width: 100%;
-	font-size: 18px;
-	float: left;
-	text-align: left;
-	margin-left: 280px;
-
-}
-/*Kết thúc register form*/
-
-
-
-
 /* Bắt đầu thông báo error và success.*/
 .form-control-feedback {
 	position: relative;
@@ -185,169 +136,207 @@ nav {
 	height: 30px;
 	font-size: 16px;
 	font-style: italic;
+	text-align: left;
 }
 
 .has-feedback label~.form-control-feedback {
 	top: 0;
 }
 
-/*.error-msg {
-	color: red;
-	font-size: 16px;
-	font-style: italic;
+/*Bắt đầu căn chỉnh khung đăng ký.*/
+.registerContent {
+	width: 800px;
+	margin: auto;
+}
+
+
+/*.regisLable {
+	padding: 5px 5px;
+}*/
+
+/*Kết thúc căn chỉnh khung đăng ký.*/
+
+
+/*Tạo responsive cho màn hình 360px trở lên*/
+@media screen and (max-width: 360px) {
+	/*#fixScreen {
+		margin: 0 auto;
 	}*/
 
-/*.success-msg {
-	color: green;
-	font-size: 16px;
+	#registerForm>.form-group {
+		margin-bottom: 0;
+	}
+}
+
+/*Tạo responsive cho màn hình 768px trở lên*/
+@media screen and (max-width: 768px) {
+	/*#fixScreen {
+		margin: 0 auto;
 	}*/
-	/* Kết thúc thông báo error và success.*/
 
-	/*Bắt đầu căn chỉnh khung đăng ký.*/
-	.registerContent {
-		width: 800px;
-		margin: auto;
-	}
-
-
-	.regisLable {
-		padding: 9px 35px;
-	}
-	/*Kết thúc căn chỉnh khung đăng ký.*/
-
-	.long-input {
-		width: 50%;
-	}
-	.normal-input {
-		width: 35%;
-	}
-
-	.short-input {
-		width: 20%;
-	}
-
-	/*Tạo responsive cho màn hình 360px trở lên*/
-	@media screen and (max-width: 360px) {
-		.modal-sm {
-			width: 100%;
-			margin-top: 35%;
-			margin-left: 0;
-		}
-	}
-
-	/*Tạo responsive cho màn hình 768px trở lên*/
-	@media screen and (max-width: 768px) {
-		.modal-sm {
-			width: 50%;
-			margin: 30% auto;
-			/*margin-left: 0;*/
-		}
-	}
-
-	/*Bắt đầu Header*/
-	#top-header {
-		background-image: url(../img/bg-header.png);
-	}
-
-	#slide-show {
-		margin-top: 10px;
-	}
-
-	.thumbnail {
-		margin-top: 15px;
-		border: none;
-		box-shadow: 0 0px 0px rgba(0,0,0,0);
-		border-radius: 100%;
-	}
-
-	.thumbnail>img {
-		border-radius: 5%;
-	}
-
-	.bIcon {
-		background-image: url(../img/bicon.png);
-		padding: 9px 9px 0px 8px;
-		color: #fff;
-		font-size: 11px;
-		line-height: 60px;
-	}
-
-	.text-bicon {
-		font-family: sans-serif;
-		font-size: 16px;
-		text-transform: uppercase;
-	}
-
-	.list-unstyled>li {
-		display: inline-block;
-	}
-
-	#header-content a {
-		color: #000;
-		padding-left: 5px;
-	}
-
-	.andress {
-		font-size: 18px;
-		color: red;
-		font-family: segoe script;
-		display: inline-block;
-		padding: 30px 0 30px 0;
-	}
-
-	.contractIcon>a>img:hover {
-		opacity: 0.8;
-	}
-
-	.contractIcon {
-		text-align: right;
-		margin-left: 20px;
+	#registerForm > .register > label {
+		width: 100%;
+		/*margin-bottom: 10px;*/
 		float: left;
 	}
-
-	.search-and-user {
-		padding-top: 10px;
+	#registerForm > .register > .inputText {
+		width: 100%;
+		float: left;
 	}
+	#registerForm > .register > span {
+		width: 100%;
+		float: left;
+	}
+}
 
+@media screen and (min-width: 812px) {
+	/*#fixScreen {
+		margin: 0 auto;
+	}*/
+
+	#registerForm > .register > label {
+		width: 40%;
+		margin-bottom: 10px;
+		float: left;
+	}
+	#registerForm > .register > .inputText {
+		width: 60%;
+		float: left;
+	}
+	#registerForm > .register > span {
+		width: 100%;
+		float: left;
+	}
+}
+
+/*Tạo responsive cho màn hình 1200px trở lên*/
+@media screen and (min-width: 1200px) {
+	/*#fixScreen {
+		margin: 0 auto;
+	}
+	*/
+	#registerForm > .register > label {
+		width: 40%;
+		/*margin-bottom: 10px;*/
+		float: left;
+	}
+	#registerForm > .register > .inputText {
+		width: 60%;
+		float: left;
+	}
+	#registerForm > .register > span {
+		width: 100%;
+		padding-left: 210px;
+		padding-bottom: 10px;
+		float: left;
+	}
+}
+
+
+/*Bắt đầu Header*/
+#top-header {
+	background-image: url(../img/bg-header.png);
+}
+
+#slide-show {
+	margin-top: 10px;
+}
+
+.thumbnail {
+	margin-top: 15px;
+	border: none;
+	box-shadow: 0 0px 0px rgba(0,0,0,0);
+	border-radius: 100%;
+}
+
+.thumbnail>img {
+	border-radius: 5%;
+}
+
+.bIcon {
+	background-image: url(../img/bicon.png);
+	padding: 9px 9px 0px 8px;
+	color: #fff;
+	font-size: 11px;
+	line-height: 60px;
+}
+
+.text-bicon {
+	font-family: sans-serif;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+.list-unstyled>li {
+	display: inline-block;
+}
+
+#header-content a {
+	color: #000;
+	padding-left: 5px;
+}
+
+.andress {
+	font-size: 18px;
+	color: red;
+	font-family: segoe script;
+	display: inline-block;
+	padding: 30px 0 30px 0;
+}
+
+.contractIcon>a>img:hover {
+	opacity: 0.8;
+}
+
+.contractIcon {
+	text-align: right;
+	margin-left: 20px;
+	float: left;
+}
+
+.search-and-user {
+	padding-top: 10px;
+}
+
+.user {
+	text-align: right;
+	margin-left: 90px;
+}
+
+@media only screen and (max-width: 500px) {
+	.andress {
+		display: none;
+	}
 	.user {
-		text-align: right;
-		margin-left: 90px;
+		text-align: center;
+		margin-top: 10px;
 	}
+}
 
-	@media only screen and (max-width: 500px) {
-		.andress {
-			display: none;
-		}
-		.user {
-			text-align: center;
-			margin-top: 10px;
-		}
+@media only screen and (max-width: 768px) {
+	.andress {
+		display: none;
 	}
-
-	@media only screen and (max-width: 768px) {
-		.andress {
-			display: none;
-		}
-		.user {
-			text-align: center;
-
-		}
-		.input-group{
-			margin-bottom: 10px;
-		}
-		.list-unstyled>li::last {
-			display: none;
-		}
-	}
-
-	@media only screen and (max-width: 1024px) {
-		.andress {
-			padding: 0 0 0 0;
-		}
-		.user {
-			text-align: left;
-			margin-left: 13px;
-		}
+	.user {
+		text-align: center;
 
 	}
-	/*Kết thúc Header*/
+	.input-group{
+		margin-bottom: 10px;
+	}
+	.list-unstyled>li::last {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.andress {
+		padding: 0 0 0 0;
+	}
+	.user {
+		text-align: left;
+		margin-left: 13px;
+	}
+
+}
+/*Kết thúc Header*/

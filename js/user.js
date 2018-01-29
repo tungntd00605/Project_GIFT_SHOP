@@ -18,17 +18,16 @@ var isValid = true;
 //=============================Bắt đầu xử lý validate login==================================//
 $(document).ready(function(){
 	//Xử lý nút đăng nhập.
-	$("#loginSubmit").click(function(){
+	$("#loginBtn").click(function(){
 		if(Validate()){
 			loginHandle();
 		}
 	});
 	//Check thông tin đăng nhâp trước khi gửi lên server.
-	
 
 	function Validate(){
 		if($("[name='email-address']").val() == null || $("[name='email-address']").val().length < 8) {
-			$("#checkEmailLogin").html("Tài khoản phải lớn hơn 8 kí tự và không được để trống.");
+			$("#checkEmailLogin").html("Tài khoản email phải lớn hơn 8 kí tự.");
 			$("#checkEmailLogin").show();
 			$("#loginForm #checkErrorLogin").addClass("has-error");
 			$("#loginForm div span").addClass("form-control-feedback");
@@ -39,7 +38,7 @@ $(document).ready(function(){
 			// isValid = true;
 		}
 		if($("[name='password']").val() == null || $("[name='password']").val().length < 8){
-			$("#checkPwdLogin").html("Mật khẩu phải lớn hơn 8 kí tự và không được để trống.");
+			$("#checkPwdLogin").html("Mật khẩu phải lớn hơn 8 kí tự.");
 			$("#checkPwdLogin").show();
 			$("#loginForm div").addClass("has-error");
 			$("#loginForm div span").addClass("form-control-feedback"); 
@@ -96,13 +95,13 @@ $(document).ready(function(){
 			checkIsValidRePassword(),
 			checkIsPhone()){
 			loginHandle();
-		}
-	});
+	}
+});
 
 	function checkIsValidLastname(){
 		if($("[name='lastname']").val() < 8){		
 			isValidLastname=false;
-			$("#checkLastNameRegister").html("Vui lòng nhập vào mục này.");
+			$("#checkLastNameRegister").html("Vui lòng nhập vào Họ của bạn.");
 			$("#checkLastNameRegister").show();
 			$("#registerForm #checkErrorRegister").addClass("has-error");
 			$("#registerForm div span").addClass("form-control-feedback"); 
@@ -117,7 +116,7 @@ $(document).ready(function(){
 	function checkIsValidFirstname(){
 		if($("[name='firstname']").val() < 8){		
 			isValidFirstname=false;
-			$("#checkFirstNameRegister").html("Mật khẩu phải lớn hơn 8 kí tự và không được để trống.");
+			$("#checkFirstNameRegister").html("Vui lòng nhập vào Tên của bạn.");
 			$("#checkFirstNameRegister").show();
 			$("#registerForm #checkErrorRegister").addClass("has-error");
 			$("#registerForm div span").addClass("form-control-feedback"); 
@@ -132,7 +131,7 @@ $(document).ready(function(){
 	function checkIsValidEmail(){
 		if($("[name='email']").val()==0){		
 			isValidEmail=false;
-			$("#checkEmailRegister").html("Mật khẩu phải lớn hơn 8 kí tự và không được để trống.");
+			$("#checkEmailRegister").html("Vui lòng nhập vào Email của bạn.");
 			$("#checkEmailRegister").show();
 			$("#registerForm #checkErrorRegister").addClass("has-error");
 			$("#registerForm div span").addClass("form-control-feedback"); 
@@ -144,9 +143,9 @@ $(document).ready(function(){
 	}
 
 	function checkIsValidPassword(){
-		if($("[name='password']").val() < 8){		
+		if($("[name='password']").val() <= 8){		
 			isValidPassword=false;
-			$("#checkPassRegister").html("Mật khẩu phải lớn hơn 8 kí tự và không được để trống.");
+			$("#checkPassRegister").html("Mật khẩu phải lớn hơn 8 kí tự.");
 			$("#checkPassRegister").show();
 			$("#registerForm #checkErrorRegister").addClass("has-error");
 			$("#registerForm div span").addClass("form-control-feedback"); 
@@ -160,7 +159,7 @@ $(document).ready(function(){
 	function checkIsValidRePassword(){
 		if($("[name='re-password']").val() != $("[name='password']").val() || $("[name='re-password']").val().length==0){		
 			isValidRePassword=false;
-			$("#checkRe-PassRegister").html("Mật khẩu phải lớn hơn 8 kí tự và không được để trống.");
+			$("#checkRe-PassRegister").html("Mật khẩu không khớp,vui lòng nhập lại.");
 			$("#checkRe-PassRegister").show();
 			$("#registerForm #checkErrorRegister").addClass("has-error");
 			$("#registerForm div span").addClass("form-control-feedback"); 
@@ -174,7 +173,7 @@ $(document).ready(function(){
 	function checkIsPhone(){
 		if($("[name='phone']").val()==0){		
 			isValidPhone=false;
-			$("#checkPhoneRegister").html("Mật khẩu phải lớn hơn 8 kí tự và không được để trống.");
+			$("#checkPhoneRegister").html("Vui lòng nhập Số điện thoại của bạn.");
 			$("#checkPhoneRegister").show();
 			$("#registerForm #checkErrorRegister").addClass("has-error");
 			$("#registerForm div span").addClass("form-control-feedback"); 
@@ -291,7 +290,6 @@ $(document).ready(function(){
 		$("#registerForm #checkErrorRegister").removeClass("has-success has-error form-control-feedback");
 		$(".modal-body div span").removeClass("has-success has-error form-control-feedback");
 	}
-
 	// ==============Kết thúc xử lý nút 'Làm Lại'===================//
 });
 
@@ -350,3 +348,15 @@ $(document).ready(function(){
 //==============================Kết thúc form đăng nhập.======================================//
 
 
+// Bắt sự kiện onkeypress
+function myFunction(){
+	$("#checkEmailLogin").html("");
+	$("#checkPwdLogin").html("");
+	$("#loginForm div").removeClass("has-success");
+	$("#loginForm div span").removeClass("has-success");
+
+	$("[name='email-address']").html("");
+	$("[name='password']").html("");
+	$("#loginForm div").removeClass("has-success has-error form-control-feedback");
+	$("#loginForm div span").removeClass("has-success has-error form-control-feedback");
+}

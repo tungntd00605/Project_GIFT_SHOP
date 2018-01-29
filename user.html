@@ -103,10 +103,10 @@
 
 						<!-- Start User Login/Signup -->
 						<span class="col-md-3 col-sm-6 col-xs-12 user">
-							<a href="#" class="btn loginBtn" id="login" data-target="#login-form" data-toggle="modal">
+							<a href="#" class="btn loginBtn" id="login" data-target="#Login" data-toggle="modal">
 								<img src="img/signin_icon.png" class="img-rounded">
 							</a>
-							<a href="#" class="btn register" id="register" data-target="#modal-register-form" data-toggle="modal">
+							<a href="#" class="btn register" id="register" data-target="#Register" data-toggle="modal">
 								<img src="img/signup_icon.png" class="img-rounded">
 							</a>
 						</span>
@@ -118,13 +118,14 @@
 	</header>
 	<!-- End header -->
 
-	<nav>
-		<!-- Bắt đầu modal đăng nhập -->
-		<fieldset>
-			<form class="modal fade" id="login-form" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" name="modal-login-form">
-				<span class="error-msg" id="total-msg"></span>
-				<div class="modal-dialog modal-sm " role="document">
-					<div class="modal-content">
+
+	<!-- Bắt đầu khung đăng nhập. -->
+	<div class="container">
+		<div class="row">
+			<!-- Bắt đầu Modal -->
+			<div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content col-lg-9 col-md-9 col-sm-12 col-xs-12">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" id="close-form">&times;</span></button>
 							<h4 class="modal-title" id="gridSystemModalLabel">Đăng Nhập</h4>
@@ -132,7 +133,7 @@
 						<div id="loginForm" class="modal-body">
 							<div id="checkErrorLogin" class="form-group login">
 								<label class="control-label" id="email" for="email">Email</label>
-								<input type="email" id="email-address" class="form-control" name="email-address" placeholder="Nhập địa chỉ email (ví dụ: abc@gmail.com)">
+								<input type="email" id="email-address" class="form-control" name="email-address" onkeypress="myFunction()" placeholder="Nhập địa chỉ email (ví dụ: abc@gmail.com)">
 								<span id="checkEmailLogin"></span>					
 							</div>
 							<div class="form-group login">
@@ -142,91 +143,160 @@
 							</div>
 							<a href="#" class="forgotPass">Quên mật khẩu?</a>
 						</div>
-						<div class="modal-footer form-group login">
-							<input type="button" name="submit" id="loginSubmit" class="btn btn-primary" value="Đăng Nhập">
-							<input type="reset" id="resetLogin" class="btn btn-default" value="Làm Lại">
+						<div class="modal-footer">
+							<input type="button" name="submit" id="loginBtn" class="btn btn-info" value="Đăng Nhập">
+							<input type="reset" id="resetLogin" class="btn btn-default" value="Làm lại" >
 						</div>
 					</div>
 				</div>
-			</form>
-		</fieldset>
-		<!-- Kết thúc modal đăng nhập -->
+			</div>
+			<!-- Kết thúc Modal. -->
+		</div>
+	</div>			
+	<!-- Kết thúc khung đăng nhập -->
 
-		<!-- Bắt đầu modal đăng ký -->
-		<fieldset>
-			<form class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="modal-register-form" name="modal-register-form">
-				<div class="modal-dialog modal-lg" role="document">
-					<div class="modal-content registerContent">
+	<!-- bắt đầu demo register -->
+	<div class="container">
+		<div class="row">
+			<!-- Modal -->
+			<div class="modal fade" id="Register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content col-lg-12 col-md-12 col-sm-12 col-xs-12" id="fixScreen">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" id="close-form">&times;</span></button>
 							<h4 class="modal-title">Đăng Ký Tài Khoản</h4>
 						</div>
 						<div id="registerForm" class="modal-body">
-							<div id="checkErrorRegister" class="form-group register">
+							<div id="checkErrorRegister" class="form-group register col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<label class="control-label regisLable" for="lastname">Họ :</label>
-								<input type="text" class="form-control normal-input" name="lastname" placeholder="Nhập họ của bạn.">
+								<input type="text" class="form-control inputText" name="lastname" placeholder="Nhập họ của bạn.">
 								<span id="checkLastNameRegister"></span>
 							</div>
-							<div id="checkErrorRegister" class="form-group register">
+							<div id="checkErrorRegister" class="form-group register col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<label class="control-label regisLable" for="firstname">Tên :</label>
-								<input type="text" class="form-control normal-input" name="firstname" placeholder="Nhập tên của bạn.">
+								<input type="text" class="form-control inputText" name="firstname" placeholder="Nhập tên của bạn.">
 								<span id="checkFirstNameRegister"></span>
 							</div>
-							<div id="checkErrorRegister" class="form-group register">
+							<div id="checkErrorRegister" class="form-group register col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<label class="control-label regisLable" for="email">Email :</label>
-								<input type="email" class="form-control long-input" name="email" placeholder="Nhập email đăng nhập của bạn.">
+								<input type="email" class="form-control inputText" name="email" placeholder="Nhập email đăng nhập của bạn.">
 								<span id="checkEmailRegister"></span>
 							</div>
-							<div id="checkErrorRegister" class="form-group register">
+							<div id="checkErrorRegister" class="form-group register col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<label class="control-label regisLable" for="password">Mật khẩu :</label>
-								<input type="password" class="form-control normal-input" name="password" placeholder="Nhập mật khẩu.">								
+								<input type="password" class="form-control inputText" name="password" placeholder="Nhập mật khẩu.">								
 								<span id="checkPassRegister"></span>
 							</div>
-							<div id="checkErrorRegister" class="form-group register">
+							<div id="checkErrorRegister" class="form-group register col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<label class="control-label regisLable" for="re-password">Nhập lại mật khẩu :</label>
-								<input type="password" class="form-control normal-input" name="re-password" placeholder="Xác nhận mật khẩu.">
+								<input type="password" class="form-control inputText" name="re-password" placeholder="Xác nhận mật khẩu.">
 								<span id="checkRe-PassRegister"></span>
 							</div>
-							<div id="checkErrorRegister" class="form-group register">
+							<div id="checkErrorRegister" class="form-group register col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<label class="control-label regisLable" for="phone">Số điện thoại :</label>
-								<input type="text" class="form-control normal-input" name="phone" placeholder="Nhập số điện thoại.">
+								<input type="text" class="form-control inputText" name="phone" placeholder="Nhập số điện thoại.">
 								<span id="checkPhoneRegister"></span>
 							</div>
-							<div>
-								<div class="form-group register">
-									<label class="control-label regisLable">Giới tính :</label>
-									<input type="radio" name="gender" value="0" checked="">&nbsp;Nữ &emsp;
-									<input type="radio" name="gender" value="1">&nbsp;Nam
-									<!-- <select name="select" class="form-control" style="width: 20%;">
-										<option value="0">Nữ</option>
-										<option value="1">Nam</option>
-									</select> -->
-								</div>
-								<div class="form-group register">
-									<label class="control-label regisLable">Ngày sinh :</label>
-									<input type="date" class="form-control normal-input" name="birthday" style="width: 30%;">
-								</div>
-								<div id="checkErrorRegister" class="regisLable">
-									<input type="checkbox" name="checkbox">&ensp;Đồng ý điều khoản sử dụng
-									<span id="checkErrorRegister"></span>
-								</div>
-								<div class="modal-footer">
-									<input type="button" name="submit" id="registerBtn" class="btn btn-primary" value="Đăng Ký">
-									<input type="reset" id="resetRegister" class="btn btn-default" value="Làm lại" >
-								</div>
+							
+							<div class="form-group register col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<label class="control-label regisLable">Giới tính :</label>
+								<input type="radio" name="gender" value="0" checked="">&nbsp;Nữ &emsp;
+								<input type="radio" name="gender" value="1">&nbsp;Nam
+								<span id="checkPassRegister"></span>
+							</div>
+							<div class="form-group register col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<label class="control-label regisLable col-lg-6 col-md-3 col-sm-12 col-xs-12">Ngày sinh :</label>
+								<input type="date" class="form-control inputText" name="birthday">
+								<span id="checkErrorRegister"></span>
+							</div>
+							<div id="checkErrorRegister" class="regisLable register col-lg-12">
+								<input type="checkbox" name="checkbox">&ensp;Đồng ý điều khoản sử dụng
+								<span id="checked"></span>
+							</div>
+							<div class="modal-footer col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<input type="button" name="submit" id="registerBtn" class="btn btn-info" value="Đăng Ký">
+								<input type="reset" id="resetRegister" class="btn btn-default" value="Làm lại" >
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- bắt đầu demo register -->
+
+	<!-- Bắt đầu modal đăng ký -->
+	<!-- <fieldset>
+		<form class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="modal-register-form" name="modal-register-form">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content registerContent">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" id="close-form">&times;</span></button>
+						<h4 class="modal-title">Đăng Ký Tài Khoản</h4>
+					</div>
+					<div id="registerForm" class="modal-body">
+						<div id="checkErrorRegister" class="form-group register">
+							<label class="control-label regisLable" for="lastname">Họ :</label>
+							<input type="text" class="form-control normal-input" name="lastname" placeholder="Nhập họ của bạn.">
+							<span id="checkLastNameRegister"></span>
+						</div>
+						<div id="checkErrorRegister" class="form-group register">
+							<label class="control-label regisLable" for="firstname">Tên :</label>
+							<input type="text" class="form-control normal-input" name="firstname" placeholder="Nhập tên của bạn.">
+							<span id="checkFirstNameRegister"></span>
+						</div>
+						<div id="checkErrorRegister" class="form-group register">
+							<label class="control-label regisLable" for="email">Email :</label>
+							<input type="email" class="form-control long-input" name="email" placeholder="Nhập email đăng nhập của bạn.">
+							<span id="checkEmailRegister"></span>
+						</div>
+						<div id="checkErrorRegister" class="form-group register">
+							<label class="control-label regisLable" for="password">Mật khẩu :</label>
+							<input type="password" class="form-control normal-input" name="password" placeholder="Nhập mật khẩu.">								
+							<span id="checkPassRegister"></span>
+						</div>
+						<div id="checkErrorRegister" class="form-group register">
+							<label class="control-label regisLable" for="re-password">Nhập lại mật khẩu :</label>
+							<input type="password" class="form-control normal-input" name="re-password" placeholder="Xác nhận mật khẩu.">
+							<span id="checkRe-PassRegister"></span>
+						</div>
+						<div id="checkErrorRegister" class="form-group register">
+							<label class="control-label regisLable" for="phone">Số điện thoại :</label>
+							<input type="text" class="form-control normal-input" name="phone" placeholder="Nhập số điện thoại.">
+							<span id="checkPhoneRegister"></span>
+						</div>
+						<div>
+							<div class="form-group register">
+								<label class="control-label regisLable">Giới tính :</label>
+								<input type="radio" name="gender" value="0" checked="">&nbsp;Nữ &emsp;
+								<input type="radio" name="gender" value="1">&nbsp;Nam
+							</div>
+							<div class="form-group register">
+								<label class="control-label regisLable">Ngày sinh :</label>
+								<input type="date" class="form-control normal-input" name="birthday" style="width: 30%;">
+							</div>
+							<div id="checkErrorRegister" class="regisLable">
+								<input type="checkbox" name="checkbox">&ensp;Đồng ý điều khoản sử dụng
+								<span id="checkErrorRegister"></span>
+							</div>
+							<div class="modal-footer">
+								<input type="button" name="submit" id="registerBtn" class="btn btn-primary" value="Đăng Ký">
+								<input type="reset" id="resetRegister" class="btn btn-default" value="Làm lại" >
 							</div>
 						</div>
 					</div>
 				</div>
-			</form>
-		</fieldset>
-		<!-- Kết thúc modal đăng nhập -->
-	</nav>
+			</div>
+		</form>
+	</fieldset> -->
+	<!-- Kết thúc modal đăng nhập -->
 	<footer>
 		<p>nguyencong</p>
 	</footer>
-	
-	
+
+
 
 
 	<!-- Start link js -->
