@@ -152,8 +152,7 @@ img{
 	box-shadow:0 1px 3px rgba(0,0,0,0.2);
 	}
 .prodItem:hover{
-	margin-right: -2px;
-	margin-left: -2px;
+	margin-top: -3px;
 }
 #flashsale .prodItem{
 	padding:10px;
@@ -298,106 +297,4 @@ img{
 	}
 #prodGrid .pagination>li.active>a{
 	color:#ff4800
-}
-/**/
-/*CSS Product-list*/
-#prodGrid .pagination>li>a, #prodGrid .pagination>li>span{
-	background:none;
-	color:#777;
-	}
-#prodGrid #pagination{
-	text-align:center;
-	}
-#prodGrid .pagination>li.active>a{
-	color:#ff4800}
-.product-list{
-	margin-top: 20px;
-}
-.category-list{
-	margin-bottom: 30px;	
-}
-.category-list h3{
-	text-transform:uppercase;
-	margin:0 0 10px 0;
-	padding-bottom:10px;
-	font-size:16px;
-	font-weight:bold;
-	border-bottom:1px solid #ddd;
-	color: #978CFA;
-}
-.category-list h3 .glyphicon{
-	color:#CEBBFC;
-	margin-right:5px;
-}
-.category-list ul{
-	margin: 0px;
-	padding: 0px;
-	margin-left: 5px;
-}
-.category-list li{
-	list-style:none;
-	margin-bottom: 5px;
-	font-size:14px;
-}
-label{
-    font-weight:normal;
-}
-.widgetProd{
-	margin-bottom:30px;
-	}
-.widgetProd h3{
-	text-transform:uppercase;
-	margin:0 0 10px 0;
-	padding-bottom:10px;
-	font-size:16px;
-	font-weight:bold;
-	border-bottom:1px solid #ddd;
-	color: blue;
-	}
-.widgetProd h3 .glyphicon{
-	color:#CEBBFC;
-	margin-right:5px;
-	}
-.widgetProd ul{
-	margin-left: 5px;
-	padding:0;}
-.widgetProd li{
-	list-style:none;
-	margin-bottom:10px;
-	font-size:14px;
-	}
-.widgetProd li label, .category-list li label{
-	margin-bottom:0;
-	color: blue;
-	}
-.widgetProd ul li label input{
-	background-color: blue;
-}
-.widgetProd li a{
-	color:blue;
-	display:block;
-	position:relative;
-	padding-right:10px;
-}
-.widgetProd p .title-filter{
-	color: blue;
-}
-
-.pagination{
-	float: right;
-	position: relative;
-	margin-top: 0px;
-	margin-right: 3px;
-}
-.tab-content .col-lg-3{
-	margin-bottom: 15px;
-	margin-top: 10px;	
-}
-.tab-content .prodItem{
-	-moz-border-radius:3px;
-	-webkit-border-radius:3px;
-	border-radius:3px;
-	-moz-box-shadow:0 1px 3px rgba(0,0,0,0.2);
-	-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.2);
-	box-shadow:0 1px 3px rgba(0,0,0,0.2);
 }
