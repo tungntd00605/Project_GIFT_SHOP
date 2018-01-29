@@ -1,5 +1,7 @@
 * {
 	box-sizing: border-box;
+	font-family: arial, Roboto , helvetica, sans-serif, verdana, Open Sans, Roboto Condensed;
+    font-family: 
 }
 
 #top-header {
@@ -10,14 +12,14 @@
 	margin-top: 10px;
 }
 
-.thumbnail {
+.logo-thumbnail {
 	margin-top: 15px;
 	border: none;
 	box-shadow: 0 0px 0px rgba(0,0,0,0);
 	border-radius: 100%;
 }
 
-.thumbnail>img {
+.logo-thumbnail>img {
 	border-radius: 5%;
 }
 
@@ -66,45 +68,16 @@
 	padding-top: 10px;
 }
 
-.user {
+.user-btn-block {
 	text-align: right;
 }
 
-@media only screen and (max-width: 500px) {
-	.andress {
-		display: none;
-	}
-	.user {
-		text-align: center;
-		margin-top: 10px;
-	}
+#noop-top>img {
+	opacity: 0.7;
 }
 
-@media only screen and (max-width: 768px) {
-	.andress {
-		display: none;
-	}
-	.user {
-		text-align: center;
-
-	}
-	.input-group{
-		margin-bottom: 10px;
-	}
-	.list-unstyled>li::last {
-		display: none;
-	}
-}
-
-@media only screen and (max-width: 1024px) {
-	.andress {
-		padding: 0 0 0 0;
-	}
-	.user {
-		text-align: left;
-		margin-left: 13px;
-	}
-
+#noop-top>img:hover {
+	opacity: 1;
 }
 
 /*===================================START FORM STYLE(nnd2890}==========================================*/

@@ -1,0 +1,108 @@
+body{
+	background-image: url(http://nhocgiftshop.com/tp/T0131/img/gr.jpg);
+}
+
+#Main {
+	margin-bottom: 10px;
+}
+
+.list-img-proCompare>img{
+	margin: 10px 0;
+	max-width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+	#Main .andress {
+		display: none;
+	}
+	.list-img-proCompare>img{
+		padding: 10px 5px;
+		margin-top: 5px;
+		height: 200px;
+	}
+}
+
+.fa-heart {
+	color: red;
+}
+
+.compare-thumbnail:hover {
+	border: 1px solid #196c92;
+}
+
+.list-img-proCompare {
+	overflow: auto;
+}
+
+#Main .form-control>label{
+	color: red;
+}
+
+#Main .form-control{
+	margin-bottom: 5px;
+}
+
+.Additional-information{
+	display: none;
+}
+
+@media only screen and (max-width: 410px) {
+	#Main .andress {
+		display: none;
+	}
+	.list-img-proCompare>img{
+		padding: 10px 5px;
+		height: 100px;
+	}
+	.Additional-information{
+		text-align: center;
+		display: block;
+		width: 50%;
+		padding: 3px;
+		margin:auto;
+	}
+	#Main img {
+		height: auto;
+	}
+	#Main .form-control>label{
+		color: red;
+		font-size: 12px;
+	}
+	#Main .form-control>p{
+		font-size: 10px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.Additional-information{
+		text-align: center;
+		display: block;
+	}
+	#Main img {
+		height: auto;
+	}
+	#Main .form-control>label{
+		color: red;
+		font-size: 12px;
+	}
+	#Main .form-control>p{
+		font-size: 10px;
+	}
+		#Main .form-control>p{
+		font-size: 10px;
+	}
+}
+
+@media only screen and (min-width: 100px) {
+	.Additional-information{
+		text-align: center;
+		background-color: #50c7fd;
+		display: block;
+		padding: 3px;
+		margin:auto;
+		color: #fff;
+		border-radius: 20px;
+		margin-bottom: 10px;
+	}
+
+}
