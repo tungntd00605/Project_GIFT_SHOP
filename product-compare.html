@@ -393,21 +393,7 @@
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxm0k6cV3zMz_xd2xv7ICZV46d-jG8bUg&callback=initMap">
 	</script>
 
-	<!-- up to the top page -->
-	<script type='text/javascript'>
-		$(function(){$(window).scroll
-			(function(){
-				if($(this).scrollTop()!=0){
-					$("#noop-top").fadeIn()
-				}else{
-					$("#noop-top").fadeOut()
-				}
-			});
-			$("#noop-top").click(function(){
-				$("body,html").animate({scrollTop:0},800);
-				return false
-			})
-		});
-	</script>
+	<script type="text/javascript" src="js/scrollTop.js"></script>
+	
 </body>
 </html>
