@@ -1,0 +1,353 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	/*background-image: url(http://anhnendep.net/wp-content/uploads/2016/02/hinh-nen-canh-dong-hoa-dep-nhat-the-gioi-01.jpg);*/
+	/*background-repeat: no-repeat;*/
+	background-size: 1343px; /* fix cứng để khi modal khung login sẽ không bị thay đổi kích cỡ background*/
+}
+header {
+	height: 200px;
+}
+
+nav {
+	height: 500px;
+}
+
+
+
+/*Bắt đầu xử lý modal*/
+.modal-content {
+	color: #666;
+	box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.46);
+	background-image: url(../img/loginbg.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.modal-sm {
+	font-family: tahoma;
+}
+
+.modal-sm {
+	width: 450px;
+}
+.modal-title {
+	font-size: 26px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.modal-footer .btn {
+	font-size: 15px;
+	margin-top: 15px;
+	margin-left: 10px;
+	float: left;
+}
+/*Kết thúc xử lý modal*/
+
+.form-control {
+	height: 40px;
+	background-color: #edf1f3b0;
+	color: #01121b;
+}
+
+/*Bắt đầu quên mật khẩu*/
+.forgotPass {
+	margin-left: 5px;
+	color: #0764c5;
+	text-decoration: none;
+}
+.forgotPass:hover {
+	color: #0764c5;
+	text-decoration: underline;
+}
+/*Kết thúc quên mật khẩu*/
+
+
+/*Bắt đầu chung 2 form 'login' và 'register'*/
+.form-group {
+	color: #462808e8;
+	font-size: 22px;
+	/*margin-bottom: 20px;*/
+}
+
+.form-group input {
+	font-size: 18px;
+}
+
+.form-group .form-control {	
+	float: left;
+	border-radius: 30px;
+}
+
+.form-group::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+/*Kết thúc chung 2 form 'login' và 'register'*/
+
+
+/*Bắt đầu login form*/
+.login label:first-child {
+	width: 100%;
+	float: left;
+}
+
+.login label {
+	margin-left: 5px;
+	padding-bottom: 8px;
+	float: left;
+}
+
+.login span {
+	float: left;
+	/*margin-top: 5px;*/
+}
+/*Kết thúc login form*/
+
+
+/*Bắt đầu register form*/
+.register label:first-child {
+	width: 35%;
+	float: left;
+}
+
+.register label {
+	margin-left: 5px;
+	padding-bottom: 8px;
+	float: left;
+}
+
+.register span {
+	width: 100%;
+	font-size: 18px;
+	float: left;
+	text-align: left;
+	margin-left: 280px;
+
+}
+/*Kết thúc register form*/
+
+
+
+
+/* Bắt đầu thông báo error và success.*/
+.form-control-feedback {
+	position: relative;
+	width: 400px;
+	height: 30px;
+	font-size: 16px;
+	font-style: italic;
+}
+
+.has-feedback label~.form-control-feedback {
+	top: 0;
+}
+
+/*.error-msg {
+	color: red;
+	font-size: 16px;
+	font-style: italic;
+	}*/
+
+/*.success-msg {
+	color: green;
+	font-size: 16px;
+	}*/
+	/* Kết thúc thông báo error và success.*/
+
+	/*Bắt đầu căn chỉnh khung đăng ký.*/
+	.registerContent {
+		width: 800px;
+		margin: auto;
+	}
+
+
+	.regisLable {
+		padding: 9px 35px;
+	}
+	/*Kết thúc căn chỉnh khung đăng ký.*/
+
+	.long-input {
+		width: 50%;
+	}
+	.normal-input {
+		width: 35%;
+	}
+
+	.short-input {
+		width: 20%;
+	}
+
+	/*Tạo responsive cho màn hình 360px trở lên*/
+	@media screen and (max-width: 360px) {
+		.modal-sm {
+			width: 100%;
+			margin-top: 35%;
+			margin-left: 0;
+		}
+	}
+
+	/*Tạo responsive cho màn hình 768px trở lên*/
+	@media screen and (max-width: 768px) {
+		.modal-sm {
+			width: 50%;
+			margin: 30% auto;
+			/*margin-left: 0;*/
+		}
+	}
+
+	/*Bắt đầu Header*/
+	#top-header {
+		background-image: url(../img/bg-header.png);
+	}
+
+	#slide-show {
+		margin-top: 10px;
+	}
+
+	.thumbnail {
+		margin-top: 15px;
+		border: none;
+		box-shadow: 0 0px 0px rgba(0,0,0,0);
+		border-radius: 100%;
+	}
+
+	.thumbnail>img {
+		border-radius: 5%;
+	}
+
+	.bIcon {
+		background-image: url(../img/bicon.png);
+		padding: 9px 9px 0px 8px;
+		color: #fff;
+		font-size: 11px;
+		line-height: 60px;
+	}
+
+	.text-bicon {
+		font-family: sans-serif;
+		font-size: 16px;
+		text-transform: uppercase;
+	}
+
+	.list-unstyled>li {
+		display: inline-block;
+	}
+
+	#header-content a {
+		color: #000;
+		padding-left: 5px;
+	}
+
+	.andress {
+		font-size: 18px;
+		color: red;
+		font-family: segoe script;
+		display: inline-block;
+		padding: 30px 0 30px 0;
+	}
+
+	.contractIcon>a>img:hover {
+		opacity: 0.8;
+	}
+
+	.contractIcon {
+		text-align: right;
+		margin-left: 20px;
+		float: left;
+	}
+
+	.search-and-user {
+		padding-top: 10px;
+	}
+
+	.user {
+		text-align: right;
+		margin-left: 90px;
+	}
+
+	@media only screen and (max-width: 500px) {
+		.andress {
+			display: none;
+		}
+		.user {
+			text-align: center;
+			margin-top: 10px;
+		}
+	}
+
+	@media only screen and (max-width: 768px) {
+		.andress {
+			display: none;
+		}
+		.user {
+			text-align: center;
+
+		}
+		.input-group{
+			margin-bottom: 10px;
+		}
+		.list-unstyled>li::last {
+			display: none;
+		}
+	}
+
+	@media only screen and (max-width: 1024px) {
+		.andress {
+			padding: 0 0 0 0;
+		}
+		.user {
+			text-align: left;
+			margin-left: 13px;
+		}
+
+	}
+	/*Kết thúc Header*/
