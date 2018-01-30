@@ -2,13 +2,14 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
 	<title>Gift Shop</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<link href="img/logo.png" rel="shortcut icon" type="img/logo.png">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
 	
 	<!-- Product Detail css -->
 	<link rel="stylesheet" type="text/css" href="css/product-compare.css">
@@ -17,8 +18,8 @@
 	<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/footer.css">
 </head>
-<body>
 
+<body>
 	<!-- Start header -->
 	<header id="top-header">
 		<div class="container-fluid">
@@ -41,17 +42,17 @@
 						</li>
 						<li>
 							<span class="bIcon">2</span>
-							<span class="text-bicon">&nbsp;Nhấn Mua Hàng &nbsp;&nbsp;;</span>
+							<span class="text-bicon">&nbsp;Nhấn Mua Hàng &nbsp;&nbsp;</span>
 							<span class="glyphicon glyphicon-chevron-right">&nbsp;&nbsp;</span>
 						</li>
 						<li>
 							<span class="bIcon">3</span>
-							<span class="text-bicon">&nbsp;Bấm  Thánh toán &nbsp;&nbsp;</span>
+							<span class="text-bicon">&nbsp;Bấm  Thanh Toán &nbsp;&nbsp;</span>
 							<span class="glyphicon glyphicon-chevron-right">&nbsp;&nbsp;</span>
 						</li>
 						<li>
 							<span class="bIcon">4</span>
-							<span class="text-bicon">&nbsp;Shop sẽ  giao hàng ngay</span>
+							<span class="text-bicon">&nbsp;Shop Sẽ  Giao Hàng Ngay</span>
 						</li>
 						<!-- End Shopping Guide -->
 
@@ -394,20 +395,6 @@
 	</script>
 
 	<!-- up to the top page -->
-	<script type='text/javascript'>
-		$(function(){$(window).scroll
-			(function(){
-				if($(this).scrollTop()!=0){
-					$("#noop-top").fadeIn()
-				}else{
-					$("#noop-top").fadeOut()
-				}
-			});
-			$("#noop-top").click(function(){
-				$("body,html").animate({scrollTop:0},800);
-				return false
-			})
-		});
-	</script>
+	<script type="text/javascript" src="js/scrollTop.js"></script>
 </body>
 </html>
