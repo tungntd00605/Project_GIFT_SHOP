@@ -5,7 +5,7 @@ module.exports = mongoose.model('users', {
 	lastName: String,
 	gender: Number,
 	birthday: Date,
-	avatarUrl: String,
+	// avatarUrl: String,
 	createdAt: {
 		type: Date,
 		default: Date.now
