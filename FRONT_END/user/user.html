@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="vn">
+<head>
+	<meta charset="utf-8">
+	<title>Đăng Nhập</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link href="img/logo.png" rel="shortcut icon" type="img/logo.png">
+	
+	<!-- Start Font -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- End Font -->
+
+	<!-- Start link css -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="css/user.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	<!-- End link css -->
+</head>
+<body>
+
+	<!-- Start header -->
+	<header id="top-header">
+		<div class="container-fluid">
+			<div class="row" id="header-content">
+				<!-- Start Logo -->
+				<div class="col-md-2 col-sm-3 col-xs-12">
+					<a href="#" class="thumbnail">
+						<img src="img/logo.png" width="100%">
+					</a>
+				</div>
+				<!-- End Logo -->
+
+				<div class="col-md-10 col-sm-9 col-xs-12">
+					<!-- Start Shopping Guide -->
+					<ul class="list-unstyled">
+						<li>
+							<span class="bIcon">1</span>
+							<span class="text-bicon">&nbsp;Chọn Sản Phẩm &nbsp;&nbsp;</span>
+							<span class="glyphicon glyphicon-chevron-right">&nbsp;&nbsp;</span>
+						</li>
+						<li>
+							<span class="bIcon">2</span>
+							<span class="text-bicon">&nbsp;Nhấn Mua Hàng &nbsp;&nbsp;;</span>
+							<span class="glyphicon glyphicon-chevron-right">&nbsp;&nbsp;</span>
+						</li>
+						<li>
+							<span class="bIcon">3</span>
+							<span class="text-bicon">&nbsp;Bấm  Thánh toán &nbsp;&nbsp;</span>
+							<span class="glyphicon glyphicon-chevron-right">&nbsp;&nbsp;</span>
+						</li>
+						<li>
+							<span class="bIcon">4</span>
+							<span class="text-bicon">&nbsp;Shop sẽ  giao hàng ngay</span>
+						</li>
+						<!-- End Shopping Guide -->
+
+						<!-- Start Address and Shopping Cart (on hold) -->
+						<li>
+							<span class="andress col-md-12 col-sm-6">
+								08 Tôn Thất Thuyết - Mỹ Đình - Hà Nội
+								01469555602 - 0962127341
+							</span>
+						</li>
+						<!-- End Address and Shopping Cart (on hold) -->
+					</ul>
+
+					<div class="search-and-user">
+						<!-- Start Search Bar -->
+						<span class="col-md-5 col-sm-12 col-xs-12" style="float: left;">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Bạn muốn mua gì?">
+								<span class="input-group-btn">
+									<button class="btn btn-default glyphicon glyphicon-search" type="button"></button>
+								</span>
+							</div>
+						</span>
+						<!-- End Search Bar -->
+
+						<!-- Start Social Network -->
+						<span class="contractIcon"> 
+							<a href="#">
+								<img src="img/facebook.png" class="img-rounded" title="Facebook" >
+							</a>
+						</span>
+						<span class="contractIcon">
+							<a href="#" >
+								<img src="img/gmail.png" class="img-rounded" title="Gmail">
+							</a>
+						</span>
+						<span class="contractIcon ">
+							<a href="#" >
+								<img src="img/Twitter.png" class="img-rounded " title="Twitter">
+							</a>
+						</span>
+						<span class="contractIcon ">
+							<a href="#" >
+								<img src="img/youtube_2.png" class="img-rounded " title="Youtube">
+							</a>
+						</span>
+						<!-- End Social Network -->
+
+						<!-- Start User Login/Signup -->
+						<span class="col-md-3 col-sm-6 col-xs-12 user">
+							<a href="#" class="btn loginBtn" id="login" data-target="#Login" data-toggle="modal">
+								<img src="img/signin_icon.png" class="img-rounded">
+							</a>
+							<a href="#" class="btn register" id="register" data-target="#Register" data-toggle="modal">
+								<img src="img/signup_icon.png" class="img-rounded">
+							</a>
+						</span>
+						<!-- End User Login/Signup -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- End header -->
+
+
+	<!-- Bắt đầu khung đăng nhập. -->
+	<div class="container">
+		<div class="row">
+			<!-- Bắt đầu Modal -->
+			<div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content col-lg-9 col-md-9 col-sm-12 col-xs-12">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" id="close-form">&times;</span></button>
+							<h4 class="modal-title" id="gridSystemModalLabel">Đăng Nhập</h4>
+						</div>
+						<div id="loginForm" class="modal-body">
+							<form id="login_Form" class="contact" method="post" action="#" onsubmit="return loginValidation()" name="login-form">
+								<div class="form-group">
+									<label >Email <sup>*</sup></label>
+									<input type="email" class="form-control" name="emailInput" placeholder="Nhập tài khoản email của bạn">
+									<div id="email_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<label >Mật Khẩu <sup>*</sup></label>
+									<input type="password" class="form-control" name="passwordInput" placeholder="Nhập mật khẩu.">
+									<div id="password_error" class="val_error"></div>
+								</div>
+								<a href="#" class="forgotPass">Quên mật khẩu?</a>
+							</div>
+							<div class="modal-footer">
+								<button type="submit" class="btn btn-info" >Đăng Nhập</button>
+								<button type="reset" class="btn btn-info" onclick="resetLogin()">Làm lại</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- Kết thúc Modal. -->
+		</div>
+	</div>			
+	<!-- Kết thúc khung đăng nhập -->
+
+	<!-- Bắt đầu khung register. -->
+	<div class="container">
+		<div class="row">
+			<!-- Modal -->
+			<div class="modal fade" id="Register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content col-lg-12 col-md-12 col-sm-12 col-xs-12" id="fixScreen">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" id="close-form">&times;</span></button>
+							<h4 class="modal-title">Đăng Ký Tài Khoản</h4>
+						</div>
+						<div id="registerForm" class="modal-body">
+							<form id="register_Form" class="contact" method="post" action="#" onsubmit="return registerValidation()" name="register_Form">
+								<div class="form-group">
+									<label >Họ <sup>*</sup></label>
+									<input type="text" class="form-control" name="lastnameReInput" placeholder="Vui lòng nhập 'Họ' của bạn.">
+									<div id="lastnameRe_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<label >Tên <sup>*</sup></label>
+									<input type="text" class="form-control" name="firstnameReInput" placeholder="Vui lòng nhập 'Tên' của bạn.">
+									<div id="firstnameRe_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<label >Email <sup>*</sup></label>
+									<input type="email" class="form-control" name="emailReInput" placeholder="Vui lòng nhập tài khoản email.">
+									<div id="emailRe_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<label >Mật khẩu <sup>*</sup></label>
+									<input type="password" class="form-control" name="passwordReInput" placeholder="Mật khẩu phải từ 8 ký tự.">
+									<div id="passwordRe_error" class="val_error"></div>
+								</div>
+
+								<div class="form-group">
+									<label >Nhập lại mật khẩu <sup>*</sup></label>
+									<input type="password" class="form-control" name="confirmpasswordReInput" placeholder="Nhập lại mật khẩu.">
+									<div id="confirmpasswordRe_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<label >Số điện thoại <sup>*</sup></label>
+									<input type="text" class="form-control" name="phoneReInput" placeholder="Vui lòng nhập số điện thoại.">
+									<div id="phoneRe_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<label >Giới tính</label>
+									<input type="radio" name="gender" value="0" checked="">&nbsp;Nữ &emsp;
+									<input type="radio" name="gender" value="1">&nbsp;Nam
+								</div>
+								<div class="form-group">
+									<label >Ngày sinh</label>
+									<input type="date" class="form-control" name="birthdayReInput" placeholder="">
+									<div id="birthdayRe_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<input type="checkbox" class="" name="checkReInput" placeholder="">&ensp;Đồng ý điều khoản sử dụng<sup>*</sup>
+									<div id="checkRe_error" class="val_error"></div>
+								</div>
+								<div class="modal-footer">
+									<button type="submit" class="btn btn-info" >Đăng Ký</button>
+									<button type="reset" class="btn btn-info" onclick="resetRegister()">Làm lại</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Kết thúc khung register. -->
+
+
+	<footer>
+		<p>nguyencong</p>
+	</footer>
+
+
+
+
+	<!-- Start link js -->
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/user.js"></script>
+	<!-- <script type="text/javascript" src="js/register.js"></script> -->
+	<!-- End link js -->
+</body>
+</html>
