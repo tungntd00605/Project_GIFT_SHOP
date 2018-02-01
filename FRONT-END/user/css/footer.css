@@ -1,0 +1,25 @@
+
+.title-footer {
+	text-transform: uppercase;
+	font-size: 20px;
+	font-style: italic;
+	margin-top: 10px;
+}
+
+ #map {
+	height: 345px;
+/*	width: 50%;*/
+}
+
+.p-content-footer{
+	color: #000;
+}
+
+.p-content-footer>a{
+	color: #000;
+	margin-bottom: 5px;
+}
+
+.p-content-footer>a>img:hover{
+	opacity: 0.8;
+}
