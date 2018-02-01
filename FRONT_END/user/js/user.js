@@ -71,6 +71,10 @@ function resetLogin() {
 	document.getElementById("login_Form").reset()
 }
 
+$('#Login').on('hidden.bs.modal', function (e) {
+  resetLogin();
+})
+
 //==========================================KẾT THÚC VALIDATION KHUNG ĐĂNG NHẬP==============================================
 //======================================================================================================================
 
@@ -253,6 +257,10 @@ function resetRegister() {
 	checkReInput.style.border = "";
 	document.getElementById("register_Form").reset()
 }
+
+$('#Register').on('hidden.bs.modal', function (e) {
+  resetRegister();
+})
 
 //==========================================KẾT THÚC VALIDATION KHUNG ĐĂNG KÝ==============================================
 //======================================================================================================================
