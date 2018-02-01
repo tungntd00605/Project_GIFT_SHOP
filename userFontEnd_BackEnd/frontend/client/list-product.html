@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<ul id="list"></ul>	
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/cart.js"></script>
+	<script type="text/javascript">
+		var API_URL = 'http://localhost:3000/_api/v1/products';
+		$.ajax({
+			url: API_URL,
+			type: 'GET',
+			success: function(response){
+				var content = '';
+				for (var i = 0; i < response.list.length; i++) {
+					content += '<li>';
+					content += '<span class="product-code">' + response.list[i].code + '</span> ';
+					content += '<span class="product-name">' + response.list[i].name + '</span> ';
+					content += '<span class="product-price">' + response.list[i].price + '</span> ';
+					content += '<a href="#' + response.list[i]._id + '" class="add-to-card" title="' + response.list[i].name +  '">Thêm vào giỏ hàng</a>';					
+					content += '</li>';
+				}
+				$('#list').html(content);
+			},
+			error: function(error, message){
+				alert('Có lỗi xảy ra, vui lòng thử lại.');
+			}
+		});
+		
+		// Bắt sự kiện kiểu này -> các content thêm vào = js vẫn thể hoạt động.
+		$('#list').on('click', '.add-to-card', function() {
+			// Lấy ra mã sản phẩm từ link.
+			var productId = $(this).attr('href').replace('#', '');
+			var productName = $(this).parent().children('.product-name').text();
+			var productCode = $(this).parent().children('.product-code').text();
+			var productPrice = $(this).parent().children('.product-price').text();			
+			// Số lượng mặc định = 1.
+			var quantity = 1;				
+			addToCart(productId, productCode, productName, productPrice, quantity);
+		});
+	</script>
+</body>
+</html>
