@@ -1,0 +1,205 @@
+body {
+	background-image: url(http://nhocgiftshop.com/tp/T0131/img/gr.jpg);
+	z-index: -1;
+}
+
+.product-detail {
+	margin-bottom: 10px;
+}
+
+.product-detail .form-control {
+	border: none;
+	margin-top: 10px;
+	padding-top: 13px;
+	width: 100%;
+}
+
+.product-detail .input-text {
+	width: 40%;
+}
+
+.product-detail .Product {
+	margin-top: 10px;
+
+}
+
+.product-detail .panel {
+	border: none !important;
+	padding: 0;
+}
+
+.proV-size {
+	padding: 0;
+	margin: 0;
+}
+
+.product-detail .form-control>label {
+	color: #ff2c51;
+	font-size: 13px;
+}
+
+.product-detail .thumbnail>img {
+	border: none;
+	margin: 0 !important;
+}
+
+.btnCart {
+	margin-top: 42px;
+	width: 35%;
+	margin-left: 30px;
+}
+
+.product-detail .panel-body>h2 {
+	font-family:tahoma;
+	margin-left: 20px;
+}
+
+.product-detail .price {
+	font-size: 15px;
+	color: #81cfdc;
+}
+
+.product-detail .andress {
+	border: 1px solid pink;
+	border-radius: 5px;
+	padding:5px;
+	background-color: white;
+	margin-bottom: 5px;
+}
+
+.product-detail .content-andress{
+	padding-bottom: 10px;
+}
+
+.product-detail input:focus {
+	outline: 0;
+}
+
+.product-detail img {
+	border: none;
+}
+
+.ProInfo-Content {
+	padding: 15px;
+	height: auto;
+}
+
+#jssor_1{
+	width: 100%;
+	right: 15px;
+	position: absolute;
+}
+
+.ProInfo-Content>div{
+	padding-bottom: 5px;
+}
+
+.bg_title_related_articles {
+	background-image: url(../img/bg_title_related_articles.png);
+	z-index: 1;
+	left: 0;
+}
+
+@media only screen and (max-width: 768px) {
+	.form-horizontal>fieldset {
+		width: 100%;
+	}
+
+	#jssor_1{
+		width: 100%;
+		right: 15px;
+		position: absolute;
+	}
+
+	.product-detail .form-control>label{
+		width: 100%;
+		font-size: 13px;
+	}
+
+	.proV-size>label{
+		margin-right: 30px;
+	}
+
+	.proV-size>label>input {
+		font-size: 10px;
+	}
+
+	.product-detail .text {
+		font-size: 12px;
+		padding-left: 20px;
+	}
+
+	.btnCart {
+		margin-top: 50px;
+		margin-left: 20px;
+	}
+	.product-detail .price {
+		padding-left: 15px;
+	}
+
+	.jssora073, .jssorb057, .btnLeft {
+		display: none;
+	}
+
+}
+
+.product-detail .breadcrumb {
+	padding-bottom: 5px;
+	background-color: #fbe8cd;
+}
+
+/*slider cua sp*/ 
+
+/* jssor slider loading skin spin css */
+.jssorl-009-spin img {
+	animation-name: jssorl-009-spin;
+	animation-duration: 1.6s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes jssorl-009-spin {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+
+.jssora093 {display:block;position:absolute;cursor:pointer;}
+.jssora093 .c {fill:none;stroke:#fff;stroke-width:400;stroke-miterlimit:10;}
+.jssora093 .a {fill:none;stroke:#fff;stroke-width:400;stroke-miterlimit:10;}
+.jssora093:hover {opacity:.8;}
+.jssora093.jssora093dn {opacity:.6;}
+.jssora093.jssora093ds {opacity:.3;pointer-events:none;}
+
+.jssort101 .p {position: absolute;top:0;left:0;box-sizing:border-box;background:#000;}
+.jssort101 .p .cv {position:relative;top:0;left:0;width:100%;height:100%;border:2px solid #000;box-sizing:border-box;z-index:1;}
+.jssort101 .a {fill:none;stroke:#fff;stroke-width:400;stroke-miterlimit:10;visibility:hidden;}
+.jssort101 .p:hover .cv, .jssort101 .p.pdn .cv {border:none;border-color:transparent;}
+.jssort101 .p:hover{padding:2px;}
+.jssort101 .p:hover .cv {background-color:rgba(0,0,0,6);opacity:.35;}
+.jssort101 .p:hover.pdn{padding:0;}
+.jssort101 .p:hover.pdn .cv {border:2px solid #fff;background:none;opacity:.35;}
+.jssort101 .pav .cv {border-color:#fff;opacity:.35;}
+.jssort101 .pav .a, .jssort101 .p:hover .a {visibility:visible;}
+.jssort101 .t {position:absolute;top:0;left:0;width:100%;height:100%;border:none;opacity:.6;}
+.jssort101 .pav .t, .jssort101 .p:hover .t{opacity:1;}
+
+
+/* SLIDE bai viết liên quan*/	
+/* jssor slider loading skin spin css */
+.jssorb057 .i {position:absolute;cursor:pointer;}
+.jssorb057 .i .b {fill:none;stroke:#fff;stroke-width:2000;stroke-miterlimit:10;stroke-opacity:0.4;}
+.jssorb057 .i:hover .b {stroke-opacity:.7;}
+.jssorb057 .iav .b {stroke-opacity: 1;}
+.jssorb057 .i.idn {opacity:.3;}
+
+.jssora073 {display:block;position:absolute;cursor:pointer;}
+.jssora073 .a {fill:#ddd;fill-opacity:.7;stroke:#000;stroke-width:160;stroke-miterlimit:10;stroke-opacity:.7;}
+.jssora073:hover {opacity:.8;}
+.jssora073.jssora073dn {opacity:.4;}
+.jssora073.jssora073ds {opacity:.3;pointer-events:none;}        
