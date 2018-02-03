@@ -89,6 +89,8 @@ var emailReInput = document.forms['register_Form']['emailReInput'];
 var passwordReInput = document.forms['register_Form']['passwordReInput'];
 var confirmpasswordReInput = document.forms['register_Form']['confirmpasswordReInput'];
 var phoneReInput = document.forms['register_Form']['phoneReInput'];
+var genderReInput = document.forms['register_Form']['genderReInput'];
+var birthdayReInput = document.forms['register_Form']['birthdayReInput'];
 var checkReInput = document.forms['register_Form']['checkReInput'];
 
 // Gán tất cả các đối tượng hiển thị lỗi.
@@ -107,6 +109,7 @@ emailReInput.addEventListener('blur', emailReVerify, true);
 passwordReInput.addEventListener('blur', passwordReVerify, true);
 confirmpasswordReInput.addEventListener('blur', confirmpasswordReVerify, true);
 phoneReInput.addEventListener('blur', phoneReVerify, true);
+birthdayReInput.addEventListener('blur', birthdayReVerify, true);
 checkReInput.addEventListener('click', checkReVerify, true);
 
 
@@ -118,6 +121,7 @@ function registerValidation() {
 	passwordReVerify();
 	confirmpasswordReVerify();
 	phoneReVerify();
+	birthdayReVerify();
 	checkReVerify();
 
 	if (lastnameReVerify() == false
@@ -125,7 +129,8 @@ function registerValidation() {
 		|| emailReVerify() == false      
 		|| passwordReVerify() == false      
 		|| confirmpasswordReVerify() == false      
-		|| phoneReVerify() == false      
+		|| phoneReVerify() == false   
+		|| birthdayReVerify() == false    
 		|| checkReVerify() == false) {
 		return false;
 	}else {
@@ -226,6 +231,28 @@ function phoneReVerify() {
         }
 }
 
+
+// Hàm xử lý trường birthday.
+function birthdayReVerify() {
+	var birthday = new Date(birthdayReInput.value);
+	var ageDifMs = Date.now() - birthday.getTime();
+	var ageDate = new Date(ageDifMs);
+	var validateYear = ageDate.getUTCFullYear() - 1970;
+
+	if (birthdayReInput.value == "") {
+		birthdayReInput.style.border = "1px solid red";
+		birthdayRe_error.innerHTML = "Thông tin bắt buộc";
+		return false;
+	} else if(validateYear > 16) {
+		birthdayReInput.style.border = "1px solid green";
+		birthdayRe_error.innerHTML = '';
+		return true;
+	} else {
+		birthdayRe_error.innerHTML = "Ngày sinh không hợp lệ (lớn hơn 16 tuổi)";
+		return false;
+	}
+}
+
 // Hàm xử lý trường Số Điện Thoại.
 function checkReVerify() {
         if (!checkReInput.checked) {
@@ -263,4 +290,50 @@ $('#Register').on('hidden.bs.modal', function (e) {
 })
 
 //==========================================KẾT THÚC VALIDATION KHUNG ĐĂNG KÝ==============================================
+//======================================================================================================================
+
+
+//==========================================BẮT ĐẦU FORM SUBMIT UER - SERVER=======================================
+//==================================================================================================================
+
+var USER_API_URL = "http://localhost:3000/_api/v1/users";
+
+// Chờ dom load hết.
+$(document).ready(function(){	
+	// Bắt sự kiện click vào nút btn-submit
+	$('[name="btn-submit"]').click(function(){
+		// run funtion validate Form
+		registerValidation();
+		if (registerValidation()) {
+			var user = {
+				'firstName': lastnameReInput.value,				
+				'lastName': firstnameReInput.value,
+				'email': emailReInput.value,
+				'password': passwordReInput.value,
+				'phone': phoneReInput.value,
+				'gender': genderReInput.value,
+				'birthday': birthdayReInput.value,
+			};
+			var api_url = USER_API_URL;
+			var method = 'POST';		
+			$.ajax({
+				url: api_url,
+				type: method,
+				data: user,
+				success: function(response){										
+					$('#modal-success').modal();
+					$('[name=user-form]').trigger("reset");
+				},
+				error: function(response, message){
+					alert('Có lỗi xảy ra. ' + message);
+				}
+			});
+		}
+	});
+});
+
+
+
+
+//==========================================KẾT THÚC FORM SUBMIT UER - SERVER==============================================
 //======================================================================================================================

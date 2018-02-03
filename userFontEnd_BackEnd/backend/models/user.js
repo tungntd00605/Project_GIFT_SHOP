@@ -3,9 +3,11 @@ var mongoose = require('mongoose');
 module.exports = mongoose.model('users', {
 	firstName: String,
 	lastName: String,
+	email: String,
+	password: String,
+	phone: String,
 	gender: Number,
 	birthday: Date,
-	// avatarUrl: String,
 	createdAt: {
 		type: Date,
 		default: Date.now

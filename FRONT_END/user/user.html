@@ -168,7 +168,7 @@
 							<h4 class="modal-title">Đăng Ký Tài Khoản</h4>
 						</div>
 						<div id="registerForm" class="modal-body">
-							<form id="register_Form" class="contact" method="post" action="#" onsubmit="return registerValidation()" name="register_Form">
+							<form id="register_Form" class="contact" method="post" action="#"  name="register_Form">
 								<div class="form-group">
 									<label >Họ <sup>*</sup></label>
 									<input type="text" class="form-control" name="lastnameReInput" placeholder="Vui lòng nhập 'Họ' của bạn.">
@@ -202,8 +202,8 @@
 								</div>
 								<div class="form-group">
 									<label >Giới tính</label>
-									<input type="radio" name="gender" value="0" checked="">&nbsp;Nữ &emsp;
-									<input type="radio" name="gender" value="1">&nbsp;Nam
+									<input type="radio" name="genderReInput" value="0" checked="">&nbsp;Nữ &emsp;
+									<input type="radio" name="genderReInput" value="1">&nbsp;Nam
 								</div>
 								<div class="form-group">
 									<label >Ngày sinh</label>
@@ -215,7 +215,7 @@
 									<div id="checkRe_error" class="val_error"></div>
 								</div>
 								<div class="modal-footer">
-									<button type="submit" class="btn btn-info" >Đăng Ký</button>
+									<button type="button" class="btn btn-info" name="btn-submit">Đăng Ký</button>
 									<button type="reset" class="btn btn-info" onclick="resetRegister()">Làm lại</button>
 								</div>
 							</form>
@@ -231,6 +231,21 @@
 	<footer>
 		<p>nguyencong</p>
 	</footer>
+	<div class="modal modal-success fade" id="modal-success">
+		<div class="modal-dialog modal-sm">
+		  <div class="modal-content">
+			<div class="modal-body">                        
+			  <h4 class="modal-title">Action Success</h4>
+			</div>          
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Ok</button>            
+			</div>
+		  </div>
+		  <!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	  </div>
+	  <!-- /.modal -->
 
 
 
