@@ -9,9 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
-	<link rel="stylesheet" type="text/css" href="css/user.css">
 	<link href="img/logo.png" rel="shortcut icon" type="img/logo.png">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	
 	<!-- Main Page product css -->
 	<link href="css/style-product-home.css" rel="stylesheet" type="text/css" />
@@ -20,6 +18,8 @@
 	<!-- Footer css -->
 	<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/footer.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/menubar.css">
 </head>
 
 <body>
@@ -108,10 +108,10 @@
 
 						<!-- Start User Login/Signup Button Block -->
 						<span class="col-md-3 col-sm-6 col-xs-12 user-btn-block">
-							<a class="btn loginBtn" id="login" data-target="#Login" data-toggle="modal">
+							<a href="#">
 								<img src="img/signin_icon.png" class="img-rounded">
 							</a>
-							<a class="btn registerBtn" id="register" data-target="#Register" data-toggle="modal">
+							<a href="#">
 								<img src="img/signup_icon.png" class="img-rounded">
 							</a>
 						</span>
@@ -122,115 +122,72 @@
 		</div>
 	</header>
 	<!-- End header -->
-
-	<!-- Bắt đầu khung đăng nhập. -->
-	<div class="container">
-		<div class="row">
-			<!-- Bắt đầu Modal -->
-			<div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content col-lg-9 col-md-9 col-sm-12 col-xs-12">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" id="close-form">&times;</span></button>
-							<h4 class="modal-title" id="gridSystemModalLabel">Đăng Nhập</h4>
-						</div>
-						<div id="loginForm" class="modal-body">
-							<form id="login_Form" class="contact" method="post" action="#" onsubmit="return loginValidation()" name="login-form">
-								<div class="form-group">
-									<label >Email <sup>*</sup></label>
-									<input type="email" class="form-control" name="emailInput" placeholder="Nhập tài khoản email của bạn">
-									<div id="email_error" class="val_error"></div>
-								</div>
-								<div class="form-group">
-									<label >Mật Khẩu <sup>*</sup></label>
-									<input type="password" class="form-control" name="passwordInput" placeholder="Nhập mật khẩu.">
-									<div id="password_error" class="val_error"></div>
-								</div>
-								<a href="#" class="forgotPass">Quên mật khẩu?</a>
-							</div>
-							<div class="modal-footer">
-								<button type="submit" class="btn btn-info" >Đăng Nhập</button>
-								<button type="reset" class="btn btn-default" onclick="resetLogin()">Làm lại</button>
-							</div>
-						</form>
-					</div>
+	
+	<!-- navbar -->
+	<div class="body-wrap" id="main-nav">
+		<nav class="navbar navbar-default" role="navigation" id="sticky-menu-bar">
+			<div class="container-fluid" style="background-image: url(img/bg-nav.png); padding: 0 50px;">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html" style="font-size: 20px; ">Trang chủ</a>
 				</div>
-			</div>
-			<!-- Kết thúc Modal. -->
-		</div>
-	</div>			
-	<!-- Kết thúc khung đăng nhập -->
 
-	<!-- Bắt đầu khung register. -->
-	<div class="container">
-		<div class="row">
-			<!-- Modal -->
-			<div class="modal fade" id="Register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content col-lg-12 col-md-12 col-sm-12 col-xs-12" id="fixScreen">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" id="close-form">&times;</span></button>
-							<h4 class="modal-title">Đăng Ký Tài Khoản</h4>
-						</div>
-						<div id="registerForm" class="modal-body">
-							<form id="register_Form" class="contact" method="post" action="#" onsubmit="return registerValidation()" name="register_Form">
-								<div class="form-group">
-									<label >Họ <sup>*</sup></label>
-									<input type="text" class="form-control" name="lastnameReInput" placeholder="Vui lòng nhập 'Họ' của bạn.">
-									<div id="lastnameRe_error" class="val_error"></div>
-								</div>
-								<div class="form-group">
-									<label >Tên <sup>*</sup></label>
-									<input type="text" class="form-control" name="firstnameReInput" placeholder="Vui lòng nhập 'Tên' của bạn.">
-									<div id="firstnameRe_error" class="val_error"></div>
-								</div>
-								<div class="form-group">
-									<label >Email <sup>*</sup></label>
-									<input type="email" class="form-control" name="emailReInput" placeholder="Vui lòng nhập tài khoản email.">
-									<div id="emailRe_error" class="val_error"></div>
-								</div>
-								<div class="form-group">
-									<label >Mật khẩu <sup>*</sup></label>
-									<input type="password" class="form-control" name="passwordReInput" placeholder="Mật khẩu phải từ 8 ký tự.">
-									<div id="passwordRe_error" class="val_error"></div>
-								</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown">Dịch vụ</a>
+							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> In hình và chữ lên đồ (cốc, áo, v..v)</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Gói quà tặng</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="test" >Danh mục</a>
+							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Lắc Tay</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Dụng Cụ Học Tập</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Gấu Bông</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Đồ Trang Trí</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Quà tặng Tiện Ích</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="test" >Hãng</a>
+							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Burberry</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Tom Ford</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Louis Vuitton</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Prada, Gucci</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Paul Smith</a></li>
+							</ul>
+						</li>
+					</ul>
 
-								<div class="form-group">
-									<label >Nhập lại mật khẩu <sup>*</sup></label>
-									<input type="password" class="form-control" name="confirmpasswordReInput" placeholder="Nhập lại mật khẩu.">
-									<div id="confirmpasswordRe_error" class="val_error"></div>
-								</div>
-								<div class="form-group">
-									<label >Số điện thoại <sup>*</sup></label>
-									<input type="text" class="form-control" name="phoneReInput" placeholder="Vui lòng nhập số điện thoại.">
-									<div id="phoneRe_error" class="val_error"></div>
-								</div>
-								<div class="form-group">
-									<label >Giới tính</label>
-									<input type="radio" name="gender" value="0" checked="">&nbsp;Nữ &emsp;
-									<input type="radio" name="gender" value="1">&nbsp;Nam
-								</div>
-								<div class="form-group">
-									<label >Ngày sinh</label>
-									<input type="date" class="form-control" name="birthdayReInput" placeholder="">
-									<div id="birthdayRe_error" class="val_error"></div>
-								</div>
-								<div class="form-group">
-									<input type="checkbox" class="" name="checkReInput" placeholder="">&ensp;Đồng ý điều khoản sử dụng<sup>*</sup>
-									<div id="checkRe_error" class="val_error"></div>
-								</div>
-								<div class="modal-footer">
-									<button type="submit" class="btn btn-info" >Đăng Ký</button>
-									<button type="reset" class="btn btn-default" onclick="resetRegister()">Làm lại</button>
-								</div>
-							</form>
-						</div>
-					</div>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="ShopCart.html"> <i class="fa fa-shopping-cart" style="font-size: 20px;"></i> Giỏ Hàng</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle hidden" data-toggle="dropdown" id="user-name">Username</a>
+							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
+								<li><a href="#">Đăng nhập</a></li>
+								<li><a href="#">Đăng ký</a></li>
+								<li><a href="#">Liên hệ</a></li>
+							</ul>
+						</li>
+					</ul>
 				</div>
+				<!-- /.navbar-collapse -->
 			</div>
-		</div>
+			<!-- /.container-fluid -->
+		</nav>	
 	</div>
-	<!-- Kết thúc khung register. -->
+	<!-- end navbar -->
+
 
 	<!-- Start Main -->
 	<main>
@@ -283,67 +240,9 @@
 						<div class="shopHd-tl">
 							<h3>Tìm Kiếm Nhiều</h3>
 						</div>
-						<div class="owl-carousel owl-carousel-trend">
-							<div class="item">
-								<a href="">
-									<img src="img/gau-bong-nam.jpg">
-									<span>Gấu Bông</span>
-								</a>
-							</div>
-							<div class="item">
-								<a href="">
-									<img src="img/that-lung-nam-lv.jpg">
-									<span>Dây Thắt Lưng</span>
-								</a>
-							</div>
-							<div class="item">
-								<a href="">
-									<img src="img/vi-da-nam.jpg">
-									<span>Ví Nam</span>
-								</a>
-							</div>
-							<div class="item">
-								<a href="">
-									<img src="img/tui-xach-JP.jpg">
-									<span>Túi Xách Nữ</span>
-								</a>
-							</div>
-							<div class="item">
-								<a href="">
-									<img src="img/lac-tay-nam-da.jpg">
-									<span>Lắc Tay Nam</span>
-								</a>
-							</div>
-							<div class="item">
-								<a href="">
-									<img src="img/lac-tay-nu.jpg">
-									<span>Lắc Tay Nữ</span>
-								</a>
-							</div>
-							<div class="item">
-								<a href="">
-									<img src="img/gau-bong.jpg">
-									<span>Gấu Bông baby</span>
-								</a>
-							</div>
-							<div class="item">
-								<a href="">
-									<img src="img/that-lung-nu.jpg">
-									<span>Thắt Lưng Nữ</span>
-								</a>
-							</div>
-							<div class="item">
-								<a href="">
-									<img src="img/lac-tay-nam.jpg">
-									<span>Lắc Tay Nam</span>
-								</a>
-							</div>
-							<div class="item">
-								<a href="">
-									<img src="img/tui-xach-nu.jpg">
-									<span>Túi xách Nữ</span>
-								</a>
-							</div>
+						<!-- lôi sp từ api về lide -->
+						<div class="owl-carousel owl-carousel-trend" id="test">
+							
 						</div>
 					</div>
 				</div>
@@ -353,197 +252,8 @@
 					<div class="container">
 						<div class="shopHd-tl"><a href="product-list.html"><h3>Danh sách sản phẩm</h3></a></div>
 						<div class="row">
-							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-								<div class="item prodItem">
-									<div class="thumb"><a href="product-detail.html"><img src="img/gau-bong-nam.jpg"></a></div>
-									<div class="promotion">Giảm <strong>10%</strong></div>
-									<div class="badge">Yêu thích</div>
-									<div class="info">
-										<h2><a href="">Gấu bông ôm nằm</a></h2>
-										<div class="price">
-											<div class="priceOld pull-left">5</span> $</div>
-											<div class="pull-left">4.5</span> $</div>
-											<div class="pull-right"><span class="glyphicon glyphicon-shopping-cart"></span></div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="prodItem-bt">
-											<div class="pull-left"><span class="glyphicon glyphicon-heart"></span> (254)</div>
-											<div class="pull-right">
-												<div class="star star-small"><span class="star-01"></span></div>
-												(105)
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-								<div class="item prodItem">
-									<div class="thumb"><a href="product-detail.html"><img src="img/lac-tay-nam.jpg"></a></div>
-									<div class="promotion">Giảm <strong>20%</strong></div>
-									<div class="badge">Yêu thích</div>
-									<div class="info">
-										<h2><a href="">Lắc Tay Nam</a></h2>
-										<div class="price">
-											<div class="priceOld pull-left">10</span> $</div>
-											<div class="pull-left">8</span> $</div>
-											<div class="pull-right"><span class="glyphicon glyphicon-shopping-cart"></span></div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="prodItem-bt">
-											<div class="pull-left"><span class="glyphicon glyphicon-heart"></span></i> (123)</div>
-											<div class="pull-right">
-												<div class="star star-small"><span class="star-01"></span></div>
-												(127)
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-								<div class="item prodItem">
-									<div class="thumb"><a href="product-detail.html"><img src="img/that-lung-nu.jpg"></a></div>
-									<div class="promotion">Giảm <strong>25%</strong></div>
-									<div class="badge">Yêu thích</div>
-									<div class="info">
-										<h2><a href="">Dây thắt lưng nữ</a></h2>
-										<div class="price">
-											<div class="priceOld pull-left">8</span> $</div>
-											<div class="pull-left">6</span> $</div>
-											<div class="pull-right"><span class="glyphicon glyphicon-shopping-cart"></span></div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="prodItem-bt">
-											<div class="pull-left"><span class="glyphicon glyphicon-heart"></span> (500)</div>
-											<div class="pull-right">
-												<div class="star star-small"><span class="star-01"></span></div>
-												(123)
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-								<div class="item prodItem">
-									<div class="thumb"><a href="product-detail.html"><img src="img/lac-tay-nu.jpg"></a></div>
-									<div class="promotion">Giảm <strong>10%</strong></div>
-									<div class="badge">Yêu thích</div>
-									<div class="info">
-										<h2><a href="">Lắc tay bạc Nữ</a></h2>
-										<div class="price">
-											<div class="priceOld pull-left">10</span> $</div>
-											<div class="pull-left">9</span> $</div>
-											<div class="pull-right"><span class="glyphicon glyphicon-shopping-cart"></span></div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="prodItem-bt">
-											<div class="pull-left"><span class="glyphicon glyphicon-heart"></span> (203)</div>
-											<div class="pull-right">
-												<div class="star star-small"><span class="star-01"></span></div>
-												(123)
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-								<div class="item prodItem">
-									<div class="thumb"><a href="product-detail.html"><img src="img/vi-da-nam.jpg"></a></div>
-									<div class="promotion">Giảm <strong>24%</strong></div>
-									<div class="badge">Yêu thích</div>
-									<div class="info">
-										<h2><a href="">Ví Da Nam</a></h2>
-										<div class="price">
-											<div class="priceOld pull-left">11</span> $</div>
-											<div class="pull-left">8.36</span> $</div>
-											<div class="pull-right"><span class="glyphicon glyphicon-shopping-cart"></span></div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="prodItem-bt">
-											<div class="pull-left"><span class="glyphicon glyphicon-heart"></span> (123)</div>
-											<div class="pull-right">
-												<div class="star star-small"><span class="star-01"></span></div>
-												(23)
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-								<div class="item prodItem">
-									<div class="thumb"><a href="product-detail.html"><img src="img/that-lung-nam-lv.jpg"></a></div>
-									<div class="promotion">Giảm <strong>25%</strong></div>
-									<div class="badge">Yêu thích</div>
-									<div class="info">
-										<h2><a href="">Thắt lưng da nam</a></h2>
-										<div class="price">
-											<div class="priceOld pull-left">12</span> $</div>
-											<div class="pull-left">9.0</span> $</div>
-											<div class="pull-right"> <span class="glyphicon glyphicon-shopping-cart"></span></div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="prodItem-bt">
-											<div class="pull-left"><span class="glyphicon glyphicon-heart"></span></i> (17)</div>
-											<div class="pull-right">
-												<div class="star star-small"><span class="star-01"></span></div>
-												(15)
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-								<div class="item prodItem">
-									<div class="thumb"><a href="product-detail.html"><img src="img/khoi-pha-le.jpg"></a></div>
-									<div class="promotion">Giảm <strong>15%</strong></div>
-									<div class="badge">Yêu thích</div>
-									<div class="info">
-										<h2><a href="">Khối pha lê tím</a></h2>
-										<div class="price">
-											<div class="priceOld pull-left">5</span> $</div>
-											<div class="pull-left">4.25</span> $</div>
-											<div class="pull-right"><span class="glyphicon glyphicon-shopping-cart"></span></div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="prodItem-bt">
-											<div class="pull-left"><span class="glyphicon glyphicon-heart"></span> (123)</div>
-											<div class="pull-right">
-												<div class="star star-small"><span class="star-01"></span></div>
-												(123)
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-								<div class="item prodItem">
-									<div class="thumb"><a href="product-detail.html"><img src="img/tui-xach-nu.jpg"></a></div>
-									<div class="promotion">Giảm <strong>20%</strong></div>
-									<div class="badge">Yêu thích</div>
-									<div class="info">
-										<h2><a href="">Túi xách nữ hiệu Elly</a></h2>
-										<div class="price">
-											<div class="priceOld pull-left">45</span> $</div>
-											<div class="pull-left">36</span> $</div>
-											<div class="pull-right"><span class="glyphicon glyphicon-shopping-cart"></span></i></div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="prodItem-bt">
-											<div class="pull-left"><span class="glyphicon glyphicon-heart"></span> (307)</div>
-											<div class="pull-right">
-												<div class="star star-small"><span class="star-01"></span></div>
-												(400)
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
+							<div id="listProduct">
+								
 							</div>
 						</div>
 					</div>
@@ -753,8 +463,7 @@
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-	<!-- Login/Register script -->
-	<script type="text/javascript" src="js/user.js"></script>
+	<script type="text/javascript" src="js/testIndex.js"></script>
 
 	<!-- Main Page product script -->
 	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
@@ -764,6 +473,9 @@
 	<script type="text/javascript" src="js/footer.js"></script>
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxm0k6cV3zMz_xd2xv7ICZV46d-jG8bUg&callback=initMap">
 	</script>
+
+	<!-- menubar script -->
+	<script type="text/javascript" src="js/menubar.js"></script>
 
 	<!-- up to the top page -->
 	<script type="text/javascript" src="js/scrollTop.js"></script>

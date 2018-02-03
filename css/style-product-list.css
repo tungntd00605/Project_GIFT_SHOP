@@ -209,10 +209,10 @@ img{
 .product-list{
 	margin-top: 20px;
 }
-.filter-list{
+.category-list{
 	margin-bottom: 30px;	
 }
-.filter-list h3{
+.category-list h3{
 	text-transform:uppercase;
 	margin:0 0 10px 0;
 	padding-bottom:10px;
@@ -221,16 +221,16 @@ img{
 	border-bottom:1px solid #ddd;
 	color: #978CFA;
 }
-.filter-list h3 .glyphicon{
+.category-list h3 .glyphicon{
 	color:#CEBBFC;
 	margin-right:5px;
 }
-.filter-list ul{
+.category-list ul{
 	margin: 0px;
 	padding: 0px;
 	margin-left: 5px;
 }
-.filter-list li{
+.category-list li{
 	list-style:none;
 	margin-bottom: 5px;
 	font-size:14px;

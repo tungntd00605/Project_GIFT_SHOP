@@ -10,9 +10,7 @@
 	<link rel="stylesheet" href="css/responsive.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<link rel="stylesheet" href="css/style-product-list.css">
-	<link rel="stylesheet" type="text/css" href="css/user.css">
 	<link href="img/logo.png" rel="shortcut icon" type="img/logo.png">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<!-- Footer css -->
 	<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
@@ -105,10 +103,10 @@
 
 						<!-- Start User Login/Signup Button Block -->
 						<span class="col-md-3 col-sm-6 col-xs-12 user-btn-block">
-							<a class="btn loginBtn" id="login" data-target="#Login" data-toggle="modal">
+							<a href="#">
 								<img src="img/signin_icon.png" class="img-rounded">
 							</a>
-							<a class="btn registerBtn" id="register" data-target="#Register" data-toggle="modal">
+							<a href="#">
 								<img src="img/signup_icon.png" class="img-rounded">
 							</a>
 						</span>
@@ -120,115 +118,6 @@
 	</header>
 	<!-- End header -->
 
-	<!-- Bắt đầu khung đăng nhập. -->
-	<div class="container">
-		<div class="row">
-			<!-- Bắt đầu Modal -->
-			<div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content col-lg-9 col-md-9 col-sm-12 col-xs-12">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" id="close-form">&times;</span></button>
-							<h4 class="modal-title" id="gridSystemModalLabel">Đăng Nhập</h4>
-						</div>
-						<div id="loginForm" class="modal-body">
-							<form id="login_Form" class="contact" method="post" action="#" onsubmit="return loginValidation()" name="login-form">
-								<div class="form-group">
-									<label >Email <sup>*</sup></label>
-									<input type="email" class="form-control" name="emailInput" placeholder="Nhập tài khoản email của bạn">
-									<div id="email_error" class="val_error"></div>
-								</div>
-								<div class="form-group">
-									<label >Mật Khẩu <sup>*</sup></label>
-									<input type="password" class="form-control" name="passwordInput" placeholder="Nhập mật khẩu.">
-									<div id="password_error" class="val_error"></div>
-								</div>
-								<a href="#" class="forgotPass">Quên mật khẩu?</a>
-							</div>
-							<div class="modal-footer">
-								<button type="submit" class="btn btn-info" >Đăng Nhập</button>
-								<button type="reset" class="btn btn-default" onclick="resetLogin()">Làm lại</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-			<!-- Kết thúc Modal. -->
-		</div>
-	</div>			
-	<!-- Kết thúc khung đăng nhập -->
-
-	<!-- Bắt đầu khung register. -->
-	<div class="container">
-		<div class="row">
-			<!-- Modal -->
-			<div class="modal fade" id="Register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content col-lg-12 col-md-12 col-sm-12 col-xs-12" id="fixScreen">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" id="close-form">&times;</span></button>
-							<h4 class="modal-title">Đăng Ký Tài Khoản</h4>
-						</div>
-						<div id="registerForm" class="modal-body">
-							<form id="register_Form" class="contact" method="post" action="#" onsubmit="return registerValidation()" name="register_Form">
-								<div class="form-group">
-									<label >Họ <sup>*</sup></label>
-									<input type="text" class="form-control" name="lastnameReInput" placeholder="Vui lòng nhập 'Họ' của bạn.">
-									<div id="lastnameRe_error" class="val_error"></div>
-								</div>
-								<div class="form-group">
-									<label >Tên <sup>*</sup></label>
-									<input type="text" class="form-control" name="firstnameReInput" placeholder="Vui lòng nhập 'Tên' của bạn.">
-									<div id="firstnameRe_error" class="val_error"></div>
-								</div>
-								<div class="form-group">
-									<label >Email <sup>*</sup></label>
-									<input type="email" class="form-control" name="emailReInput" placeholder="Vui lòng nhập tài khoản email.">
-									<div id="emailRe_error" class="val_error"></div>
-								</div>
-								<div class="form-group">
-									<label >Mật khẩu <sup>*</sup></label>
-									<input type="password" class="form-control" name="passwordReInput" placeholder="Mật khẩu phải từ 8 ký tự.">
-									<div id="passwordRe_error" class="val_error"></div>
-								</div>
-
-								<div class="form-group">
-									<label >Nhập lại mật khẩu <sup>*</sup></label>
-									<input type="password" class="form-control" name="confirmpasswordReInput" placeholder="Nhập lại mật khẩu.">
-									<div id="confirmpasswordRe_error" class="val_error"></div>
-								</div>
-								<div class="form-group">
-									<label >Số điện thoại <sup>*</sup></label>
-									<input type="text" class="form-control" name="phoneReInput" placeholder="Vui lòng nhập số điện thoại.">
-									<div id="phoneRe_error" class="val_error"></div>
-								</div>
-								<div class="form-group">
-									<label >Giới tính</label>
-									<input type="radio" name="gender" value="0" checked="">&nbsp;Nữ &emsp;
-									<input type="radio" name="gender" value="1">&nbsp;Nam
-								</div>
-								<div class="form-group">
-									<label >Ngày sinh</label>
-									<input type="date" class="form-control" name="birthdayReInput" placeholder="">
-									<div id="birthdayRe_error" class="val_error"></div>
-								</div>
-								<div class="form-group">
-									<input type="checkbox" class="" name="checkReInput" placeholder="">&ensp;Đồng ý điều khoản sử dụng<sup>*</sup>
-									<div id="checkRe_error" class="val_error"></div>
-								</div>
-								<div class="modal-footer">
-									<button type="submit" class="btn btn-info" >Đăng Ký</button>
-									<button type="reset" class="btn btn-default" onclick="resetRegister()">Làm lại</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Kết thúc khung register. -->
-
 	<!-- Start Main -->
 	<main class="product-list-main">
 		<div class="container product-list">
@@ -236,432 +125,425 @@
 				<!-- siderbar-left -->
 				<div class="col-lg-2 col-md-2 col-sm-3">
 					<aside>
-						<div>
-							<select id="filter-select-box">
-								<option value="category-filter">Danh Mục</option>
-								<option value="brand-filter">Nhãn hiệu</option>
-							</select>
-						</div>
 						<!-- sidebar Danh muc -->
-						<div class="filter-list" id="category-filter-box">
-							<h3><span class="glyphicon glyphicon-th-list"></span>Danh Mục</h3>
-							<ul id="cat-filter-list">
-								<li><label><input type="checkbox" class="category-filter" value="category-bag"> Túi Xách</label></li>
-								<li><label><input type="checkbox" class="category-filter" value="category-wallet"> Ví Da</label></li>
-								<li><label><input type="checkbox" class="category-filter" value="category-belt"> Thắt Lưng</label></li>
-								<li><label><input type="checkbox" class="category-filter" value="category-bracelet"> Lắc Tay</label></li>
-								<li><label><input type="checkbox" class="category-filter" value="category-cube"> Khối pha lê</label></li>
-							</ul>
+						<div class="category-list">
+							<h3><span class="glyphicon glyphicon-th-list"></span>Danh Muc</h3>
+							<ul>
+                               	<li><label><input type="checkbox"> Gấu Bông</label></li>
+                                <li><label><input type="checkbox"> Túi Xách</label></li>
+                                <li><label><input type="checkbox"> Ví Da</label></li>
+                                <li><label><input type="checkbox"> Lắc Tay</label></li>
+                                <li><label><input type="checkbox"> Bút</label></li>
+                                <li><label><input type="checkbox"> Đồng Hồ</label></li>
+                                <li><label><input type="checkbox"> Vòng Cổ</label></li>
+                            </ul>
 						</div>
 						<!-- end sidebar category -->
 						<!-- siderbar Nhãn Hàng -->
-						<div class="filter-list" id="brand-filter-box">
+						<div class="category-list">
 							<h3><span class="glyphicon glyphicon-th-list"></span>Nhãn Hàng</h3>
-							<ul id="brand-filter-list">
-								<li><label><input type="checkbox" class="brand-filter" value="brand-boss"> Boss</label></li>
-								<li><label><input type="checkbox" class="brand-filter" value="brand-tissot"> TISSOT</label></li>
-								<li><label><input type="checkbox" class="brand-filter" value="brand-jingding"> JingDing</label></li>
-								<li><label><input type="checkbox" class="brand-filter" value="brand-ellis"> Ellis</label></li>
-							</ul>
+							<ul>
+                               	<li><label><input type="checkbox"> Boss</label></li>
+                                <li><label><input type="checkbox"> TISSOT</label></li>
+                                <li><label><input type="checkbox"> JingDing</label></li>
+                                <li><label><input type="checkbox"> Ellis</label></li>
+                            </ul>
 						</div>
 						<!-- end siderbar nhãn hàng -->
-						<button id="clear-filter-btn">Bỏ Lọc</button>
 					</aside>
 				</div>
 				<!-- content -->
 				<div class="col-lg-8 col-md-8 col-sm-6">
 					<div>
 						<ol class="breadcrumb">
-							<li><a href="#">Trang Chủ</a></li>
-							<li><a href="#">Sản Phẩm</a></li>    
+						    <li><a href="#">Trang Chủ</a></li>
+						    <li><a href="#">Sản Phẩm</a></li>
+						    <li><a href="#">Tất Cả</a></li>       
 						</ol>
-						<ul class="pagination">
-							<li>
-								<a href="#" aria-label="Previous">
-									<span aria-hidden="true">«</span>
-								</a>
-							</li>
-							<li class="active"><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li>
-								<a href="#" aria-label="Next">
-									<span aria-hidden="true">»</span>
-								</a>
-							</li>
-						</ul>
-						<div class="clearfix"></div>
+	                    <ul class="pagination">
+	                        <li>
+	                        <a href="#" aria-label="Previous">
+	                        <span aria-hidden="true">«</span>
+	                        </a>
+	                        </li>
+	                        <li class="active"><a href="#">1</a></li>
+	                        <li><a href="#">2</a></li>
+	                        <li><a href="#">3</a></li>
+	                        <li>
+	                        <a href="#" aria-label="Next">
+	                        <span aria-hidden="true">»</span>
+	                        </a>
+	                        </li>
+	                    </ul>
+	                    <div class="clearfix"></div>
 					</div>
 					
-					<div class="tab-content">
-						<div class="row">    
-							<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 category-bracelet brand-boss product-item">
-								<div class="item prodItem">
-									<div class="thumb"><a href=""><img src="img/lac-tay-nam.jpg"></a></div>
-									<div class="promotion">Giảm <strong>20%</strong></div>
-									<div class="badge">Yêu thích</div>
-									<div class="info">
-										<h2><a href="">Lắc Tay Nam</a></h2>
-										<div class="price">
-											<div class="priceOld pull-left">10</span> $</div>
-											<div class="pull-left">8</span> $</div>
-											<div class="pull-right"><button><span class="glyphicon glyphicon-shopping-cart"></span></button></div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="prodItem-bt">
-											<div class="pull-left"><span class="glyphicon glyphicon-heart"></span></i> (123)</div>
-											<div class="pull-right">
-												<div class="star star-small"><span class="star-01"></span></div>
-												(127)
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							</div>
+                    <div class="tab-content">
+                        <div class="row">    
+							<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 item-pro">
+	                        	<div class="item prodItem">
+	                                <div class="thumb"><a href=""><img src="img/lac-tay-nam.jpg"></a></div>
+	                                <div class="promotion">Giảm <strong>20%</strong></div>
+	                                <div class="badge">Yêu thích</div>
+	                                <div class="info">
+	                                    <h2><a href="">Lắc Tay Nam</a></h2>
+	                                    <div class="price">
+	                                        <div class="priceOld pull-left">10</span> $</div>
+	                                        <div class="pull-left">8</span> $</div>
+	                                        <div class="pull-right"><button><span class="glyphicon glyphicon-shopping-cart"></span></button></div>
+	                                        <div class="clearfix"></div>
+	                                    </div>
+	                                    <div class="prodItem-bt">
+	                                        <div class="pull-left"><span class="glyphicon glyphicon-heart"></span></i> (123)</div>
+	                                        <div class="pull-right">
+	                                            <div class="star star-small"><span class="star-01"></span></div>
+	                                            (127)
+	                                         </div>
+	                                        <div class="clearfix"></div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
 
-							<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 category-belt brand-tissot product-item">
-								<div class="item prodItem">
-									<div class="thumb"><a href=""><img src="img/that-lung-nu.jpg"></a></div>
-									<div class="promotion">Giảm <strong>25%</strong></div>
-									<div class="badge">Yêu thích</div>
-									<div class="info">
-										<h2><a href="">Dây thắt lưng nữ</a></h2>
-										<div class="price">
-											<div class="priceOld pull-left">8</span> $</div>
-											<div class="pull-left">6</span> $</div>
-											<div class="pull-right"><button><span class="glyphicon glyphicon-shopping-cart"></span></button></div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="prodItem-bt">
-											<div class="pull-left"><span class="glyphicon glyphicon-heart"></span> (500)</div>
-											<div class="pull-right">
-												<div class="star star-small"><span class="star-01"></span></div>
-												(123)
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							</div>
+	                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+	                        	<div class="item prodItem">
+	                                <div class="thumb"><a href=""><img src="img/that-lung-nu.jpg"></a></div>
+	                                <div class="promotion">Giảm <strong>25%</strong></div>
+	                                <div class="badge">Yêu thích</div>
+	                                <div class="info">
+	                                    <h2><a href="">Dây thắt lưng nữ</a></h2>
+	                                    <div class="price">
+	                                        <div class="priceOld pull-left">8</span> $</div>
+	                                        <div class="pull-left">6</span> $</div>
+	                                        <div class="pull-right"><button><span class="glyphicon glyphicon-shopping-cart"></span></button></div>
+	                                        <div class="clearfix"></div>
+	                                    </div>
+	                                    <div class="prodItem-bt">
+	                                        <div class="pull-left"><span class="glyphicon glyphicon-heart"></span> (500)</div>
+	                                        <div class="pull-right">
+	                                            <div class="star star-small"><span class="star-01"></span></div>
+	                                            (123)
+	                                         </div>
+	                                        <div class="clearfix"></div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
 
-							<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 category-bracelet brand-jingding product-item">
-								<div class="item prodItem">
-									<div class="thumb"><a href=""><img src="img/lac-tay-nu.jpg"></a></div>
-									<div class="promotion">Giảm <strong>10%</strong></div>
-									<div class="badge">Yêu thích</div>
-									<div class="info">
-										<h2><a href="">Lắc tay bạc Nữ</a></h2>
-										<div class="price">
-											<div class="priceOld pull-left">10</span> $</div>
-											<div class="pull-left">9</span> $</div>
-											<div class="pull-right"><button><span class="glyphicon glyphicon-shopping-cart"></span></button></div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="prodItem-bt">
-											<div class="pull-left"><span class="glyphicon glyphicon-heart"></span> (203)</div>
-											<div class="pull-right">
-												<div class="star star-small"><span class="star-01"></span></div>
-												(123)
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							</div>
+	                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+	                        	<div class="item prodItem">
+	                                <div class="thumb"><a href=""><img src="img/lac-tay-nu.jpg"></a></div>
+	                                <div class="promotion">Giảm <strong>10%</strong></div>
+	                                <div class="badge">Yêu thích</div>
+	                                <div class="info">
+	                                    <h2><a href="">Lắc tay bạc Nữ</a></h2>
+	                                    <div class="price">
+	                                        <div class="priceOld pull-left">10</span> $</div>
+	                                        <div class="pull-left">9</span> $</div>
+	                                        <div class="pull-right"><button><span class="glyphicon glyphicon-shopping-cart"></span></button></div>
+	                                        <div class="clearfix"></div>
+	                                    </div>
+	                                    <div class="prodItem-bt">
+	                                        <div class="pull-left"><span class="glyphicon glyphicon-heart"></span> (203)</div>
+	                                        <div class="pull-right">
+	                                            <div class="star star-small"><span class="star-01"></span></div>
+	                                            (123)
+	                                         </div>
+	                                        <div class="clearfix"></div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
 
-							<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 category-wallet brand-ellis product-item">
-								<div class="item prodItem">
-									<div class="thumb"><a href=""><img src="img/vi-da-nam.jpg"></a></div>
-									<div class="promotion">Giảm <strong>24%</strong></div>
-									<div class="badge">Yêu thích</div>
-									<div class="info">
-										<h2><a href="">Ví Da Nam</a></h2>
-										<div class="price">
-											<div class="priceOld pull-left">11</span> $</div>
-											<div class="pull-left">8.36</span> $</div>
-											<div class="pull-right"><button><span class="glyphicon glyphicon-shopping-cart"></span></button></div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="prodItem-bt">
-											<div class="pull-left"><span class="glyphicon glyphicon-heart"></span> (123)</div>
-											<div class="pull-right">
-												<div class="star star-small"><span class="star-01"></span></div>
-												(23)
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							</div>
+							<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+	                        	<div class="item prodItem">
+	                                <div class="thumb"><a href=""><img src="img/vi-da-nam.jpg"></a></div>
+	                                <div class="promotion">Giảm <strong>24%</strong></div>
+	                                <div class="badge">Yêu thích</div>
+	                                <div class="info">
+	                                    <h2><a href="">Ví Da Nam</a></h2>
+	                                    <div class="price">
+	                                        <div class="priceOld pull-left">11</span> $</div>
+	                                        <div class="pull-left">8.36</span> $</div>
+	                                        <div class="pull-right"><button><span class="glyphicon glyphicon-shopping-cart"></span></button></div>
+	                                        <div class="clearfix"></div>
+	                                    </div>
+	                                    <div class="prodItem-bt">
+	                                        <div class="pull-left"><span class="glyphicon glyphicon-heart"></span> (123)</div>
+	                                        <div class="pull-right">
+	                                            <div class="star star-small"><span class="star-01"></span></div>
+	                                            (23)
+	                                         </div>
+	                                        <div class="clearfix"></div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
 
-							<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 category-belt brand-boss product-item">
-								<div class="item prodItem">
-									<div class="thumb"><a href=""><img src="img/that-lung-nam-lv.jpg"></a></div>
-									<div class="promotion">Giảm <strong>25%</strong></div>
-									<div class="badge">Yêu thích</div>
-									<div class="info">
-										<h2><a href="">Thắt lưng da nam</a></h2>
-										<div class="price">
-											<div class="priceOld pull-left">12</span> $</div>
-											<div class="pull-left">9.0</span> $</div>
-											<div class="pull-right"><button><span class="glyphicon glyphicon-shopping-cart"></span></button></div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="prodItem-bt">
-											<div class="pull-left"><span class="glyphicon glyphicon-heart"></span></i> (17)</div>
-											<div class="pull-right">
-												<div class="star star-small"><span class="star-01"></span></div>
-												(15)
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							</div>
+	                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+	                        	<div class="item prodItem">
+	                                <div class="thumb"><a href=""><img src="img/that-lung-nam-lv.jpg"></a></div>
+	                                <div class="promotion">Giảm <strong>25%</strong></div>
+	                                <div class="badge">Yêu thích</div>
+	                                <div class="info">
+	                                    <h2><a href="">Thắt lưng da nam</a></h2>
+	                                    <div class="price">
+	                                        <div class="priceOld pull-left">12</span> $</div>
+	                                        <div class="pull-left">9.0</span> $</div>
+	                                        <div class="pull-right"><button><span class="glyphicon glyphicon-shopping-cart"></span></button></div>
+	                                        <div class="clearfix"></div>
+	                                    </div>
+	                                    <div class="prodItem-bt">
+	                                        <div class="pull-left"><span class="glyphicon glyphicon-heart"></span></i> (17)</div>
+	                                        <div class="pull-right">
+	                                            <div class="star star-small"><span class="star-01"></span></div>
+	                                            (15)
+	                                         </div>
+	                                        <div class="clearfix"></div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
 
-							<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 category-cube brand-tissot product-item">
-								<div class="item prodItem">
-									<div class="thumb"><a href=""><img src="img/khoi-pha-le.jpg"></a></div>
-									<div class="promotion">Giảm <strong>15%</strong></div>
-									<div class="badge">Yêu thích</div>
-									<div class="info">
-										<h2><a href="">Khối pha lê tím</a></h2>
-										<div class="price">
-											<div class="priceOld pull-left">5</span> $</div>
-											<div class="pull-left">4.25</span> $</div>
-											<div class="pull-right"><button><span class="glyphicon glyphicon-shopping-cart"></span></button></div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="prodItem-bt">
-											<div class="pull-left"><span class="glyphicon glyphicon-heart"></span> (123)</div>
-											<div class="pull-right">
-												<div class="star star-small"><span class="star-01"></span></div>
-												(123)
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							</div>
+	                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+	                        	<div class="item prodItem">
+	                                <div class="thumb"><a href=""><img src="img/khoi-pha-le.jpg"></a></div>
+	                                <div class="promotion">Giảm <strong>15%</strong></div>
+	                                <div class="badge">Yêu thích</div>
+	                                <div class="info">
+	                                    <h2><a href="">Khối pha lê tím</a></h2>
+	                                    <div class="price">
+	                                        <div class="priceOld pull-left">5</span> $</div>
+	                                        <div class="pull-left">4.25</span> $</div>
+	                                        <div class="pull-right"><button><span class="glyphicon glyphicon-shopping-cart"></span></button></div>
+	                                        <div class="clearfix"></div>
+	                                    </div>
+	                                    <div class="prodItem-bt">
+	                                        <div class="pull-left"><span class="glyphicon glyphicon-heart"></span> (123)</div>
+	                                        <div class="pull-right">
+	                                            <div class="star star-small"><span class="star-01"></span></div>
+	                                            (123)
+	                                         </div>
+	                                        <div class="clearfix"></div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
 
-							<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 category-bag brand-ellis product-item">
-								<div class="item prodItem">
-									<div class="thumb"><a href=""><img src="img/tui-xach-nu.jpg"></a></div>
-									<div class="promotion">Giảm <strong>20%</strong></div>
-									<div class="badge">Yêu thích</div>
-									<div class="info">
-										<h2><a href="">Túi xách nữ hiệu Elly</a></h2>
-										<div class="price">
-											<div class="priceOld pull-left">45</span> $</div>
-											<div class="pull-left">36</span> $</div>
-											<div class="pull-right"><button><span class="glyphicon glyphicon-shopping-cart"></span></button></div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="prodItem-bt">
-											<div class="pull-left"><span class="glyphicon glyphicon-heart"></span> (307)</div>
-											<div class="pull-right">
-												<div class="star star-small"><span class="star-01"></span></div>
-												(400)
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							</div>
+	                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+	                        	<div class="item prodItem">
+	                                <div class="thumb"><a href=""><img src="img/tui-xach-nu.jpg"></a></div>
+	                                <div class="promotion">Giảm <strong>20%</strong></div>
+	                                <div class="badge">Yêu thích</div>
+	                                <div class="info">
+	                                    <h2><a href="">Túi xách nữ hiệu Elly</a></h2>
+	                                    <div class="price">
+	                                        <div class="priceOld pull-left">45</span> $</div>
+	                                        <div class="pull-left">36</span> $</div>
+	                                        <div class="pull-right"><button><span class="glyphicon glyphicon-shopping-cart"></span></button></div>
+	                                        <div class="clearfix"></div>
+	                                    </div>
+	                                    <div class="prodItem-bt">
+	                                        <div class="pull-left"><span class="glyphicon glyphicon-heart"></span> (307)</div>
+	                                        <div class="pull-right">
+	                                            <div class="star star-small"><span class="star-01"></span></div>
+	                                            (400)
+	                                         </div>
+	                                        <div class="clearfix"></div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
 
-							<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 category-cube brand-jingding product-item">
-								<div class="item prodItem">
-									<div class="thumb"><a href=""><img src="img/khoi-pha-le.jpg"></a></div>
-									<div class="promotion">Giảm <strong>15%</strong></div>
-									<div class="badge">Yêu thích</div>
-									<div class="info">
-										<h2><a href="">Khối pha lê hồng</a></h2>
-										<div class="price">
-											<div class="priceOld pull-left">5</span> $</div>
-											<div class="pull-left">4.25</span> $</div>
-											<div class="pull-right"><button><span class="glyphicon glyphicon-shopping-cart"></span></button></div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="prodItem-bt">
-											<div class="pull-left"><span class="glyphicon glyphicon-heart"></span> (123)</div>
-											<div class="pull-right">
-												<div class="star star-small"><span class="star-01"></span></div>
-												(123)
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<nav aria-label="Page navigation" id="pagination">
-						<ul class="pagination">
-							<li>
-								<a href="#" aria-label="Previous">
-									<span aria-hidden="true">«</span>
-								</a>
-							</li>
-							<li class="active"><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li>
-								<a href="#" aria-label="Next">
-									<span aria-hidden="true">»</span>
-								</a>
-							</li>
-						</ul>
-						<div class="clearfix"></div>
-					</nav>
+	                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+	                        	<div class="item prodItem">
+	                                <div class="thumb"><a href=""><img src="img/khoi-pha-le.jpg"></a></div>
+	                                <div class="promotion">Giảm <strong>15%</strong></div>
+	                                <div class="badge">Yêu thích</div>
+	                                <div class="info">
+	                                    <h2><a href="">Khối pha lê tím</a></h2>
+	                                    <div class="price">
+	                                        <div class="priceOld pull-left">5</span> $</div>
+	                                        <div class="pull-left">4.25</span> $</div>
+	                                        <div class="pull-right"><button><span class="glyphicon glyphicon-shopping-cart"></span></button></div>
+	                                        <div class="clearfix"></div>
+	                                    </div>
+	                                    <div class="prodItem-bt">
+	                                        <div class="pull-left"><span class="glyphicon glyphicon-heart"></span> (123)</div>
+	                                        <div class="pull-right">
+	                                            <div class="star star-small"><span class="star-01"></span></div>
+	                                            (123)
+	                                         </div>
+	                                        <div class="clearfix"></div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+
+                        </div>
+                    </div>
+                    <nav aria-label="Page navigation" id="pagination">
+                            <ul class="pagination">
+                                <li>
+                                <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">«</span>
+                                </a>
+                                </li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li>
+                                <a href="#" aria-label="Next">
+                                <span aria-hidden="true">»</span>
+                                </a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </nav>
 				</div>
 				<!-- siderbar-right -->
 				<div id="b" class="col-lg-2 col-md-2 col-sm-3">
 					<aside>
 						<!-- sidebar Danh muc -->
 						<div id="filter" class="widgetProd">
-							<h3><span class="glyphicon glyphicon-filter"></span> Lọc tìm kiếm</h3>
-							<p class="title-filter"><strong>Nơi Bán</strong></p>
-							<ul>
-								<li><label><input type="checkbox"> Hà Nội</label></li>
-								<li><label><input type="checkbox"> TP. Hồ Chí Minh</label></li>
-								<li><label><input type="checkbox"> Thái Nguyên</label></li>
-								<li><label><input type="checkbox"> Vĩnh Phúc</label></li>
-								<li><label><input type="checkbox"> Nam Định</label></li>
-								<li><label><input type="checkbox"> Đà Nẵng</label></li>
-								<li><label><input type="checkbox"> Thanh Hóa</label></li>
-							</ul>
+                            	<h3><span class="glyphicon glyphicon-filter"></span> Lọc tìm kiếm</h3>
+                                <p class="title-filter"><strong>Nơi Bán</strong></p>
+                            	<ul>
+                                	<li><label><input type="checkbox"> Hà Nội</label></li>
+                                    <li><label><input type="checkbox"> TP. Hồ Chí Minh</label></li>
+                                    <li><label><input type="checkbox"> Thái Nguyên</label></li>
+                                    <li><label><input type="checkbox"> Vĩnh Phúc</label></li>
+                                    <li><label><input type="checkbox"> Nam Định</label></li>
+                                    <li><label><input type="checkbox"> Đà Nẵng</label></li>
+                                    <li><label><input type="checkbox"> Thanh Hóa</label></li>
+                                </ul>
 
-							<p class="title-filter"><strong>Khoảng giá</strong></p>
-							<ul>
-								<li><a href="">0đ - 150.000đ</a></li>
-								<li><a href="">150.000đ - 500.000đ</a></li>
-								<li><a href="">500.000đ - 1.000.000đ</a></li>
-								<li><a href="">1.000.000đ >></a></li>
-							</ul>
+								<p class="title-filter"><strong>Khoảng giá</strong></p>
+                            	<ul>
+                                	<li><a href="">0đ - 150.000đ</a></li>
+                                    <li><a href="">150.000đ - 500.000đ</a></li>
+                                    <li><a href="">500.000đ - 1.000.000đ</a></li>
+                                    <li><a href="">1.000.000đ >></a></li>
+                                </ul>
+                            </div>
 						</div>
+						<!-- end siderbar nhãn hàng -->
+					</aside>
+				</div>
+			</div>		
+		</div>
+	</main>
+	<!-- End Main -->
+	<!-- Start Footer -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12" style="background-image:url(img/bg-header.png); margin:0;">
+				<footer>
+					<div class="col-md-3 col-sm-4 col-xs-12">
+						<p class="title-footer">Hệ thống cửa hàng</p>
+						<br>
+						<p class="p-content-footer"> 08 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</p>
+						<p class="p-content-footer"> 125 Phùng Hưng, Cửa Đông, Hoàn Kiếm, Hà Nội</p>
+						<p class="p-content-footer"> 252 Phúc Diễn, Hà Nội</p>
+						<p class="p-content-footer"> 10 Trần Hữu Dực, Mỹ Đình, Hà Nội</p>
+						<p class="p-content-footer"> 159 Ba Cu, TP. Vũng Tàu - 0254 6550 947</p>
+						<p class="p-content-footer"> 94 Thủ Khoa Huân,TP Phan Thiết - 0252 650 2059</p>
+						<p class="p-content-footer"> 130 Nguyễn Việt Hồng, TP Cần Thơ - 0292 653 9541</p>
+						<p class="p-content-footer"> 107 Nguyễn Trãi, P2, Q.5 - 0286 686 0947</p>
 					</div>
-					<!-- end siderbar nhãn hàng -->
-				</aside>
-			</div>
-		</div>		
-	</div>
-</main>
-<!-- End Main -->
-<!-- Start Footer -->
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12 col-sm-12 col-xs-12" style="background-image:url(img/bg-header.png); margin:0;">
-			<footer>
-				<div class="col-md-3 col-sm-4 col-xs-12">
-					<p class="title-footer">Hệ thống cửa hàng</p>
-					<br>
-					<p class="p-content-footer"> 08 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</p>
-					<p class="p-content-footer"> 125 Phùng Hưng, Cửa Đông, Hoàn Kiếm, Hà Nội</p>
-					<p class="p-content-footer"> 252 Phúc Diễn, Hà Nội</p>
-					<p class="p-content-footer"> 10 Trần Hữu Dực, Mỹ Đình, Hà Nội</p>
-					<p class="p-content-footer"> 159 Ba Cu, TP. Vũng Tàu - 0254 6550 947</p>
-					<p class="p-content-footer"> 94 Thủ Khoa Huân,TP Phan Thiết - 0252 650 2059</p>
-					<p class="p-content-footer"> 130 Nguyễn Việt Hồng, TP Cần Thơ - 0292 653 9541</p>
-					<p class="p-content-footer"> 107 Nguyễn Trãi, P2, Q.5 - 0286 686 0947</p>
+					<div class="col-md-3 col-sm-4 col-xs-12">
+						<p class="title-footer">HỖ TRỢ KHÁCH HÀNG</p>
+						<br>
+						<p class="p-content-footer">
+							<a href="#">
+								Hướng dẫn mua hàng
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Chính sách vận chuyển
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Hình thức thanh toán
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Khuyến mãi
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Tin tức
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Gửi Mail tại đây</a>
+						</p>
+					</div>
+					<div class="col-md-2 col-sm-4 col-xs-12">
+						<p class="title-footer">THÔNG TIN</p>
+						<br>
+						<p class="p-content-footer">
+							<a href="#">
+								Giới thiệu
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Tuyển dụng
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Video
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#" class="col-md-3 col-sm-6 col-xs-6">
+								<img src="img/facebook.png">
+							</a>
+							<a href="#" class="col-md-3 col-sm-6 col-xs-6">
+								<img src="img/Twitter.png">
+							</a>
+							<a href="#" class="col-md-3 col-sm-6 col-xs-6">
+								<img src="img/youtube_2.png">
+							</a>
+							<a href="#" class="col-md-3 col-sm-6 col-xs-6">
+								<img src="img/gmail.png">
+							</a>
+						</p>
+					</div>
+					<div id="map" class="col-md-4 col-sm-12 col-xs-12" style="border: 1px solid black;"></div>
+				</footer>
+				<div class="col-xs-12 col-sm-12 col-md-12 text-center" style="font-size: 12px;">
+					<a href="#" style="color: white;">Gift Shop</a> &copy;CopyRight : <p style="color: green;">Nguyễn Tùng, Nguyễn Công, Công Đoàn, SlowV, Ngọc Thúy, Đặng Quảng, Ngọc Đại, Xuân Hùng, T1708E, Aptech FPT</p>
 				</div>
-				<div class="col-md-3 col-sm-4 col-xs-12">
-					<p class="title-footer">HỖ TRỢ KHÁCH HÀNG</p>
-					<br>
-					<p class="p-content-footer">
-						<a href="#">
-							Hướng dẫn mua hàng
-						</a>
-					</p>
-					<p class="p-content-footer">
-						<a href="#">
-							Chính sách vận chuyển
-						</a>
-					</p>
-					<p class="p-content-footer">
-						<a href="#">
-							Hình thức thanh toán
-						</a>
-					</p>
-					<p class="p-content-footer">
-						<a href="#">
-							Khuyến mãi
-						</a>
-					</p>
-					<p class="p-content-footer">
-						<a href="#">
-							Tin tức
-						</a>
-					</p>
-					<p class="p-content-footer">
-						<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Gửi Mail tại đây</a>
-					</p>
-				</div>
-				<div class="col-md-2 col-sm-4 col-xs-12">
-					<p class="title-footer">THÔNG TIN</p>
-					<br>
-					<p class="p-content-footer">
-						<a href="#">
-							Giới thiệu
-						</a>
-					</p>
-					<p class="p-content-footer">
-						<a href="#">
-							Tuyển dụng
-						</a>
-					</p>
-					<p class="p-content-footer">
-						<a href="#">
-							Video
-						</a>
-					</p>
-					<p class="p-content-footer">
-						<a href="#" class="col-md-3 col-sm-6 col-xs-6">
-							<img src="img/facebook.png">
-						</a>
-						<a href="#" class="col-md-3 col-sm-6 col-xs-6">
-							<img src="img/Twitter.png">
-						</a>
-						<a href="#" class="col-md-3 col-sm-6 col-xs-6">
-							<img src="img/youtube_2.png">
-						</a>
-						<a href="#" class="col-md-3 col-sm-6 col-xs-6">
-							<img src="img/gmail.png">
-						</a>
-					</p>
-				</div>
-				<div id="map" class="col-md-4 col-sm-12 col-xs-12" style="border: 1px solid black;"></div>
-			</footer>
-			<div class="col-xs-12 col-sm-12 col-md-12 text-center" style="font-size: 12px;">
-				<a href="#" style="color: white;">Gift Shop</a> &copy;CopyRight : <p style="color: green;">Nguyễn Tùng, Nguyễn Công, Công Đoàn, SlowV, Ngọc Thúy, Đặng Quảng, Ngọc Đại, Xuân Hùng, T1708E, Aptech FPT</p>
 			</div>
 		</div>
 	</div>
-</div>
-<!-- End Footer -->
+	<!-- End Footer -->
 
-<!-- Up top page -->
-<a id='noop-top' style=' position: fixed; bottom: 5px; right:1%; cursor:pointer;font:12px arial;'>
-	<img src='http://nhocgiftshop.com/tp/T0131/img/btTop.png'/>
-</a>
+	<!-- Up top page -->
+	<a id='noop-top' style=' position: fixed; bottom: 5px; right:1%; cursor:pointer;font:12px arial;'>
+		<img src='http://nhocgiftshop.com/tp/T0131/img/btTop.png'/>
+	</a>
 
-<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-<!-- Login/Register script -->
-<script type="text/javascript" src="js/user.js"></script>
+	<!-- Main Page product script -->
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="js/product-home.js"></script>
 
-<!-- Main Page product script -->
-<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="js/product-home.js"></script>
-<script type="text/javascript" src="js/product-list.js"></script>
+	<!-- Footer script -->
+	<script type="text/javascript" src="js/footer.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxm0k6cV3zMz_xd2xv7ICZV46d-jG8bUg&callback=initMap">
+	</script>
 
-<!-- Footer script -->
-<script type="text/javascript" src="js/footer.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxm0k6cV3zMz_xd2xv7ICZV46d-jG8bUg&callback=initMap">
-</script>
-
-<!-- up to the top page -->
-<script type="text/javascript" src="js/scrollTop.js"></script>
+	<!-- up to the top page -->
+	<script type="text/javascript" src="js/scrollTop.js"></script>
 </body>
 </html>

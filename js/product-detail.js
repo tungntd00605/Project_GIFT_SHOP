@@ -1,7 +1,11 @@
+var GIFT_SHOP_API_URL = "http://localhost:3000/giftshop_api/v1/products";
+
 $(document).ready(function(){
   $("#compareBtn").click(function(){
     window.location.href = "product-compare.html";
   });
+  var id = getUrlParameter('id');
+  loadListProduct():
 });
 
 
@@ -127,3 +131,28 @@ jssor_2_slider_init1 = function() {
 };
 
 jssor_2_slider_init1();
+
+
+function loadListProduct(){
+ $.ajax({
+   url: GIFT_SHOP_API_URL + '/' + id ,
+   type: 'GET',
+   success: function(response){
+     // var totalPage = response.totalPage;      
+     var listProduct = response.list;
+     var content = '';
+     for (var i = 0; i < listProduct.length; i++) {
+       var id = listProduct[i]._id;
+        content +=      '<div data-p="150.00">';
+        content +=        '<img data-u="image" src="img/gautruc.jpg" />';
+        content +=        '<img data-u="thumb" src="img/gautruc.jpg" />';
+        content +=      '</div>';
+     }
+     $('#lide-imgDetail').html(content);
+   },
+   error: function(response, message){
+     alert('Có lỗi xảy ra. ' + message);
+   }
+ });
+}
+
