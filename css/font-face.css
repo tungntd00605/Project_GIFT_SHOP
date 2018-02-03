@@ -1,0 +1,69 @@
+@font-face {
+  font-family: 'Roboto-Thin';
+  src: url('../fonts/Roboto-Thin.eot');
+  src: url('../fonts/Roboto-Thin.woff2') format('woff2'),
+       url('../fonts/Roboto-Thin.woff') format('woff'),
+       url('../fonts/Roboto-Thin.ttf') format('truetype'),
+       url('../fonts/Roboto-Thin.svg#Roboto-Thin') format('svg'),
+       url('../fonts/Roboto-Thin.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceSansPro-Bold';
+  src: url('../fonts/SourceSansPro-Bold.woff') format('woff'),
+       url('../fonts/SourceSansPro-Bold.ttf') format('truetype'),
+       url('../fonts/SourceSansPro-Bold.svg#SourceSansPro-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceSansPro-BoldIt';
+  src: url('../fonts/SourceSansPro-BoldIt.woff') format('woff'),
+       url('../fonts/SourceSansPro-BoldIt.ttf') format('truetype'),
+       url('../fonts/SourceSansPro-BoldIt.svg#SourceSansPro-BoldIt') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceSansPro-Light';
+  src: url('../fonts/SourceSansPro-Light.eot');
+  src: url('../fonts/SourceSansPro-Light.woff2') format('woff2'),
+       url('../fonts/SourceSansPro-Light.woff') format('woff'),
+       url('../fonts/SourceSansPro-Light.ttf') format('truetype'),
+       url('../fonts/SourceSansPro-Light.svg#SourceSansPro-Light') format('svg'),
+       url('../fonts/SourceSansPro-Light.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceSansPro-LightIt';
+  src: url('../fonts/SourceSansPro-LightIt.eot');
+  src: url('../fonts/SourceSansPro-LightIt.woff2') format('woff2'),
+       url('../fonts/SourceSansPro-LightIt.woff') format('woff'),
+       url('../fonts/SourceSansPro-LightIt.ttf') format('truetype'),
+       url('../fonts/SourceSansPro-LightIt.svg#SourceSansPro-LightIt') format('svg'),
+       url('../fonts/SourceSansPro-LightIt.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceSansPro-Regular';
+  src: url('../fonts/SourceSansPro-Regular.woff') format('woff'),
+       url('../fonts/SourceSansPro-Regular.ttf') format('truetype'),
+       url('../fonts/SourceSansPro-Regular.svg#SourceSansPro-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansPro-ExtraLight';
+  src: url('../fonts/SourceSansPro-ExtraLight.eot');
+  src: url('../fonts/SourceSansPro-ExtraLight.woff2') format('woff2'),
+       url('../fonts/SourceSansPro-ExtraLight.woff') format('woff'),
+       url('../fonts/SourceSansPro-ExtraLight.ttf') format('truetype'),
+       url('../fonts/SourceSansPro-ExtraLight.svg#SourceSansPro-ExtraLight') format('svg'),
+       url('../fonts/SourceSansPro-ExtraLight.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<title>Gift Shop</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="css/header.css">
+	<link rel="stylesheet" type="text/css" href="css/user.css">
+	<link href="img/logo.png" rel="shortcut icon" type="img/logo.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<!-- Product Detail css -->
+	<link rel="stylesheet" type="text/css" href="css/product-detail.css">
+
+	<!-- Footer css -->
+	<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/footer.css">
+</head>
+
+<body>
+	<!-- Start header -->
+	<header id="top-header">
+		<div class="container-fluid">
+			<div class="row" id="header-content">
+				<!-- Start Logo -->
+				<div class="col-md-2 col-sm-3 col-xs-12">
+					<a href="index.html" class="thumbnail logo-thumbnail">
+						<img src="img/logo.png" width="100%">
+					</a>
+				</div>
+				<!-- End Logo -->
+
+				<div class="col-md-10 col-sm-9 col-xs-12">
+					<!-- Start Shopping Guide -->
+					<ul class="list-unstyled">
+						<li>
+							<span class="bIcon">1</span>
+							<span class="text-bicon">&nbsp;Chọn Sản Phẩm &nbsp;&nbsp;</span>
+							<span class="glyphicon glyphicon-chevron-right">&nbsp;&nbsp;</span>
+						</li>
+						<li>
+							<span class="bIcon">2</span>
+							<span class="text-bicon">&nbsp;Nhấn Mua Hàng &nbsp;&nbsp;</span>
+							<span class="glyphicon glyphicon-chevron-right">&nbsp;&nbsp;</span>
+						</li>
+						<li>
+							<span class="bIcon">3</span>
+							<span class="text-bicon">&nbsp;Bấm  Thanh Toán &nbsp;&nbsp;</span>
+							<span class="glyphicon glyphicon-chevron-right">&nbsp;&nbsp;</span>
+						</li>
+						<li>
+							<span class="bIcon">4</span>
+							<span class="text-bicon">&nbsp;Shop Sẽ  Giao Hàng Ngay</span>
+						</li>
+						<!-- End Shopping Guide -->
+
+						<!-- Start Address and Shopping Cart (on hold) -->
+						<li>
+							<span class="andress col-md-12 col-sm-6">
+								08 Tôn Thất Thuyết - Mỹ Đình - Hà Nội
+								01469555602 - 0962127341
+							</span>
+						</li>
+						<!-- End Address and Shopping Cart (on hold) -->
+					</ul>
+
+					<div class="search-and-user">
+						<!-- Start Search Bar -->
+						<span class="col-md-5 col-sm-12 col-xs-12" style="float: left;">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Bạn muốn mua gì?">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button">
+										<span class="glyphicon glyphicon-search"></span>
+									</button>
+								</span>
+							</div>
+						</span>
+						<!-- End Search Bar -->
+
+						<!-- Start Social Network -->
+						<span class="contractIcon"> 
+							<a href="#">
+								<img src="img/facebook.png" class="img-rounded" title="Facebook" >
+							</a>
+						</span>
+						<span class="contractIcon">
+							<a href="#" >
+								<img src="img/gmail.png" class="img-rounded" title="Gmail">
+							</a>
+						</span>
+						<span class="contractIcon ">
+							<a href="#" >
+								<img src="img/Twitter.png" class="img-rounded " title="Twitter">
+							</a>
+						</span>
+						<span class="contractIcon ">
+							<a href="#" >
+								<img src="img/youtube_2.png" class="img-rounded " title="Youtube">
+							</a>
+						</span>
+						<!-- End Social Network -->
+
+						<!-- Start User Login/Signup Button Block -->
+						<span class="col-md-3 col-sm-6 col-xs-12 user-btn-block">
+							<a class="btn loginBtn" id="login" data-target="#Login" data-toggle="modal">
+								<img src="img/signin_icon.png" class="img-rounded">
+							</a>
+							<a class="btn registerBtn" id="register" data-target="#Register" data-toggle="modal">
+								<img src="img/signup_icon.png" class="img-rounded">
+							</a>
+						</span>
+						<!-- End User Login/Signup Button Block -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- End header -->
+
+	<!-- Bắt đầu khung đăng nhập. -->
+	<div class="container">
+		<div class="row">
+			<!-- Bắt đầu Modal -->
+			<div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content col-lg-9 col-md-9 col-sm-12 col-xs-12">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" id="close-form">&times;</span></button>
+							<h4 class="modal-title" id="gridSystemModalLabel">Đăng Nhập</h4>
+						</div>
+						<div id="loginForm" class="modal-body">
+							<form id="login_Form" class="contact" method="post" action="#" onsubmit="return loginValidation()" name="login-form">
+								<div class="form-group">
+									<label >Email <sup>*</sup></label>
+									<input type="email" class="form-control" name="emailInput" placeholder="Nhập tài khoản email của bạn">
+									<div id="email_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<label >Mật Khẩu <sup>*</sup></label>
+									<input type="password" class="form-control" name="passwordInput" placeholder="Nhập mật khẩu.">
+									<div id="password_error" class="val_error"></div>
+								</div>
+								<a href="#" class="forgotPass">Quên mật khẩu?</a>
+							</div>
+							<div class="modal-footer">
+								<button type="submit" class="btn btn-info" >Đăng Nhập</button>
+								<button type="reset" class="btn btn-default" onclick="resetLogin()">Làm lại</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- Kết thúc Modal. -->
+		</div>
+	</div>			
+	<!-- Kết thúc khung đăng nhập -->
+
+	<!-- Bắt đầu khung register. -->
+	<div class="container">
+		<div class="row">
+			<!-- Modal -->
+			<div class="modal fade" id="Register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content col-lg-12 col-md-12 col-sm-12 col-xs-12" id="fixScreen">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" id="close-form">&times;</span></button>
+							<h4 class="modal-title">Đăng Ký Tài Khoản</h4>
+						</div>
+						<div id="registerForm" class="modal-body">
+							<form id="register_Form" class="contact" method="post" action="#" onsubmit="return registerValidation()" name="register_Form">
+								<div class="form-group">
+									<label >Họ <sup>*</sup></label>
+									<input type="text" class="form-control" name="lastnameReInput" placeholder="Vui lòng nhập 'Họ' của bạn.">
+									<div id="lastnameRe_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<label >Tên <sup>*</sup></label>
+									<input type="text" class="form-control" name="firstnameReInput" placeholder="Vui lòng nhập 'Tên' của bạn.">
+									<div id="firstnameRe_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<label >Email <sup>*</sup></label>
+									<input type="email" class="form-control" name="emailReInput" placeholder="Vui lòng nhập tài khoản email.">
+									<div id="emailRe_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<label >Mật khẩu <sup>*</sup></label>
+									<input type="password" class="form-control" name="passwordReInput" placeholder="Mật khẩu phải từ 8 ký tự.">
+									<div id="passwordRe_error" class="val_error"></div>
+								</div>
+
+								<div class="form-group">
+									<label >Nhập lại mật khẩu <sup>*</sup></label>
+									<input type="password" class="form-control" name="confirmpasswordReInput" placeholder="Nhập lại mật khẩu.">
+									<div id="confirmpasswordRe_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<label >Số điện thoại <sup>*</sup></label>
+									<input type="text" class="form-control" name="phoneReInput" placeholder="Vui lòng nhập số điện thoại.">
+									<div id="phoneRe_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<label >Giới tính</label>
+									<input type="radio" name="gender" value="0" checked="">&nbsp;Nữ &emsp;
+									<input type="radio" name="gender" value="1">&nbsp;Nam
+								</div>
+								<div class="form-group">
+									<label >Ngày sinh</label>
+									<input type="date" class="form-control" name="birthdayReInput" placeholder="">
+									<div id="birthdayRe_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<input type="checkbox" class="" name="checkReInput" placeholder="">&ensp;Đồng ý điều khoản sử dụng<sup>*</sup>
+									<div id="checkRe_error" class="val_error"></div>
+								</div>
+								<div class="modal-footer">
+									<button type="submit" class="btn btn-info" >Đăng Ký</button>
+									<button type="reset" class="btn btn-default" onclick="resetRegister()">Làm lại</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Kết thúc khung register. -->
+
+	<!-- Start Product Detail -->
+	<div class="container product-detail">
+		<!-- Bắt đầu slide ảnh và thông tin sản phẩm-->
+		<div class="row" style="padding-bottom: 10px;">
+			<div class="Product col-xs-12">
+				<!-- bắt đầu silde ảnh của sản phẩm -->
+				<div class="col-md-8 col-xs-12">
+					<div id="jssor_1" style="position:relative;width:900px;height:480px;overflow:hidden;visibility:hidden;background-color:#fff;" class="col-xs-12">
+						<!-- Loading Screen -->
+						<div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+							<img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
+						</div>
+						<div data-u="slides" style="cursor:default;position:relative;top:0px;left:240px;width:720px;height:480px;overflow:hidden;" class="col-xs-12">
+							<div data-p="150.00">
+								<img data-u="image" src="img/gautruc.jpg" />
+								<img data-u="thumb" src="img/gautruc.jpg" />
+							</div>
+							<div data-p="150.00">
+								<img data-u="image" src="img/gautruc1.jpg" />
+								<img data-u="thumb" src="img/gautruc1.jpg" />
+							</div>
+							<div data-p="150.00">
+								<img data-u="image" src="img/gautruc2.jpg" />
+								<img data-u="thumb" src="img/gautruc2.jpg" />
+							</div>
+							<div data-p="150.00">
+								<img data-u="image" src="img/gautruc3.jpg" />
+								<img data-u="thumb" src="img/gautruc3.jpg" />
+							</div>
+							<div data-p="150.00">
+								<img data-u="image" src="img/gautruc4.jpg" />
+								<img data-u="thumb" src="img/gautruc4.jpg" />
+							</div>
+						</div>
+						<!-- Thumbnail Navigator -->
+						<div data-u="thumbnavigator" class="jssort101 col-xs-12" style="position:absolute;left:0px;top:0px;width:240px;height:480px;background-color:#fff2f2;" data-autocenter="2" data-scale-left="0.75">
+							<div data-u="slides">
+								<div data-u="prototype" class="p" style="width:99px;height:80px;">
+									<div data-u="thumbnailtemplate" class="t"></div>
+								</div>
+							</div>
+						</div>
+						<!-- Arrow Navigator -->
+						<div data-u="arrowleft" class="jssora093" style="width:50px;height:50px;top:0px;left:270px;" data-autocenter="2">
+							<svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+								<circle class="c" cx="8000" cy="8000" r="5920"></circle>
+								<polyline class="a" points="7777.8,6080 5857.8,8000 7777.8,9920 "></polyline>
+								<line class="a" x1="10142.2" y1="8000" x2="5857.8" y2="8000"></line>
+							</svg>
+						</div>
+						<div data-u="arrowright" class="jssora093" style="width:50px;height:50px;top:0px;right:30px;" data-autocenter="2">
+							<svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+								<circle class="c" cx="8000" cy="8000" r="5920"></circle>
+								<polyline class="a" points="8222.2,6080 10142.2,8000 8222.2,9920 "></polyline>
+								<line class="a" x1="5857.8" y1="8000" x2="10142.2" y2="8000"></line>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<!-- kết thúc slide ảnh sp -->
+
+				<!-- bắt đầu thông tin sản phẩm -->
+				<div class="panel panel-default col-md-4 col-xs-12">
+					<div class="panel-body">
+						<h2>Gấu trúc bông Cute!</h2>
+						<form class="form-horizontal">
+							<fieldset>
+								<div class="col-xs-12">
+									<div class="form-control" style="clear: both;">
+										<label for="" class="col-xs-12 col-md-6">
+											<i class="fa fa-heart"></i>
+											Giá Sản Phẩm:
+										</label>
+										<div class="col-xs-12 col-md-6">
+											<div class="proV-price">
+												<p class="price">240.000 $</p>
+											</div>
+										</div>
+									</div>
+									<div class="form-control" style="clear: both;">
+										<label for="" class="col-xs-12 col-md-6">
+											<i class="fa fa-heart"></i>
+											Trạng thái :
+										</label>
+										<div class="col-md-6 col-xs-12">
+											<div class="text">
+												Còn hàng
+											</div>
+										</div>
+									</div>
+									<div class="form-control" style="clear: both;">
+										<label for="" class="col-xs-12 col-md-6">
+											<i class="fa fa-heart"></i>
+											Kích Thước:
+										</label>
+										<div class="col-xs-12 col-md-6">
+											<div class="text">
+												50 x 30 x 20cm
+											</div>
+										</div>
+									</div>
+									<div class="form-control" style="clear: both;">
+										<label for="" class="col-xs-12 col-md-6">
+											<i class="fa fa-heart"></i>
+											Hãng :
+										</label>
+										<div class="col-xs-12 col-md-6">
+											<div class="text">
+												Burberry
+											</div>
+										</div>
+									</div>
+									<div class="form-control" style="clear: both;">
+										<label for="" class="col-xs-6">
+											<i class="fa fa-heart"></i>
+											Số Lượng:
+										</label>
+										<div class="col-xs-6">
+											<div class="quantity">
+												<input type="number" step="1" min="1" max name="quantity" value="1" title="Số Lượng" class="input-text" size="4" style="border-radius: 5px; padding-left: 5px;">
+											</div>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+							<div class="btnOder">
+								<a href="product-compare.html"><button type="button" class="btn btn-warning btnCart" id="compareBtn">So Sánh</button></a>
+								<a href="shopCart.html"><button type="button" class="btn btn-success btnCart">Đặt hàng</button></a>
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- kết thúc thông tin sản phẩm -->
+			</div>
+			<!-- kết thúc silde ảnh của sản phẩm -->
+
+			<div class="col-md-12 col-xs-12 col-sm-12 andress" >
+				<fieldset>
+					<legend>
+						<div class="col-md-12 col-xs-12 col-sm-12 content-andress" >
+							<h3 style="color: #ff2c51;"><i class="fa fa-heart"></i> Chi nhánh cửa hàng</h3>
+						</div>
+					</legend>
+
+					<div class="col-md-12 col-xs-12 col-sm-12 content-andress">
+						<img src="http://c.fastcdn.co/t/eb6c86bd/fa35eb19/1513240521-22355586-23x22-11586978-23x22-icon-1.png">
+						&nbsp;08 Tôn Thất Thuyết, Mỹ Đình, Hà Nội
+					</div>
+
+					<div class="col-md-12 col-xs-12 col-sm-12 content-andress">
+						<img src="http://c.fastcdn.co/t/eb6c86bd/fa35eb19/1513240521-22355586-23x22-11586978-23x22-icon-1.png">
+						&nbsp;125 Phùng Hưng, Cửa Đông, Hoàn Kiếm, Hà Nội
+					</div>
+
+					<div class="col-md-12 col-xs-12 col-sm-12 content-andress">
+						<img src="http://c.fastcdn.co/t/eb6c86bd/fa35eb19/1513240521-22355586-23x22-11586978-23x22-icon-1.png">
+						&nbsp;252 Phúc Diễn, Hà Nội
+					</div>
+
+					<div class="col-md-12 col-xs-12 col-sm-12 content-andress">
+						<img src="http://c.fastcdn.co/t/eb6c86bd/fa35eb19/1513240521-22355586-23x22-11586978-23x22-icon-1.png">
+						&nbsp;10 Trần Hữu Dực, Mỹ Đình, Hà Nội
+					</div>
+				</fieldset>
+			</div>
+		</div>
+		<!-- kết thúc slide ảnh và thông tin sản phẩm-->
+
+		<!-- bắt đầu chi tiết sản phẩm -->
+		<div class="row">
+			<div class="Product-Info panel panel-default col-md-9">
+				<div class="col-md-12 col-xs-12 col-sm-12">
+					<img src="img/title.png" width="100%">
+				</div>
+				<div class="panel-body">
+					<div class="col-md-12 ProInfo-Content" style="line-height: 23px;">
+						<div style="font-weight: bold;" class="col-md-12 col-xs-12 col-sm-12">
+							Kiểu dáng gấu trúc nhồi bông
+						</div>
+						<div class="col-md-12 col-xs-12 col-sm-12">
+							Gấu trúc Panda - Hình ảnh một chú gấu trúc béo ú, lười biếng nhất thung lũng Thanh Bình nhưng vô cùng tốt bụng và cực kỳ mê võ kungfu đã trở lên rất đỗi quen thuộc với mọi người, đặc biệt là những em nhỏ. Trong tư thế nằm mới lạ, bạn gấu trúc bông này đã trở lên rất lạ vì em gấu này mới vừa ra đời thôi. Thân hình căng tròn mập mạp, đôi mắt tròn to làm cho em gấu bông này càng mũm mĩm và đáng yêu hơn
+						</div>
+						<div class="col-md-12 col-xs-12 col-sm-12">
+							<img src="http://shopgaubong.net/wp-content/uploads/2015/01/gau-truc-bong-mac-ao-len-04.jpg" width="100%">
+							<div style="text-align: center;"><i>Gấu trúc bông</i></div>
+						</div>
+						<div class="col-md-12 col-xs-12 col-sm-12">
+							<strong>Chất liệu làm gấu trúc nằm nhồi bông</strong>
+							Gấu trúc nằm nhồi bông được làm từ những nguyên liệu chọn lọc: Bên ngoài là lớp lông ngắn siêu mềm mịn, bên trong là 100% bông trắng tinh khiết. Tất cả đều là những nguyên liệu cao cấp, được nhập khẩu từ nước ngoài. Vì vậy, chúng tôi cam kết đây là những sản phẩm tốt nhất thị trường, đảm bảo không xù lông, không rụng lông, không xẹp và an toàn tuyệt đối
+							,<br>
+							<strong>Màu sắc và kích thước:</strong> Màu trắng - đen, với 3 size khác nhau cho bạn chọn
+						</div>
+					</div>	
+				</div>
+			</div>
+
+			<div class="category col-md-3">
+				<!-- Lọc theo danh mục -->
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h2 style="color: green; " >Danh Mục</h2>
+						<ul class="list-group">
+							<li class="list-group-item"><a href="#">Gấu bông</a> <span class="badge">120</span></li>
+							<li class="list-group-item"><a href="#">Phụ kiện thời trang</a> <span class="badge">50</span></li>
+							<li class="list-group-item"><a href="#">Quà tặng</a> <span class="badge">269</span></li>
+							<li class="list-group-item"><a href="#">Phụ kiện Hi-Tech</a> <span class="badge">65</span></li>
+							<li class="list-group-item"><a href="#">Hộp quà</a> <span class="badge">32</span></li>
+						</ul>
+					</div>
+				</div>
+				<!-- kết thúc lọc theo danh mục -->
+
+				<!-- lọc theo hãng -->
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h2 style="color: green; " >Hãng Sản Phẩm</h2>
+						<ul class="list-group">
+							<li class="list-group-item"><a href="#">Burberry</a> <span class="badge">112</span></li>
+							<li class="list-group-item"><a href="#">Tom Ford</a> <span class="badge">30</span></li>
+							<li class="list-group-item"><a href="#">Louis Vuitton</a> <span class="badge">279</span></li>
+							<li class="list-group-item"><a href="#">Prada, Gucci</a> <span class="badge">77</span></li>
+							<li class="list-group-item"><a href="">Paul Smith</a> <span class="badge">50</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="ProInfo-Content">
+					<img src="img/content.png" width="100%">
+				</div>	
+			</div>
+		</div>
+		<!-- kết thúc chi tiết sản phẩm -->
+
+		<!-- bắt đầu slide sản phẩm liên quan -->
+		<div class="row">
+			<div class="col-md-12 col-xs-12 col-sm-12">
+				<div class="col-md-12 col-xs-12 col-sm-12" style="margin-bottom: 10px;">
+					<i class="fa fa-heart" style="color: #ff2c51; font-size: 20px;"></i>
+					<i style="color: #ff2c51; font-size: 19px;"> CÓ THỂ BẠN SẼ THÍCH</i>
+				</div>
+				<div id="jssor_2" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:200px;overflow:hidden;visibility:hidden; background-color: #fff; margin:auto;">
+					<!-- Loading Screen -->
+					<div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7); border: 1px solid red;">
+						<img style="margin-top:-19px;position:relative;top:50%;width:38px;height:40px;" src="img/spin.svg" />
+					</div>
+					<div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:200px;overflow:hidden;">
+						<div data-p="43.75" style="border: 1px solid #dcdcdc;">
+							<a href="#">
+								<img data-u="image" src="img/gaubong.jpg" title="Gấu Bông Đẹp" />
+							</a>
+						</div>
+						<div data-p="43.75">
+							<a href="#" style="border: 1px solid #dcdcdc;"> 
+								<img data-u="image" src="img/gaubong1.jpg" title="Gấu Bông Đẹp" />
+								
+							</a>
+						</div>
+						<div data-p="43.75">	
+							<a href="#"><img data-u="image" src="img/gaubong2.jpg" title="Gấu Bông Đẹp"/>Gấu Bông đẹp</a>
+						</div>
+						<div data-p="43.75">
+							<a href="#"><img data-u="image" src="img/gaubong3.jpg" title="Gấu Bông Đẹp"/>Gấu Bông đẹp</a>
+						</div>
+						<div data-p="43.75">
+							<a href="#"><img data-u="image" src="img/gaubong4.jpg" title="Gấu Bông Đẹp"/>Gấu Bông đẹp</a>
+						</div>
+						<div data-p="43.75">
+							<a href="#"><img data-u="image" src="img/gaubong6.jpg" title="Gấu Bông Đẹp"/>Gấu Bông đẹp</a>
+						</div>
+						<div data-p="43.75">
+							<a href="#"><img data-u="image" src="img/gaubong7.jpg" title="Gấu Bông Đẹp"/>Gấu Bông đẹp</a>
+						</div>
+						<div data-p="43.75">
+							<a href="#"><img data-u="image" src="img/gaubong.jpg" title="Gấu Bông Đẹp"/>Gấu Bông đẹp</a>
+						</div>
+						<div data-p="43.75">
+							<a href="#"><img data-u="image" src="img/gaubong1.jpg" title="Gấu Bông Đẹp"/>Gấu Bông đẹp</a>
+						</div>
+						<div data-p="43.75">
+							<a href="#"><img data-u="image" src="img/gaubong2.jpg" title="Gấu Bông Đẹp"/>Gấu Bông đẹp</a>
+						</div>
+						<div data-p="43.75">
+							<a href="#"><img data-u="image" src="img/gaubong3.jpg" title="Gấu Bông Đẹp"/>Gấu Bông đẹp</a>
+						</div>
+						<div data-p="43.75">
+							<a href="#"><img data-u="image" src="img/gaubong4.jpg" title="Gấu Bông Đẹp"/>Gấu Bông đẹp</a>
+						</div>
+					</div>
+					<!-- Bullet Navigator -->
+					<div data-u="navigator" class="jssorb057" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+						<div data-u="prototype" class="i" style="width:16px;height:16px;">
+							<svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+								<circle class="b" cx="8000" cy="8000" r="5000"></circle>
+							</svg>
+						</div>
+					</div>
+					<!-- Arrow Navigator -->
+					<div data-u="arrowleft" class="jssora073 btnLeft" style="width:50px;height:50px;top:0px;left:30px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+						<svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+							<path class="a" d="M4037.7,8357.3l5891.8,5891.8c100.6,100.6,219.7,150.9,357.3,150.9s256.7-50.3,357.3-150.9 l1318.1-1318.1c100.6-100.6,150.9-219.7,150.9-357.3c0-137.6-50.3-256.7-150.9-357.3L7745.9,8000l4216.4-4216.4 c100.6-100.6,150.9-219.7,150.9-357.3c0-137.6-50.3-256.7-150.9-357.3l-1318.1-1318.1c-100.6-100.6-219.7-150.9-357.3-150.9 s-256.7,50.3-357.3,150.9L4037.7,7642.7c-100.6,100.6-150.9,219.7-150.9,357.3C3886.8,8137.6,3937.1,8256.7,4037.7,8357.3 L4037.7,8357.3z"></path>
+						</svg>
+					</div>
+					<div data-u="arrowright" class="jssora073" style="width:50px;height:50px;top:0px;right:30px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+						<svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+							<path class="a" d="M11962.3,8357.3l-5891.8,5891.8c-100.6,100.6-219.7,150.9-357.3,150.9s-256.7-50.3-357.3-150.9 L4037.7,12931c-100.6-100.6-150.9-219.7-150.9-357.3c0-137.6,50.3-256.7,150.9-357.3L8254.1,8000L4037.7,3783.6 c-100.6-100.6-150.9-219.7-150.9-357.3c0-137.6,50.3-256.7,150.9-357.3l1318.1-1318.1c100.6-100.6,219.7-150.9,357.3-150.9 s256.7,50.3,357.3,150.9l5891.8,5891.8c100.6,100.6,150.9,219.7,150.9,357.3C12113.2,8137.6,12062.9,8256.7,11962.3,8357.3 L11962.3,8357.3z"></path>
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- bắt đầu slide sản phẩm liên quan -->
+	</div>
+	<!-- End Product Detail -->
+
+	<!-- Start Footer -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12" style="background-image:url(img/bg-header.png); margin:0;">
+				<footer>
+					<div class="col-md-3 col-sm-4 col-xs-12">
+						<p class="title-footer">Hệ thống cửa hàng</p>
+						<br>
+						<p class="p-content-footer"> 08 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</p>
+						<p class="p-content-footer"> 125 Phùng Hưng, Cửa Đông, Hoàn Kiếm, Hà Nội</p>
+						<p class="p-content-footer"> 252 Phúc Diễn, Hà Nội</p>
+						<p class="p-content-footer"> 10 Trần Hữu Dực, Mỹ Đình, Hà Nội</p>
+						<p class="p-content-footer"> 159 Ba Cu, TP. Vũng Tàu - 0254 6550 947</p>
+						<p class="p-content-footer"> 94 Thủ Khoa Huân,TP Phan Thiết - 0252 650 2059</p>
+						<p class="p-content-footer"> 130 Nguyễn Việt Hồng, TP Cần Thơ - 0292 653 9541</p>
+						<p class="p-content-footer"> 107 Nguyễn Trãi, P2, Q.5 - 0286 686 0947</p>
+					</div>
+					<div class="col-md-3 col-sm-4 col-xs-12">
+						<p class="title-footer">HỖ TRỢ KHÁCH HÀNG</p>
+						<br>
+						<p class="p-content-footer">
+							<a href="#">
+								Hướng dẫn mua hàng
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Chính sách vận chuyển
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Hình thức thanh toán
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Khuyến mãi
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Tin tức
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Gửi Mail tại đây</a>
+						</p>
+					</div>
+					<div class="col-md-2 col-sm-4 col-xs-12">
+						<p class="title-footer">THÔNG TIN</p>
+						<br>
+						<p class="p-content-footer">
+							<a href="#">
+								Giới thiệu
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Tuyển dụng
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Video
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#" class="col-md-3 col-sm-6 col-xs-6">
+								<img src="img/facebook.png">
+							</a>
+							<a href="#" class="col-md-3 col-sm-6 col-xs-6">
+								<img src="img/Twitter.png">
+							</a>
+							<a href="#" class="col-md-3 col-sm-6 col-xs-6">
+								<img src="img/youtube_2.png">
+							</a>
+							<a href="#" class="col-md-3 col-sm-6 col-xs-6">
+								<img src="img/gmail.png">
+							</a>
+						</p>
+					</div>
+					<div id="map" class="col-md-4 col-sm-12 col-xs-12" style="border: 1px solid black;"></div>
+				</footer>
+				<div class="col-xs-12 col-sm-12 col-md-12 text-center" style="font-size: 12px;">
+					<a href="#" style="color: white;">Gift Shop</a> &copy;CopyRight : <p style="color: green;">Nguyễn Tùng, Nguyễn Công, Công Đoàn, SlowV, Ngọc Thúy, Đặng Quảng, Ngọc Đại, Xuân Hùng, T1708E, Aptech FPT</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Up top page -->
+	<a id='noop-top' style=' position: fixed; bottom: 5px; right:1%; cursor:pointer;font:12px arial;'>
+		<img src='http://nhocgiftshop.com/tp/T0131/img/btTop.png'/>
+	</a>
+
+	<!-- End Footer -->
+
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<!-- Login/Register script -->
+	<script type="text/javascript" src="js/user.js"></script>
+
+	<!-- Product Detail Page script -->
+	<script src="js/jssor.slider-26.9.0.min.js" type="text/javascript"></script>
+	<script src="js/product-detail.js" type="text/javascript"></script>
+
+	<!-- Footer script -->
+	<script type="text/javascript" src="js/footer.js"></script>
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxm0k6cV3zMz_xd2xv7ICZV46d-jG8bUg&callback=initMap">
+	</script>
+
+	<!-- up to the top page -->
+	<script type="text/javascript" src="js/scrollTop.js"></script>
+
+</body>
+</html>

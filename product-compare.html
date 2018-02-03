@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Gift Shop</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="css/header.css">
+	<link rel="stylesheet" type="text/css" href="css/user.css">
+	<link href="img/logo.png" rel="shortcut icon" type="img/logo.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<!-- Product Detail css -->
+	<link rel="stylesheet" type="text/css" href="css/product-compare.css">
+
+	<!-- Footer css -->
+	<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/footer.css">
+</head>
+
+<body>
+	<!-- Start header -->
+	<header id="top-header">
+		<div class="container-fluid">
+			<div class="row" id="header-content">
+				<!-- Start Logo -->
+				<div class="col-md-2 col-sm-3 col-xs-12">
+					<a href="index.html" class="thumbnail logo-thumbnail">
+						<img src="img/logo.png" width="100%">
+					</a>
+				</div>
+				<!-- End Logo -->
+
+				<div class="col-md-10 col-sm-9 col-xs-12">
+					<!-- Start Shopping Guide -->
+					<ul class="list-unstyled">
+						<li>
+							<span class="bIcon">1</span>
+							<span class="text-bicon">&nbsp;Chọn Sản Phẩm &nbsp;&nbsp;</span>
+							<span class="glyphicon glyphicon-chevron-right">&nbsp;&nbsp;</span>
+						</li>
+						<li>
+							<span class="bIcon">2</span>
+							<span class="text-bicon">&nbsp;Nhấn Mua Hàng &nbsp;&nbsp;</span>
+							<span class="glyphicon glyphicon-chevron-right">&nbsp;&nbsp;</span>
+						</li>
+						<li>
+							<span class="bIcon">3</span>
+							<span class="text-bicon">&nbsp;Bấm  Thanh Toán &nbsp;&nbsp;</span>
+							<span class="glyphicon glyphicon-chevron-right">&nbsp;&nbsp;</span>
+						</li>
+						<li>
+							<span class="bIcon">4</span>
+							<span class="text-bicon">&nbsp;Shop Sẽ  Giao Hàng Ngay</span>
+						</li>
+						<!-- End Shopping Guide -->
+
+						<!-- Start Address and Shopping Cart (on hold) -->
+						<li>
+							<span class="andress col-md-12 col-sm-6">
+								08 Tôn Thất Thuyết - Mỹ Đình - Hà Nội
+								01469555602 - 0962127341
+							</span>
+						</li>
+						<!-- End Address and Shopping Cart (on hold) -->
+					</ul>
+
+					<div class="search-and-user">
+						<!-- Start Search Bar -->
+						<span class="col-md-5 col-sm-12 col-xs-12" style="float: left;">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Bạn muốn mua gì?">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button">
+										<span class="glyphicon glyphicon-search"></span>
+									</button>
+								</span>
+							</div>
+						</span>
+						<!-- End Search Bar -->
+
+						<!-- Start Social Network -->
+						<span class="contractIcon"> 
+							<a href="#">
+								<img src="img/facebook.png" class="img-rounded" title="Facebook" >
+							</a>
+						</span>
+						<span class="contractIcon">
+							<a href="#" >
+								<img src="img/gmail.png" class="img-rounded" title="Gmail">
+							</a>
+						</span>
+						<span class="contractIcon ">
+							<a href="#" >
+								<img src="img/Twitter.png" class="img-rounded " title="Twitter">
+							</a>
+						</span>
+						<span class="contractIcon ">
+							<a href="#" >
+								<img src="img/youtube_2.png" class="img-rounded " title="Youtube">
+							</a>
+						</span>
+						<!-- End Social Network -->
+
+						<!-- Start User Login/Signup Button Block -->
+						<span class="col-md-3 col-sm-6 col-xs-12 user-btn-block">
+							<a class="btn loginBtn" id="login" data-target="#Login" data-toggle="modal">
+								<img src="img/signin_icon.png" class="img-rounded">
+							</a>
+							<a class="btn registerBtn" id="register" data-target="#Register" data-toggle="modal">
+								<img src="img/signup_icon.png" class="img-rounded">
+							</a>
+						</span>
+						<!-- End User Login/Signup Button Block -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- End header -->
+
+	<!-- Bắt đầu khung đăng nhập. -->
+	<div class="container">
+		<div class="row">
+			<!-- Bắt đầu Modal -->
+			<div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content col-lg-9 col-md-9 col-sm-12 col-xs-12">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" id="close-form">&times;</span></button>
+							<h4 class="modal-title" id="gridSystemModalLabel">Đăng Nhập</h4>
+						</div>
+						<div id="loginForm" class="modal-body">
+							<form id="login_Form" class="contact" method="post" action="#" onsubmit="return loginValidation()" name="login-form">
+								<div class="form-group">
+									<label >Email <sup>*</sup></label>
+									<input type="email" class="form-control" name="emailInput" placeholder="Nhập tài khoản email của bạn">
+									<div id="email_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<label >Mật Khẩu <sup>*</sup></label>
+									<input type="password" class="form-control" name="passwordInput" placeholder="Nhập mật khẩu.">
+									<div id="password_error" class="val_error"></div>
+								</div>
+								<a href="#" class="forgotPass">Quên mật khẩu?</a>
+							</div>
+							<div class="modal-footer">
+								<button type="submit" class="btn btn-info" >Đăng Nhập</button>
+								<button type="reset" class="btn btn-default" onclick="resetLogin()">Làm lại</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- Kết thúc Modal. -->
+		</div>
+	</div>			
+	<!-- Kết thúc khung đăng nhập -->
+
+	<!-- Bắt đầu khung register. -->
+	<div class="container">
+		<div class="row">
+			<!-- Modal -->
+			<div class="modal fade" id="Register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content col-lg-12 col-md-12 col-sm-12 col-xs-12" id="fixScreen">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" id="close-form">&times;</span></button>
+							<h4 class="modal-title">Đăng Ký Tài Khoản</h4>
+						</div>
+						<div id="registerForm" class="modal-body">
+							<form id="register_Form" class="contact" method="post" action="#" onsubmit="return registerValidation()" name="register_Form">
+								<div class="form-group">
+									<label >Họ <sup>*</sup></label>
+									<input type="text" class="form-control" name="lastnameReInput" placeholder="Vui lòng nhập 'Họ' của bạn.">
+									<div id="lastnameRe_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<label >Tên <sup>*</sup></label>
+									<input type="text" class="form-control" name="firstnameReInput" placeholder="Vui lòng nhập 'Tên' của bạn.">
+									<div id="firstnameRe_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<label >Email <sup>*</sup></label>
+									<input type="email" class="form-control" name="emailReInput" placeholder="Vui lòng nhập tài khoản email.">
+									<div id="emailRe_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<label >Mật khẩu <sup>*</sup></label>
+									<input type="password" class="form-control" name="passwordReInput" placeholder="Mật khẩu phải từ 8 ký tự.">
+									<div id="passwordRe_error" class="val_error"></div>
+								</div>
+
+								<div class="form-group">
+									<label >Nhập lại mật khẩu <sup>*</sup></label>
+									<input type="password" class="form-control" name="confirmpasswordReInput" placeholder="Nhập lại mật khẩu.">
+									<div id="confirmpasswordRe_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<label >Số điện thoại <sup>*</sup></label>
+									<input type="text" class="form-control" name="phoneReInput" placeholder="Vui lòng nhập số điện thoại.">
+									<div id="phoneRe_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<label >Giới tính</label>
+									<input type="radio" name="gender" value="0" checked="">&nbsp;Nữ &emsp;
+									<input type="radio" name="gender" value="1">&nbsp;Nam
+								</div>
+								<div class="form-group">
+									<label >Ngày sinh</label>
+									<input type="date" class="form-control" name="birthdayReInput" placeholder="">
+									<div id="birthdayRe_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<input type="checkbox" class="" name="checkReInput" placeholder="">&ensp;Đồng ý điều khoản sử dụng<sup>*</sup>
+									<div id="checkRe_error" class="val_error"></div>
+								</div>
+								<div class="modal-footer">
+									<button type="submit" class="btn btn-info" >Đăng Ký</button>
+									<button type="reset" class="btn btn-default" onclick="resetRegister()">Làm lại</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Kết thúc khung register. -->
+
+	<!-- Start Main Product Compare -->
+	<section id="Main" style="margin-top: 10px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="panel panel-warning">
+						<div class="panel-heading">
+							<h3 class="panel-title" style="font-size: 25px;">Gấu trúc bông Cute!</h3>
+						</div>
+						<div class="panel-body">
+							<img src="img/gautruc.jpg" width="100%" height="500px;">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="panel panel-warning" id="proCompare">
+						<div class="panel-heading">
+							<h3 class="panel-title" id="title-proCompare" style="font-size: 25px;">Vui lòng chọn sản phẩm bạn muốn so sánh</h3>
+						</div>
+						<div class="panel-body show" id="compare-img-list">
+							<div class="list-img-proCompare col-md-12 col-xs-12 col-sm-12" style="height: 500px">
+								<img src="img/gaubong.jpg" class="col-md-3 col-xs-6 col-sm-4 compare-thumbnail" id="img1">
+								<img src="img/gaubong1.jpg" class="col-md-3 col-xs-6 col-sm-4 compare-thumbnail" id="img2">
+								<img src="img/gaubong2.jpg" class="col-md-3 col-xs-6 col-sm-4 compare-thumbnail" id="img3">
+								<img src="img/gaubong3.jpg" class="col-md-3 col-xs-6 col-sm-4 compare-thumbnail" id="img4">
+								<img src="img/gaubong4.jpg" class="col-md-3 col-xs-6 col-sm-4 compare-thumbnail" id="img5">
+								<img src="img/gaubong6.jpg" class="col-md-3 col-xs-6 col-sm-4 compare-thumbnail" id="img6">
+								<img src="img/gaubong7.jpg" class="col-md-3 col-xs-6 col-sm-4 compare-thumbnail" id="img7">
+								<img src="img/gautruc1.jpg" class="col-md-3 col-xs-6 col-sm-4 compare-thumbnail" id="img8">
+								<img src="img/gautruc2.jpg" class="col-md-3 col-xs-6 col-sm-4 compare-thumbnail" id="img9">
+								<img src="img/gautruc3.jpg" class="col-md-3 col-xs-6 col-sm-4 compare-thumbnail" id="img10">
+								<img src="img/gautruc4.jpg" class="col-md-3 col-xs-6 col-sm-4 compare-thumbnail" id="img11">
+								<img src="img/gau-bong.jpg" class="col-md-3 col-xs-6 col-sm-4 compare-thumbnail" id="img12">
+							</div>
+						</div>
+						<div class="panel-body hidden compare-big-img">
+							<img src="img/gaubong.jpg" width="100%" height="500px;">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-5 col-sm-12 col-xs-12">
+					<div class="form-control " style="clear: both;">
+						<label for="" class="col-xs-6 col-md-6">
+							<i class="fa fa-heart"></i>
+							Giá Sản Phẩm:
+						</label>
+						<div class="col-xs-6 col-md-6">
+							<div class="proV-price">
+								<p class="price">240.000 $</p>
+							</div>
+						</div>
+					</div>
+					<div class="form-control " style="clear: both;">
+						<label for="" class="col-xs-6 col-md-6">
+							<i class="fa fa-heart"></i>
+							Trạng thái :
+						</label>
+						<div class="col-md-6 col-xs-6">
+							<div class="text">
+								Còn hàng
+							</div>
+						</div>
+					</div>
+					<div class="form-control " style="clear: both;">
+						<label for="" class="col-xs-6 col-md-6">
+							<i class="fa fa-heart"></i>
+							Kích Thước :
+						</label>
+						<div class="col-xs-6 col-md-6">
+							<div class="text">
+								50 x 30 x 20cm
+							</div>
+						</div>
+					</div>
+					<div class="form-control " style="clear: both;">
+						<label for="" class="col-xs-6 col-md-6">
+							<i class="fa fa-heart"></i>
+							Hãng :
+						</label>
+						<div class="col-xs-6 col-md-6">
+							<div class="text">
+								Burberry
+							</div>
+						</div>
+					</div>
+					<div class="Additional-information" style="clear: both;"> Thông tin sản phẩm 1 </div>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-12">
+					<div class="form-control" style="clear: both;">
+						<p class="text-info text-center" style="font-weight: bolder;"><i class="fa fa-angle-double-left"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Giá&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-double-right"></i></p>
+					</div>
+					<div class="form-control" style="clear: both;">
+						<p class="text-info text-center" style="font-weight: bolder;"><i class="fa fa-angle-double-left"></i> &nbsp;&nbsp;&nbsp;&nbsp;Trạng Thái&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-double-right"></i></p>
+					</div>
+					<div class="form-control" style="clear: both;">
+						<p class="text-info text-center" style="font-weight: bolder;"><i class="fa fa-angle-double-left"></i> &nbsp;&nbsp;&nbsp;Kích Thước&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-double-right"></i></p>
+					</div>
+					<div class="form-control" style="clear: both;">
+						<p class="text-info text-center" style="font-weight: bolder;"><i class="fa fa-angle-double-left"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hãng&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-angle-double-right"></i></p>
+					</div>
+				</div>
+				<div class="col-md-5 col-sm-4 col-xs-12 compare-big-img hidden">
+					<div class="form-control " style="clear: both;">
+						<label for="" class="col-xs-6 col-md-6">
+							<i class="fa fa-heart"></i>
+							&nbsp;Giá Sản Phẩm:
+						</label>
+						<div class="col-xs-6 col-md-6">
+							<div class="proV-price">
+								<p class="price">240.000 $</p>
+							</div>
+						</div>
+					</div>
+					<div class="form-control " style="clear: both;">
+						<label for="" class="col-xs-6 col-md-6">
+							<i class="fa fa-heart"></i>
+							&nbsp;Trạng thái :
+						</label>
+						<div class="col-md-6 col-xs-6">
+							<div class="text">
+								Còn hàng
+							</div>
+						</div>
+					</div>
+					<div class="form-control " style="clear: both;">
+						<label for="" class="col-xs-6 col-md-6">
+							<i class="fa fa-heart"></i>
+							&nbsp;Kích Thước :
+						</label>
+						<div class="col-xs-6 col-md-6">
+							<div class="text">
+								50 x 30 x 20cm
+							</div>
+						</div>
+					</div>
+					<div class="form-control " style="clear: both;">
+						<label for="" class="col-xs-6 col-md-6">
+							<i class="fa fa-heart"></i>
+							&nbsp;Hãng :
+						</label>
+						<div class="col-xs-6 col-md-6">
+							<div class="text">
+								Burberry
+							</div>
+						</div>
+					</div>
+
+					<!-- <div id="proCompare-info">
+						
+					</div> -->
+					<div id="addPro2Info">
+						
+					</div>
+				</div>
+				<div style="clear: both;"></div>
+				<div class="col-md-12 col-sm-12 col-xs-12 text-center" style="margin-top: 5px;">
+					<button type="button" class="btn btn-primary " id="btnReCompare"> &nbsp; &nbsp;&nbsp; So Sánh Lại &nbsp; &nbsp; &nbsp;</button>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Main Product Compare -->
+
+	<!-- Start Footer -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12" style="background-image:url(img/bg-header.png); margin:0;">
+				<footer>
+					<div class="col-md-3 col-sm-4 col-xs-12">
+						<p class="title-footer">Hệ thống cửa hàng</p>
+						<br>
+						<p class="p-content-footer"> 08 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</p>
+						<p class="p-content-footer"> 125 Phùng Hưng, Cửa Đông, Hoàn Kiếm, Hà Nội</p>
+						<p class="p-content-footer"> 252 Phúc Diễn, Hà Nội</p>
+						<p class="p-content-footer"> 10 Trần Hữu Dực, Mỹ Đình, Hà Nội</p>
+						<p class="p-content-footer"> 159 Ba Cu, TP. Vũng Tàu - 0254 6550 947</p>
+						<p class="p-content-footer"> 94 Thủ Khoa Huân,TP Phan Thiết - 0252 650 2059</p>
+						<p class="p-content-footer"> 130 Nguyễn Việt Hồng, TP Cần Thơ - 0292 653 9541</p>
+						<p class="p-content-footer"> 107 Nguyễn Trãi, P2, Q.5 - 0286 686 0947</p>
+					</div>
+					<div class="col-md-3 col-sm-4 col-xs-12">
+						<p class="title-footer">HỖ TRỢ KHÁCH HÀNG</p>
+						<br>
+						<p class="p-content-footer">
+							<a href="#">
+								Hướng dẫn mua hàng
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Chính sách vận chuyển
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Hình thức thanh toán
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Khuyến mãi
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Tin tức
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Gửi Mail tại đây</a>
+						</p>
+					</div>
+					<div class="col-md-2 col-sm-4 col-xs-12">
+						<p class="title-footer">THÔNG TIN</p>
+						<br>
+						<p class="p-content-footer">
+							<a href="#">
+								Giới thiệu
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Tuyển dụng
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Video
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#" class="col-md-3 col-sm-6 col-xs-6">
+								<img src="img/facebook.png">
+							</a>
+							<a href="#" class="col-md-3 col-sm-6 col-xs-6">
+								<img src="img/Twitter.png">
+							</a>
+							<a href="#" class="col-md-3 col-sm-6 col-xs-6">
+								<img src="img/youtube_2.png">
+							</a>
+							<a href="#" class="col-md-3 col-sm-6 col-xs-6">
+								<img src="img/gmail.png">
+							</a>
+						</p>
+					</div>
+					<div id="map" class="col-md-4 col-sm-12 col-xs-12" style="border: 1px solid black;"></div>
+				</footer>
+				<div class="col-xs-12 col-sm-12 col-md-12 text-center" style="font-size: 12px;">
+					<a href="#" style="color: white;">Gift Shop</a> &copy;CopyRight : <p style="color: green;">Nguyễn Tùng, Nguyễn Công, Công Đoàn, SlowV, Ngọc Thúy, Đặng Quảng, Ngọc Đại, Xuân Hùng, T1708E, Aptech FPT</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Up top page -->
+	<a id='noop-top' style=' position: fixed; bottom: 5px; right:1%; cursor:pointer;font:12px arial;'>
+		<img src='http://nhocgiftshop.com/tp/T0131/img/btTop.png'/>
+	</a>
+
+	<!-- End Footer -->
+
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<!-- Login/Register script -->
+	<script type="text/javascript" src="js/user.js"></script>
+
+	<!-- product compare js -->
+	<script type="text/javascript" src="js/product-Compare.js"></script>
+
+	<!-- Footer script -->
+	<script type="text/javascript" src="js/footer.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxm0k6cV3zMz_xd2xv7ICZV46d-jG8bUg&callback=initMap">
+	</script>
+
+	<!-- up to the top page -->
+	<script type="text/javascript" src="js/scrollTop.js"></script>
+</body>
+</html>
