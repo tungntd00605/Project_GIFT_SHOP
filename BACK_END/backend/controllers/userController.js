@@ -49,3 +49,18 @@ exports.delete = function(req, resp){
 		});
 	});	
 }
+
+exports.login = function(req, resp){
+	const email = req.body.email;
+	const password = req.body.password;
+  
+	User.findOne({ email: email }, (err, user) => {
+  
+	  if (err) throw err;
+  
+	  if (!user) {
+		return resp.status(400).json({ success: false, msg: 'User not found.' });
+	  }
+	  resp.json(user);
+	});
+}

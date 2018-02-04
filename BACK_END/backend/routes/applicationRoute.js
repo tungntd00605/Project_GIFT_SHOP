@@ -11,6 +11,9 @@ module.exports = function(app){
 		.put(userController.update)
 		.delete(userController.delete);
 
+	app.route('/_api/v1/users/login')
+		.post(userController.login);
+
 	// image api.	
 	app.post('/_api/v1/images', function(req, res) {		
 		console.log(req.files);

@@ -303,6 +303,8 @@ var USER_API_URL = "http://localhost:3000/_api/v1/users";
 // Chờ dom load hết.
 $(document).ready(function(){	
 	// Bắt sự kiện click vào nút btn-submit
+	// =========REGISTER USER
+	// =====================================================================================================
 	$('[name="btn-submit"]').click(function(){
 		// run funtion validate Form
 		registerValidation();
@@ -325,6 +327,33 @@ $(document).ready(function(){
 				success: function(response){										
 					$('#modal-success').modal();
 					$('[name=user-form]').trigger("reset");
+				},
+				error: function(response, message){
+					alert('Có lỗi xảy ra. ' + message);
+				}
+			});
+		}
+	});
+
+	// =========LOGIN USER
+	// =====================================================================================================
+	$('[name="btn-login"]').click(function(){
+		// run funtion validate Form
+		loginValidation();
+		if (loginValidation()) {
+			var object = {
+				'email': emailInput.value,
+				'password': passwordInput.value,
+			};
+			var api_url = USER_API_URL + '/login';
+			var method = 'POST';		
+			$.ajax({
+				url: api_url,
+				type: method,
+				data: object,
+				success: function(response){										
+					$('#modal-success').modal();
+					$('[name=login-form]').trigger("reset");
 				},
 				error: function(response, message){
 					alert('Có lỗi xảy ra. ' + message);
