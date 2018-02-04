@@ -9,7 +9,7 @@ exports.getList = function(req, resp){
 	User.find({'status': 1})
 	.paginate(page, limit, function(err, result, total) {    	
     	var responseData = {
-    		'listStudent': result,
+    		'listUser': result,
     		'totalPage': Math.ceil(total/limit)
     	};
     	resp.send(responseData);
