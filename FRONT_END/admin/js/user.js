@@ -1,97 +1,142 @@
+var USER_API_URL = "http://localhost:3000/_api/v1/users";
 
-//==========================================BẮT ĐẦU VALIDATION KHUNG ĐĂNG NHẬP======================================
-//==================================================================================================================
-// Gán tất cả các đối tượng đầu vào.
-var emailInput = document.forms['login-form']['emailInput'];
-var passwordInput = document.forms['login-form']['passwordInput'];
+$(document).ready(function(){	
+	var page = Number(getUrlParameter('page'));
+	var limit = Number(getUrlParameter('limit'));
+	loadUser(page, limit);
 
-// Gán tất cả các đối tượng hiển thị lỗi.
-var email_error = document.getElementById('email_error');
-var password_error = document.getElementById('password_error');
+	
+});
 
+function loadUser(page, limit){
+	$.ajax({
+		url: USER_API_URL + '?page=' + page + '&limit=' + limit,
+		type: 'GET',				
+		success: function(response){
+			var listUser = response.listUser;
+			var totalPage = response.totalPage;
+			var content = '';
+			for (var i = 0; i < listUser.length; i++) {
+				var id = listUser[i]._id;			
+				content += '<tr>';
+					content += '<td>' + listUser[i].firstName + '</td>';
+					content += '<td>' + listUser[i].lastName + '</td>';				
+					content += '<td>';
+						content += '<a href="user-edit-form.html?id=' + id + '" class="btn btn-default">Edit</a>&nbsp;';
+						content += '<a href="#" onclick="deleteUser(\'' + id + '\')" class="btn btn-danger">Delete</a>';
+					content += '</td>';
+				content += '</tr>';
+			}
 
-// Setup các sự kiện.
-emailInput.addEventListener('blur', emailVerify, true);
-passwordInput.addEventListener('blur', passwordVerify, true);
-
-
-// Các biến Validation.
-function loginValidation() {
-	emailVerify();
-	passwordVerify();
-
-	if (emailVerify() == false      
-		|| passwordVerify() == false) {
-		return false;
-}else {
-	return true;
+			var paginateContent = '';
+			if(page > 1){
+				paginateContent += '<li><a href="?page=1&limit=' + limit + '" aria-label="First"><span aria-hidden="true"><<</span></a></li>';
+				paginateContent += '<li><a href="?page=' + (page - 1) + '&limit=' + limit + '" aria-label="Previous"><span aria-hidden="true"><</span></a></li>';
+			}
+			if(page > 2){
+				paginateContent += '<li><a href="?page=' + (page - 2) + '&limit=' + limit + '">' + (page - 2) + '</a></li>';
+			}
+			if(page > 1){
+				paginateContent += '<li><a href="?page=' + (page - 1) + '&limit=' + limit + '">' + (page - 1) + '</a></li>';
+			}
+			paginateContent += '<li class="active"><a href="?page=' + page + '">' + page + '</a></li>';			
+			if(totalPage > page){
+				paginateContent += '<li><a href="?page=' + (page + 1) + '&limit=' + limit + '">' + (page + 1) + '</a></li>';	
+			}
+			if((totalPage - 1) > page){
+				paginateContent += '<li><a href="?page=' + (page + 2) + '&limit=' + limit + '">' + (page + 2) + '</a></li>';	
+			}
+			if(page < totalPage){
+				paginateContent += '<li><a href="?page=' + (page + 1) + '&limit=' + limit + '" aria-label="Next"><span aria-hidden="true">></span></a></li>';
+				paginateContent += '<li><a href="?page=' + (totalPage) + '&limit=' + limit + '" aria-label="Last"><span aria-hidden="true">>></span></a></li>';
+			}
+				
+   			$('.pagination').html(paginateContent);
+			$('#result').html(content);
+		},
+		error: function(response, message){
+			alert('Có lỗi xảy ra. ' + message);
+		}
+	});
 }
-}
 
-// Hàm xử lý trường Email.
-function emailVerify() {
-	var reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-	if (emailInput.value == "") {
-		emailInput.style.border = "1px solid red";
-		email_error.innerHTML = "Thông tin bắt buộc";
-		return false;
-	} else if (reg.test(emailInput.value) == false) {
-		email_error.innerHTML = 'Địa chỉ email không hợp lệ';
-		return false;
-	} else {
-		emailInput.style.border = '1px solid green';
-		email_error.innerHTML = "";
-		return true;
+// Edit user
+$('[name="btn-edit-user"]').click(function(){
+	if (registerValidation()) {
+		// get id from url
+		var url_string = window.location.href;
+		var url = new URL(url_string);
+		var id = url.searchParams.get("id");
+
+		var user = {
+			'firstName': lastnameReInput.value,				
+			'lastName': firstnameReInput.value,
+			'email': emailReInput.value,
+			'password': passwordReInput.value,
+			'phone': phoneReInput.value,
+			'gender': genderReInput.value,
+			'birthday': birthdayReInput.value,
+		};
+		$.ajax({
+			url: USER_API_URL + '/' + id,
+			type: 'PUT',
+			data: user,						
+			success: function(response){
+				alert('Success.');
+				location.reload();
+			},
+			error: function(response, message){
+				alert('Error. ' + message);
+			}
+		});
+	}
+	
+});
+
+function deleteUser(id){			
+	if(confirm('Are you sure?')){
+		$.ajax({
+			url: USER_API_URL + '/' + id,
+			type: 'DELETE',							
+			success: function(response){
+				alert('Success.');
+				location.reload();
+			},
+			error: function(response, message){
+				alert('Error. ' + message);
+			}
+		});
 	}
 }
 
+// Lấy tham số truyền lên trong url theo tên.
+function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
 
-// Hàm xử lý trường Mật khẩu.
-function passwordVerify() {
-	if (passwordInput.value == "") {
-		passwordInput.style.border = "1px solid red";
-		password_error.innerHTML = "Thông tin bắt buộc";
-		return false;
-	} else if (passwordInput.value.length < 8) {
-		passwordInput.style.border = "1px solid red";
-		password_error.innerHTML = "Mật khẩu phải lớn hơn 8 ký tự.";
-	} else {
-		passwordInput.style.border = '1px solid green';
-		password_error.innerHTML = "";
-		return true;
-	}
-}
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
 
-// Hàm reset thông qua click nút Làm Lại.
-function resetLogin() {
-	email_error.innerHTML = "";
-	emailInput.style.border = "";
-	password_error.innerHTML = "";
-	passwordInput.style.border = "";
-	document.getElementById("login_Form").reset()
-}
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
 
-$('#Login').on('hidden.bs.modal', function (e) {
-  resetLogin();
-})
-
-//==========================================KẾT THÚC VALIDATION KHUNG ĐĂNG NHẬP==============================================
-//======================================================================================================================
-
-
-
-//==========================================BẮT ĐẦU VALIDATION KHUNG ĐĂNG KÝ========================================
+//==========================================BẮT ĐẦU VALIDATION EDIT FORM USER========================================
 //==================================================================================================================
 // Gán tất cả các đối tượng đầu vào.
-var lastnameReInput = document.forms['register_Form']['lastnameReInput'];
-var firstnameReInput = document.forms['register_Form']['firstnameReInput'];
-var emailReInput = document.forms['register_Form']['emailReInput'];
-var passwordReInput = document.forms['register_Form']['passwordReInput'];
-var confirmpasswordReInput = document.forms['register_Form']['confirmpasswordReInput'];
-var phoneReInput = document.forms['register_Form']['phoneReInput'];
-var genderReInput = document.forms['register_Form']['genderReInput'];
-var birthdayReInput = document.forms['register_Form']['birthdayReInput'];
-var checkReInput = document.forms['register_Form']['checkReInput'];
+var lastnameReInput = document.forms['edit_user_Form']['lastnameReInput'];
+var firstnameReInput = document.forms['edit_user_Form']['firstnameReInput'];
+var emailReInput = document.forms['edit_user_Form']['emailReInput'];
+var passwordReInput = document.forms['edit_user_Form']['passwordReInput'];
+var confirmpasswordReInput = document.forms['edit_user_Form']['confirmpasswordReInput'];
+var phoneReInput = document.forms['edit_user_Form']['phoneReInput'];
+var genderReInput = document.forms['edit_user_Form']['genderReInput'];
+var birthdayReInput = document.forms['edit_user_Form']['birthdayReInput'];
+var checkReInput = document.forms['edit_user_Form']['checkReInput'];
 
 // Gán tất cả các đối tượng hiển thị lỗi.
 var lastnameRe_error = document.getElementById('lastnameRe_error');
@@ -291,51 +336,5 @@ $('#Register').on('hidden.bs.modal', function (e) {
   resetRegister();
 })
 
-//==========================================KẾT THÚC VALIDATION KHUNG ĐĂNG KÝ==============================================
-//======================================================================================================================
-
-
-//==========================================BẮT ĐẦU FORM SUBMIT UER - SERVER=======================================
-//==================================================================================================================
-
-var USER_API_URL = "http://localhost:3000/_api/v1/users";
-
-// Chờ dom load hết.
-$(document).ready(function(){	
-	// Bắt sự kiện click vào nút btn-submit
-	$('[name="btn-submit"]').click(function(){
-		// run funtion validate Form
-		registerValidation();
-		if (registerValidation()) {
-			var user = {
-				'firstName': lastnameReInput.value,				
-				'lastName': firstnameReInput.value,
-				'email': emailReInput.value,
-				'password': passwordReInput.value,
-				'phone': phoneReInput.value,
-				'gender': genderReInput.value,
-				'birthday': birthdayReInput.value,
-			};
-			var api_url = USER_API_URL;
-			var method = 'POST';		
-			$.ajax({
-				url: api_url,
-				type: method,
-				data: user,
-				success: function(response){										
-					$('#modal-success').modal();
-					$('[name=user-form]').trigger("reset");
-				},
-				error: function(response, message){
-					alert('Có lỗi xảy ra. ' + message);
-				}
-			});
-		}
-	});
-});
-
-
-
-
-//==========================================KẾT THÚC FORM SUBMIT UER - SERVER==============================================
+//==========================================KẾT THÚC VALIDATION EDIT FORM USER==============================================
 //======================================================================================================================
