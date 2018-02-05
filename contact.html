@@ -3,18 +3,26 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
 	<title>Gift Shop</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-	<link href="img/logo.png" rel="shortcut icon" type="img/logo.png">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="css/contract.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
+	<link rel="stylesheet" type="text/css" href="css/user.css">
+
+	<link href="img/logo.png" rel="shortcut icon" type="img/logo.png">
 	<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+
+	<!-- Contact CSS -->
+	<link rel="stylesheet" type="text/css" href="css/contract.css">
+	<!-- Footer CSS -->
 	<link rel="stylesheet" type="text/css" href="css/footer.css">
+	
 </head>
 
 <body>
+	<!-- Start header -->
 	<header id="top-header">
 		<div class="container-fluid">
 			<div class="row" id="header-content">
@@ -99,10 +107,10 @@
 
 						<!-- Start User Login/Signup Button Block -->
 						<span class="col-md-3 col-sm-6 col-xs-12 user-btn-block">
-							<a href="#">
+							<a class="btn loginBtn" id="login" data-target="#Login" data-toggle="modal">
 								<img src="img/signin_icon.png" class="img-rounded">
 							</a>
-							<a href="#">
+							<a class="btn registerBtn" id="register" data-target="#Register" data-toggle="modal">
 								<img src="img/signup_icon.png" class="img-rounded">
 							</a>
 						</span>
@@ -112,12 +120,126 @@
 			</div>
 		</div>
 	</header>
-	<div class="container-fluid" >
+	<!-- End header -->
+
+	<!-- Bắt đầu khung đăng nhập. -->
+	<div class="container">
+		<div class="row">
+			<!-- Bắt đầu Modal -->
+			<div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content col-lg-9 col-md-9 col-sm-12 col-xs-12">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" id="close-form">&times;</span></button>
+							<h4 class="modal-title" id="gridSystemModalLabel">Đăng Nhập</h4>
+						</div>
+						<div id="loginForm" class="modal-body">
+							<form id="login_Form" class="contact" method="post" action="#" name="login-form">
+								<div class="form-group">
+									<label >Email <sup>*</sup></label>
+									<input type="email" class="form-control" name="emailInput" placeholder="Nhập tài khoản email của bạn">
+									<div id="email_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<label >Mật Khẩu <sup>*</sup></label>
+									<input type="password" class="form-control" name="passwordInput" placeholder="Nhập mật khẩu.">
+									<div id="password_error" class="val_error"></div>
+								</div>
+								<a href="#" class="forgotPass">Quên mật khẩu?</a>
+							</div>
+							<div class="modal-footer">
+								<button type="submit" class="btn btn-info" id="login-submit-btn">Đăng Nhập</button>
+								<button type="reset" class="btn btn-default" id="login-reset-btn">Làm lại</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- Kết thúc Modal. -->
+		</div>
+	</div>			
+	<!-- Kết thúc khung đăng nhập -->
+
+	<!-- Bắt đầu khung register. -->
+	<div class="container">
+		<div class="row">
+			<!-- Modal -->
+			<div class="modal fade" id="Register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content col-lg-12 col-md-12 col-sm-12 col-xs-12" id="fixScreen">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" id="close-form">&times;</span></button>
+							<h4 class="modal-title">Đăng Ký Tài Khoản</h4>
+						</div>
+						<div id="registerForm" class="modal-body">
+							<form id="register_Form" class="contact" method="post" action="#"  name="register_Form">
+								<div class="form-group re_group">
+									<label >Họ <sup>*</sup></label>
+									<input type="text" class="form-control inputRe" name="lastnameReInput" placeholder="Vui lòng nhập 'Họ' của bạn.">
+									<div id="lastnameRe_error" class="val_error re_error"></div>
+								</div>
+								<div class="form-group re_group">
+									<label >Tên <sup>*</sup></label>
+									<input type="text" class="form-control inputRe" name="firstnameReInput" placeholder="Vui lòng nhập 'Tên' của bạn.">
+									<div id="firstnameRe_error" class="val_error re_error"></div>
+								</div>
+								<div class="form-group re_group">
+									<label >Email <sup>*</sup></label>
+									<input type="email" class="form-control inputRe" name="emailReInput" placeholder="Vui lòng nhập tài khoản email.">
+									<div id="emailRe_error" class="val_error re_error"></div>
+								</div>
+								<div class="form-group re_group">
+									<label >Mật khẩu <sup>*</sup></label>
+									<input type="password" class="form-control inputRe" name="passwordReInput" placeholder="Mật khẩu phải từ 8 ký tự.">
+									<div id="passwordRe_error" class="val_error re_error"></div>
+								</div>
+
+								<div class="form-group re_group">
+									<label >Nhập lại mật khẩu <sup>*</sup></label>
+									<input type="password" class="form-control inputRe" name="confirmpasswordReInput" placeholder="Nhập lại mật khẩu.">
+									<div id="confirmpasswordRe_error" class="val_error re_error"></div>
+								</div>
+								<div class="form-group re_group">
+									<label >Số điện thoại <sup>*</sup></label>
+									<input type="text" class="form-control inputRe" name="phoneReInput" placeholder="Vui lòng nhập số điện thoại.">
+									<div id="phoneRe_error" class="val_error re_error"></div>
+								</div>
+								<div class="form-group re_group">
+									<label >Giới tính</label>
+									<div class="inputRe">
+										<input type="radio" name="genderReInput" value="0" checked="">&nbsp;Nữ &emsp;
+										<input type="radio" name="genderReInput" value="1">&nbsp;Nam
+									</div>
+								</div>
+								<div class="form-group re_group">
+									<label >Ngày sinh <sup>*</sup></label>
+									<input type="date" class="form-control inputRe" name="birthdayReInput" placeholder="">
+									<div id="birthdayRe_error" class="val_error re_error"></div>
+								</div>
+								<div class="form-group">
+									<input type="checkbox" class="" name="checkReInput" placeholder="">&ensp;Đồng ý điều khoản sử dụng<sup>*</sup></input>
+									<div id="checkRe_error" class="val_error"></div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-info" id="register-submit-btn">Đăng Ký</button>
+									<button type="reset" class="btn btn-default" id="register-reset-btn"">Làm lại</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Kết thúc khung register. -->
+
+	<!-- Start contact main -->
+	<main class="container-fluid" >
 		<div class="row" id="main-contract" style="padding-bottom: 10px;">
 			<div class="col-xs-12 col-sm-12  col-md-4 col-md-offset-1">
 				<h2 >Liên hệ với chúng tôi</h2>
 				<!--{{message}}-->
-				<form id="contactForm" class="contact" method="post" action="#" onsubmit="return contactValidation()" name="contact">
+				<form id="contactForm" class="contact" method="post" action="#" name="contact">
 					<div class="form-group">
 						<label >Họ và tên</label>
 						<input type="text" class="form-control" name="nameInput" placeholder="">
@@ -139,8 +261,8 @@
 						<div id="message_error" class="val_error"></div>
 					</div>
 					<div style="text-align: right;">
-						<button type="submit" class="btn btn-info" >Gửi đi</button>
-						<button type="reset" class="btn btn-default" onclick="resetContact()">Làm lại</button>
+						<button type="button" class="btn btn-info" id="contact-submit-btn">Gửi đi</button>
+						<button type="reset" class="btn btn-default" id="contact-reset-btn">Làm lại</button>
 					</div>
 				</form>
 			</div>
@@ -247,20 +369,23 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</main>
 
-    <!-- Bootstrap core JavaScript
-    	================================================== -->
-    	<!-- Placed at the end of the document so the pages load faster -->
-    	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-    	<!-- Footer script -->
-    	<script type="text/javascript" src="js/footer.js"></script>
-    	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxm0k6cV3zMz_xd2xv7ICZV46d-jG8bUg&callback=initMap">
-    	</script>
+	<!-- Bootstrap core javascript-->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/contract.js"></script>
 
-    	<!-- scrollTop -->
-    	<script type="text/javascript" src="js/scrollTop.js"></script>
-    	<script type="text/javascript" src="js/contract.js"></script>
-    </body>
-    </html>
+	<!-- Login/Register script -->
+	<script type="text/javascript" src="js/user.js"></script>
+
+	<!-- Footer script -->
+	<script type="text/javascript" src="js/footer.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxm0k6cV3zMz_xd2xv7ICZV46d-jG8bUg&callback=initMap">
+	</script>
+
+	<!-- scrollTop -->
+	<script type="text/javascript" src="js/scrollTop.js"></script>
+</body>
+</html>

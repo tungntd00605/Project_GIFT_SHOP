@@ -101,6 +101,15 @@ function resetContact() {
     document.getElementById("contactForm").reset()
 }
 
+$('#contact-submit-btn').on('click', function(){
+    contactValidation();
+});
+
+$('#contact-reset-btn').on('click', function(){
+   resetContact();
+});
+
+
 //==========================================END VALIDATION FORM CONTACT==============================================
 //======================================================================================================================
 

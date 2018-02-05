@@ -1,4 +1,3 @@
-
 //==========================================BẮT ĐẦU VALIDATION KHUNG ĐĂNG NHẬP======================================
 //==================================================================================================================
 // Gán tất cả các đối tượng đầu vào.
@@ -72,7 +71,15 @@ function resetLogin() {
 }
 
 $('#Login').on('hidden.bs.modal', function (e) {
-  resetLogin();
+	resetLogin();
+})
+
+$('#login-reset-btn').on('click', function(){
+	resetLogin();
+})
+
+$('#login-submit-btn').on('click', function(){
+	loginValidation();
 })
 
 //==========================================KẾT THÚC VALIDATION KHUNG ĐĂNG NHẬP==============================================
@@ -89,6 +96,8 @@ var emailReInput = document.forms['register_Form']['emailReInput'];
 var passwordReInput = document.forms['register_Form']['passwordReInput'];
 var confirmpasswordReInput = document.forms['register_Form']['confirmpasswordReInput'];
 var phoneReInput = document.forms['register_Form']['phoneReInput'];
+var genderReInput = document.forms['register_Form']['genderReInput'];
+var birthdayReInput = document.forms['register_Form']['birthdayReInput'];
 var checkReInput = document.forms['register_Form']['checkReInput'];
 
 // Gán tất cả các đối tượng hiển thị lỗi.
@@ -107,6 +116,7 @@ emailReInput.addEventListener('blur', emailReVerify, true);
 passwordReInput.addEventListener('blur', passwordReVerify, true);
 confirmpasswordReInput.addEventListener('blur', confirmpasswordReVerify, true);
 phoneReInput.addEventListener('blur', phoneReVerify, true);
+birthdayReInput.addEventListener('blur', birthdayReVerify, true);
 checkReInput.addEventListener('click', checkReVerify, true);
 
 
@@ -118,6 +128,7 @@ function registerValidation() {
 	passwordReVerify();
 	confirmpasswordReVerify();
 	phoneReVerify();
+	birthdayReVerify();
 	checkReVerify();
 
 	if (lastnameReVerify() == false
@@ -125,38 +136,39 @@ function registerValidation() {
 		|| emailReVerify() == false      
 		|| passwordReVerify() == false      
 		|| confirmpasswordReVerify() == false      
-		|| phoneReVerify() == false      
+		|| phoneReVerify() == false   
+		|| birthdayReVerify() == false    
 		|| checkReVerify() == false) {
 		return false;
-	}else {
-		return true;
-	}
+}else {
+	return true;
+}
 }
 
 // Hàm xử lý trường Họ.
 function lastnameReVerify() {
-    if (lastnameReInput.value == "") {
-        lastnameReInput.style.border = "1px solid red";
-        lastnameRe_error.innerHTML = "Thông tin bắt buộc";
-        return false;
-    } else if(lastnameReInput.value !== "") {
-        lastnameReInput.style.border = '1px solid green';
-        lastnameRe_error.innerHTML = '';
-        return true;
-    }
+	if (lastnameReInput.value == "") {
+		lastnameReInput.style.border = "1px solid red";
+		lastnameRe_error.innerHTML = "Thông tin bắt buộc";
+		return false;
+	} else if(lastnameReInput.value !== "") {
+		lastnameReInput.style.border = '1px solid green';
+		lastnameRe_error.innerHTML = '';
+		return true;
+	}
 }
 
 // Hàm xử lý trường Tên.
 function firstnameReVerify() {
-    if (firstnameReInput.value == "") {
-        firstnameReInput.style.border = "1px solid red";
-        firstnameRe_error.innerHTML = "Thông tin bắt buộc";
-        return false;
-    } else if(firstnameReInput.value !== "") {
-        firstnameReInput.style.border = '1px solid green';
-        firstnameRe_error.innerHTML = '';
-        return true;
-    }
+	if (firstnameReInput.value == "") {
+		firstnameReInput.style.border = "1px solid red";
+		firstnameRe_error.innerHTML = "Thông tin bắt buộc";
+		return false;
+	} else if(firstnameReInput.value !== "") {
+		firstnameReInput.style.border = '1px solid green';
+		firstnameRe_error.innerHTML = '';
+		return true;
+	}
 }
 
 // Hàm xử lý trường Email.
@@ -211,31 +223,53 @@ function confirmpasswordReVerify() {
 
 // Hàm xử lý trường Số Điện Thoại.
 function phoneReVerify() {
-        var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-        if (phoneReInput.value == "") {
-            phoneReInput.style.border = "1px solid red";
-            phoneRe_error.innerHTML = "Thông tin bắt buộc";
-            return false;
-        } else if(phoneReInput.value.match(phoneno)) {
-            phoneReInput.style.border = '1px solid green';
-            phoneRe_error.innerHTML = '';
-            return true;
-        } else {
-            phoneRe_error.innerHTML = "Số điện thoại không hợp lệ";
-            return false;
-        }
+	var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	if (phoneReInput.value == "") {
+		phoneReInput.style.border = "1px solid red";
+		phoneRe_error.innerHTML = "Thông tin bắt buộc";
+		return false;
+	} else if(phoneReInput.value.match(phoneno)) {
+		phoneReInput.style.border = '1px solid green';
+		phoneRe_error.innerHTML = '';
+		return true;
+	} else {
+		phoneRe_error.innerHTML = "Số điện thoại không hợp lệ";
+		return false;
+	}
+}
+
+
+// Hàm xử lý trường birthday.
+function birthdayReVerify() {
+	var birthday = new Date(birthdayReInput.value);
+	var ageDifMs = Date.now() - birthday.getTime();
+	var ageDate = new Date(ageDifMs);
+	var validateYear = ageDate.getUTCFullYear() - 1970;
+
+	if (birthdayReInput.value == "") {
+		birthdayReInput.style.border = "1px solid red";
+		birthdayRe_error.innerHTML = "Thông tin bắt buộc";
+		return false;
+	} else if(validateYear > 16) {
+		birthdayReInput.style.border = "1px solid green";
+		birthdayRe_error.innerHTML = '';
+		return true;
+	} else {
+		birthdayRe_error.innerHTML = "Ngày sinh không hợp lệ (lớn hơn 16 tuổi)";
+		return false;
+	}
 }
 
 // Hàm xử lý trường Số Điện Thoại.
 function checkReVerify() {
-        if (!checkReInput.checked) {
-            checkReInput.style.border = "1px solid red";
-            checkRe_error.innerHTML = "Thông tin bắt buộc";
-            return false;
-        } else {
-            checkRe_error.innerHTML = '';
-            return true;
-        }
+	if (!checkReInput.checked) {
+		checkReInput.style.border = "1px solid red";
+		checkRe_error.innerHTML = "Thông tin bắt buộc";
+		return false;
+	} else {
+		checkRe_error.innerHTML = '';
+		return true;
+	}
 }
 
 
@@ -253,13 +287,23 @@ function resetRegister() {
 	confirmpasswordReInput.style.border = "";
 	phoneRe_error.innerHTML = "";
 	phoneReInput.style.border = "";
+	birthdayRe_error.innerHTML = "";
+	birthdayReInput.style.border = "";
 	checkRe_error.innerHTML = "";
 	checkReInput.style.border = "";
 	document.getElementById("register_Form").reset()
 }
 
 $('#Register').on('hidden.bs.modal', function (e) {
-  resetRegister();
+	resetRegister();
+});
+
+$('#register-submit-btn').on('click', function(){
+	registerValidation();
+})
+
+$('#register-reset-btn').on('click', function(){
+	resetRegister();
 })
 
 //==========================================KẾT THÚC VALIDATION KHUNG ĐĂNG KÝ==============================================
