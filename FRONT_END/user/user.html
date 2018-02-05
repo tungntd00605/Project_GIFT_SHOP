@@ -145,7 +145,7 @@
 							</div>
 							<div class="modal-footer">
 								<button type="submit" class="btn btn-info" >Đăng Nhập</button>
-								<button type="reset" class="btn btn-info" onclick="resetLogin()">Làm lại</button>
+								<button type="reset" class="btn btn-default" onclick="resetLogin()">Làm lại</button>
 							</div>
 						</form>
 					</div>
@@ -169,54 +169,56 @@
 						</div>
 						<div id="registerForm" class="modal-body">
 							<form id="register_Form" class="contact" method="post" action="#"  name="register_Form">
-								<div class="form-group">
+								<div class="form-group re_group">
 									<label >Họ <sup>*</sup></label>
-									<input type="text" class="form-control" name="lastnameReInput" placeholder="Vui lòng nhập 'Họ' của bạn.">
-									<div id="lastnameRe_error" class="val_error"></div>
+									<input type="text" class="form-control inputRe" name="lastnameReInput" placeholder="Vui lòng nhập 'Họ' của bạn.">
+									<div id="lastnameRe_error" class="val_error re_error"></div>
 								</div>
-								<div class="form-group">
+								<div class="form-group re_group">
 									<label >Tên <sup>*</sup></label>
-									<input type="text" class="form-control" name="firstnameReInput" placeholder="Vui lòng nhập 'Tên' của bạn.">
-									<div id="firstnameRe_error" class="val_error"></div>
+									<input type="text" class="form-control inputRe" name="firstnameReInput" placeholder="Vui lòng nhập 'Tên' của bạn.">
+									<div id="firstnameRe_error" class="val_error re_error"></div>
 								</div>
-								<div class="form-group">
+								<div class="form-group re_group">
 									<label >Email <sup>*</sup></label>
-									<input type="email" class="form-control" name="emailReInput" placeholder="Vui lòng nhập tài khoản email.">
-									<div id="emailRe_error" class="val_error"></div>
+									<input type="email" class="form-control inputRe" name="emailReInput" placeholder="Vui lòng nhập tài khoản email.">
+									<div id="emailRe_error" class="val_error re_error"></div>
 								</div>
-								<div class="form-group">
+								<div class="form-group re_group">
 									<label >Mật khẩu <sup>*</sup></label>
-									<input type="password" class="form-control" name="passwordReInput" placeholder="Mật khẩu phải từ 8 ký tự.">
-									<div id="passwordRe_error" class="val_error"></div>
+									<input type="password" class="form-control inputRe" name="passwordReInput" placeholder="Mật khẩu phải từ 8 ký tự.">
+									<div id="passwordRe_error" class="val_error re_error"></div>
 								</div>
 
-								<div class="form-group">
+								<div class="form-group re_group">
 									<label >Nhập lại mật khẩu <sup>*</sup></label>
-									<input type="password" class="form-control" name="confirmpasswordReInput" placeholder="Nhập lại mật khẩu.">
-									<div id="confirmpasswordRe_error" class="val_error"></div>
+									<input type="password" class="form-control inputRe" name="confirmpasswordReInput" placeholder="Nhập lại mật khẩu.">
+									<div id="confirmpasswordRe_error" class="val_error re_error"></div>
 								</div>
-								<div class="form-group">
+								<div class="form-group re_group">
 									<label >Số điện thoại <sup>*</sup></label>
-									<input type="text" class="form-control" name="phoneReInput" placeholder="Vui lòng nhập số điện thoại.">
-									<div id="phoneRe_error" class="val_error"></div>
+									<input type="text" class="form-control inputRe" name="phoneReInput" placeholder="Vui lòng nhập số điện thoại.">
+									<div id="phoneRe_error" class="val_error re_error"></div>
 								</div>
-								<div class="form-group">
+								<div class="form-group re_group">
 									<label >Giới tính</label>
-									<input type="radio" name="genderReInput" value="0" checked="">&nbsp;Nữ &emsp;
-									<input type="radio" name="genderReInput" value="1">&nbsp;Nam
+									<div class="inputRe">
+										<input type="radio" name="genderReInput" value="0" checked="">&nbsp;Nữ &emsp;
+										<input type="radio" name="genderReInput" value="1">&nbsp;Nam
+									</div>
+								</div>
+								<div class="form-group re_group">
+									<label >Ngày sinh <sup>*</sup></label>
+									<input type="date" class="form-control inputRe" name="birthdayReInput" placeholder="">
+									<div id="birthdayRe_error" class="val_error re_error"></div>
 								</div>
 								<div class="form-group">
-									<label >Ngày sinh</label>
-									<input type="date" class="form-control" name="birthdayReInput" placeholder="">
-									<div id="birthdayRe_error" class="val_error"></div>
-								</div>
-								<div class="form-group">
-									<input type="checkbox" class="" name="checkReInput" placeholder="">&ensp;Đồng ý điều khoản sử dụng<sup>*</sup>
+									<input type="checkbox" class="" name="checkReInput" placeholder="">&ensp;Đồng ý điều khoản sử dụng<sup>*</sup></input>
 									<div id="checkRe_error" class="val_error"></div>
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-info" name="btn-submit">Đăng Ký</button>
-									<button type="reset" class="btn btn-info" onclick="resetRegister()">Làm lại</button>
+									<button type="reset" class="btn btn-default" onclick="resetRegister()">Làm lại</button>
 								</div>
 							</form>
 						</div>
@@ -233,19 +235,19 @@
 	</footer>
 	<div class="modal modal-success fade" id="modal-success">
 		<div class="modal-dialog modal-sm">
-		  <div class="modal-content">
-			<div class="modal-body">                        
-			  <h4 class="modal-title">Action Success</h4>
-			</div>          
-			<div class="modal-footer">
-			  <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Ok</button>            
+			<div class="modal-content">
+				<div class="modal-body">                        
+					<h4 class="modal-title">Action Success</h4>
+				</div>          
+				<div class="modal-footer">
+					<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Ok</button>            
+				</div>
 			</div>
-		  </div>
-		  <!-- /.modal-content -->
+			<!-- /.modal-content -->
 		</div>
 		<!-- /.modal-dialog -->
-	  </div>
-	  <!-- /.modal -->
+	</div>
+	<!-- /.modal -->
 
 
 

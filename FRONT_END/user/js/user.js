@@ -280,6 +280,8 @@ function resetRegister() {
 	confirmpasswordReInput.style.border = "";
 	phoneRe_error.innerHTML = "";
 	phoneReInput.style.border = "";
+	birthdayRe_error.innerHTML = "";
+	birthdayReInput.style.border = "";
 	checkRe_error.innerHTML = "";
 	checkReInput.style.border = "";
 	document.getElementById("register_Form").reset()
@@ -306,8 +308,8 @@ $(document).ready(function(){
 		registerValidation();
 		if (registerValidation()) {
 			var user = {
-				'firstName': lastnameReInput.value,				
-				'lastName': firstnameReInput.value,
+				'firstName': firstnameReInput.value,				
+				'lastName': lastnameReInput.value,
 				'email': emailReInput.value,
 				'password': passwordReInput.value,
 				'phone': phoneReInput.value,

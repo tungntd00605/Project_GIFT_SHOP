@@ -12,42 +12,6 @@ sup {
 	color: red;
 }
 
-.login label {
-	color: #502708;
-	font-size: 17px;
-	padding-bottom: 5px;
-	padding-left: 5px;
-}
-.login input {
-	background-color: #ffffffb5;
-	font-size: 16px;
-	border-radius: 30px;
-}
-.login span {
-	padding-left: 5px;
-}
-
-/*kết thúc css login*/
-
-/*Bắt đầu css Register*/
-.register {
-	margin-bottom: 5px;
-}
-.register label {
-	color: #502708;
-	font-size: 18px;
-	padding-left: 5px;
-}
-.register input {
-	background-color: #ffffffb5;
-	font-size: 18px;
-	border-radius: 30px;
-}
-.register span {
-	padding-left: 5px;
-}
-/*Kết thúc css Register*/
-
 
 /*Bắt đầu xử lý modal*/
 .modal-content {
@@ -60,7 +24,6 @@ sup {
 .modal-sm {
 	font-family: tahoma;
 }
-
 
 .modal-title {
 	font-size: 26px;
@@ -80,19 +43,6 @@ sup {
 }
 /*Kết thúc quên mật khẩu*/
 
-/* Bắt đầu thông báo error và success.*/
-.form-control-feedback {
-	position: relative;
-	width: 400px;
-	height: 30px;
-	font-size: 16px;
-	font-style: italic;
-	text-align: left;
-}
-
-.has-feedback label~.form-control-feedback {
-	top: 0;
-}
 
 /*Bắt đầu căn chỉnh khung đăng ký.*/
 .registerContent {
@@ -107,75 +57,32 @@ sup {
 /*Tạo responsive cho màn hình 360px trở lên*/
 @media screen and (max-width: 360px) {
 	
-	#registerForm>.form-group {
+	#register_Form>.form-group {
 		margin-bottom: 0;
 	}
 }
 
 /*Tạo responsive cho màn hình 768px trở lên*/
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
+	form {
+		padding: 0px 15px;
+	}
 	
-	#registerForm > .register > label {
-		width: 35%;
-		/*margin-bottom: 10px;*/
-		float: left;
-	}
-	#registerForm > .register > .inputText {
-		width: 65%;
-		float: left;
-	}
-	#registerForm > .register > span {
-		width: 100%;
-		padding-left: 190px;
-		padding-bottom: 10px;
-		float: left;
-	}
-	#registerForm .agree {
-		width: 100%;
-		float: left;
-	}
-
-	#registerForm .checked {
-		width: 100%;
-		float: left;
-	}
-}
-
-@media screen and (min-width: 812px) {
-
-	#registerForm > .register > label {
-		width: 40%;
-		margin-bottom: 10px;
-		float: left;
-	}
-	#registerForm > .register > .inputText {
-		width: 60%;
-		float: left;
-	}
-	#registerForm > .register > span {
-		width: 100%;
-		padding-left: 210px;
-		padding-bottom: 10px;
-		float: left;
-	}
-}
-
-/*Tạo responsive cho màn hình 1200px trở lên*/
-@media screen and (min-width: 1200px) {
-
-	#registerForm > .register > label {
+	#register_Form > .re_group > label {
 		width: 40%;
 		float: left;
 	}
-	#registerForm > .register > .inputText {
+	#register_Form > .re_group {
+		margin-bottom: 15px;	
+	}
+	#register_Form > .re_group > .inputRe {
 		width: 60%;
+		margin-bottom: 15px;
 		float: left;
 	}
-	#registerForm > .register > span {
-		width: 100%;
-		padding-left: 210px;
-		padding-bottom: 10px;
-		float: left;
+	#register_Form > .re_group > .re_error {
+		padding-left: 15px;
+		text-align: center;
 	}
 }
 
