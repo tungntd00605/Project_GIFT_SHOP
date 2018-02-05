@@ -3,19 +3,19 @@
 //======================================================================================================================
 // Get all input object
 var nameInput = document.forms['contact']['nameInput'];
-var emailInput = document.forms['contact']['emailInput'];
+var emailContactInput = document.forms['contact']['emailContactInput'];
 var phoneInput = document.forms['contact']['phoneInput'];
 var messageInput = document.forms['contact']['messageInput'];
 
 // Getting all error display objects
 var name_error = document.getElementById('name_error');
-var email_error = document.getElementById('email_error');
+var email_contact_error = document.getElementById('email_contact_error');
 var phone_error = document.getElementById('phone_error');
 var message_error = document.getElementById('message_error');
 
 // Setting all eventlisteners
 nameInput.addEventListener('blur', nameVerify, true);
-emailInput.addEventListener('blur', emailVerify, true);
+emailContactInput.addEventListener('blur', emailVerify, true);
 phoneInput.addEventListener('blur', phoneVerify, true);
 messageInput.addEventListener('blur', messageVerify, true);
 
@@ -48,17 +48,17 @@ function nameVerify() {
     }
 }
 function emailVerify() {
-        var reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (emailInput.value == "") {
-            emailInput.style.border = "1px solid red";
-            email_error.innerHTML = "Thông tin bắt buộc";
+        var emailreg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (emailContactInput.value == "") {
+            emailContactInput.style.border = "1px solid red";
+            email_contact_error.innerHTML = "Thông tin bắt buộc";
             return false;
-        } else if (reg.test(emailInput.value) == false) {
-            email_error.innerHTML = 'Địa chỉ email không hợp lệ';
+        } else if (reg.test(emailContactInput.value) == false) { 
+            email_contact_error.innerHTML = 'Địa chỉ email không hợp lệ';
             return false;
         } else {
-            emailInput.style.border = '1px solid #5E6E66';
-            email_error.innerHTML = "";
+            emailContactInput.style.border = '1px solid #5E6E66';
+            email_contact_error.innerHTML = "";
             return true;
         }
 }
@@ -94,8 +94,8 @@ function resetContact() {
     nameInput.style.border = "";
     phone_error.innerHTML = "";
     phoneInput.style.border = "";
-    email_error.innerHTML = "";
-    emailInput.style.border = "";
+    email_contact_error.innerHTML = "";
+    emailContactInput.style.border = "";
     message_error.innerHTML = "";
     messageInput.style.border = "";
     document.getElementById("contactForm").reset()
@@ -103,11 +103,11 @@ function resetContact() {
 
 $('#contact-submit-btn').on('click', function(){
     contactValidation();
-});
+})
 
 $('#contact-reset-btn').on('click', function(){
-   resetContact();
-});
+    resetContact();
+})
 
 
 //==========================================END VALIDATION FORM CONTACT==============================================

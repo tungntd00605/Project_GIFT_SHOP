@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="css/user.css">
+	<link rel="stylesheet" type="text/css" href="css/menubar.css">
 	<link href="img/logo.png" rel="shortcut icon" type="img/logo.png">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -150,7 +151,7 @@
 								<a href="#" class="forgotPass">Quên mật khẩu?</a>
 							</div>
 							<div class="modal-footer">
-								<button type="submit" class="btn btn-info" id="login-submit-btn">Đăng Nhập</button>
+								<button type="button" class="btn btn-info" id="login-submit-btn">Đăng Nhập</button>
 								<button type="reset" class="btn btn-default" id="login-reset-btn">Làm lại</button>
 							</div>
 						</form>
@@ -235,6 +236,74 @@
 	</div>
 	<!-- Kết thúc khung register. -->
 
+	<!-- Start Menu Bar -->
+	<div class="body-wrap" id="main-nav">
+		<nav class="navbar navbar-default" role="navigation" id="sticky-menu-bar">
+			<div class="container-fluid" style="background-image: url(img/bg-nav.png); padding: 0 50px;">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html" style="font-size: 20px; ">Trang chủ</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown">Dịch vụ</a>
+							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> In hình và chữ lên đồ (cốc, áo, v..v)</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Gói quà tặng</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="test" >Danh mục</a>
+							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Lắc Tay</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Dụng Cụ Học Tập</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Gấu Bông</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Đồ Trang Trí</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Quà tặng Tiện Ích</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="test" >Hãng</a>
+							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Burberry</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Tom Ford</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Louis Vuitton</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Prada, Gucci</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Paul Smith</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="">Giới thiệu</a>
+						</li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="ShopCart.html"> <i class="fa fa-shopping-cart" style="font-size: 20px;"></i> Giỏ Hàng</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle hidden" data-toggle="dropdown" id="user-name">Username</a>
+							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
+								<li><a href="#">Đăng nhập</a></li>
+								<li><a href="#">Đăng ký</a></li>
+								<li><a href="#">Liên hệ</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>	
+	</div>
+	<!-- End Menu Bar -->
+
 	<!-- Start Main Shop Cart -->
 	<section id="main-shopCart">
 		<div class="container">
@@ -256,10 +325,7 @@
 									<img src="img/gautruc.jpg" height="100%">
 								</div>
 								<div class="col-lg-3" >
-									<div class="title-order">
-										Tên sản phẩm
-									</div>
-									<div class="name-product">
+									<div class="name-product" style="font-weight: bold;">
 										Gấu trúc bông Cute!
 									</div>
 									<div style="font-size: 12px; line-height: 20px;">
@@ -267,60 +333,58 @@
 									</div>
 								</div>
 								<div class="col-lg-3" >
-									<div  class="title-order">
-										Giá sản phẩm
-									</div>
-									<div class="unit-price" style="font-weight: bold;">
-										230.400$
-									</div>
-									<div class="unit-price-old" style="text-decoration: line-through; color: #969696; font-size: 13px;">
-										240.000$
-									</div>
-									<div style="background-color: #ff9601; color: #fff;" class="sale">
-										-4%
-									</div>
-								</div>
-								<div class="col-lg-3" >
-									<div  class="title-order">
-										Số lượng
-									</div>
-									<div class="input-group col-lg-12" style="margin-top: 10px;">
-										<div class="input-group col-lg-12" style="margin-top: 10px; float: left;">
-											<button class="form-control input-sm minus-product" value="1" type="number" style="width: 30%;">-</button>
-											<input type="number" class="form-control input-sm quantity-product" value="1" style="width: 30%;">
-											<button class="form-control plus-product input-sm" value="1" type="number" style="width: 30%;">+</button>
+									<div class="price" >
+										<div>
+											<span  style="font-weight: bold;">Giá tiền:</span>
+											<span class="item-unit-price">8</span>
+											<span class="currency">$</span>
+										</div>
+										<div >
+											<span style="font-weight: bold;">Tổng tiền:</span>
+											<span class="item-total-price">8</span>
+											<span class="currency">$</span>
 										</div>
 									</div>
 								</div>
+								<div class="col-lg-3">
+									<div class="input-group col-lg-12 item" style="margin-top: 10px; float: left;">
+										<button class="form-control input-sm minus-product" style="width: 30%;">-</button>
+										<input type="number" class="form-control input-sm quantity-product" value="1" style="width: 30%;">
+										<button class="form-control plus-product input-sm"  style="width: 30%;">+</button>
+									</div>
+								</div>
 							</div>
-							<div class="row row-product">
+							<div class="row row-product" >
 								<div class="col-lg-3" style="height: 150px;">
-									<img src="img/gautruc.jpg" height="100%">
+									<img src="img/gaubong.jpg" height="100%">
 								</div>
 								<div class="col-lg-3" >
-									<div class="name-product">
-										Gấu trúc bông Cute!
+									<div class="name-product"  style="font-weight: bold;">
+										Gấu bông nâu Cute!
 									</div>
 									<div style="font-size: 12px; line-height: 20px;">
 										Cung cấp bởi: <span class="text-info">Gift Shop</span>
 									</div>
 								</div>
 								<div class="col-lg-3" >
-									<div class="unit-price" style="font-weight: bold;">
-										230.400$
-									</div>
-									<div class="unit-price-old" style="text-decoration: line-through; color: #969696; font-size: 13px;">
-										240.000$
-									</div>
-									<div style="background-color: #ff9601; color: #fff;" class="sale">
-										-4%
+									<div class="price" >
+										<div>
+											<span  style="font-weight: bold;">Giá tiền:</span>
+											<span class="item-unit-price">8</span>
+											<span class="currency">$</span>
+										</div>
+										<div >
+											<span style="font-weight: bold;">Tổng tiền:</span>
+											<span class="item-total-price">8</span>
+											<span class="currency">$</span>
+										</div>
 									</div>
 								</div>
-								<div class="col-lg-3" >
-									<div class="input-group col-lg-12" style="margin-top: 10px; float: left;">
-										<button class="form-control input-sm minus-product" value="1" type="number" style="width: 30%;">-</button>
+								<div class="col-lg-3">
+									<div class="input-group col-lg-12 item" style="margin-top: 10px; float: left;">
+										<button class="form-control input-sm minus-product" style="width: 30%;">-</button>
 										<input type="number" class="form-control input-sm quantity-product" value="1" style="width: 30%;">
-										<button class="form-control plus-product input-sm" value="1" type="number" style="width: 30%;">+</button>
+										<button class="form-control plus-product input-sm"  style="width: 30%;">+</button>
 									</div>
 								</div>
 							</div>
@@ -338,8 +402,8 @@
 									<div class="col-lg-6 col-xs-6 col-sm-6">
 										Tạm tính :
 									</div>
-									<div id="total-price" class="col-lg-6 col-sm-6 col-xs-6">
-										480.000$
+									<div class="col-lg-6 col-sm-6 col-xs-6">
+										<span id="order-temp-price"></span><span class="currency">$</span>
 									</div>
 								</div>
 								<div class="row" style="border-bottom: 1px solid #bbb;">
@@ -347,15 +411,15 @@
 										Giảm giá :
 									</div>
 									<div id="total-price" class="col-lg-6 col-sm-6 col-xs-6">
-										19.200$
+										<span class="discount-price">0</span><span class="currency">$</span>
 									</div>
 								</div>
 								<div class="row" style="padding: 20px 0 0 0 ;"">
 									<div class="col-lg-6 col-xs-6 col-sm-6">
 										Thành tiền :
 									</div>
-									<div id="total-price-all-order"  class="col-lg-6 col-sm-6 col-xs-6" style="font-size: 22px; color: red; line-height: 20px;">
-										460.800$
+									<div class="col-lg-6 col-sm-6 col-xs-6" style="font-size: 22px; color: red; line-height: 20px;">
+										<span id="order-total-price"></span><span>$</span>
 									</div>
 								</div>
 							</div>
@@ -364,14 +428,14 @@
 					<div class="btnOrder">
 						<a href="#buying" id="btn-buying">
 							<button class="btn btn-success col-lg-12">
-								Tiến hành đặt hàng
+								Tiến hành thanh toán
 							</button>
 						</a>
-						<a href="#">
+						<!-- <a href="#">
 							<button class="btn btn-warning col-lg-12">
 								Gửi quà tặng
 							</button>
-						</a>
+						</a> -->
 					</div>
 				</div>
 			</div>
@@ -439,28 +503,40 @@
 											<div>
 												<h4 class="title-form-order">ĐƠN HÀNG <span style="font-size: 12px;">(2 sản phẩm)</span></h4> 
 											</div>
-											<div class="content-pay">
-												<span class="quantity-pay">1</span> x <span class="name-pay">Gấu trúc bông Cute!</span>
-												<span class="price-pay">230.400$</span>
+											<div id="pay-detail">
+											<!-- <div class="content-pay">
+												<span class="quantity-pay"></span> x <span class="name-pay"></span>
+												<span class="currency pull-right">$</span>
+												<span class="price-pay pull-right"></span>
 											</div>
 											<div class="content-pay">
-												<span class="quantity-pay">1</span> x <span class="name-pay">Gấu trúc bông Cute!</span>
-												<span class="price-pay">230.400$</span>
+												<span class="quantity-pay"></span> x <span class="name-pay">!</span>
+												<span class="pull-right">$</span>
+												<span class="price-pay pull-right"></span>
+											</div> -->												
+											</div>
+											<div class="content-pay" id="discount-detail">
+												<span class="name-pay">Giảm Giá</span>
+												<span class="pull-right">$</span>
+												<span class="price-pay pull-right discount-price">0</span>
 											</div>
 											<div class="content-pay" style="margin: 0 0 10px 0;">
-												<span style="text-align: left;">Tạm tính:</span> <span>460.800$</span>
+												<span style="text-align: left;">Thành tiền:</span> 
+												<span class="pull-right">$</span>
+												<span class="pull-right" id="all-price-pay"></span>
 											</div>
 											<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" style="margin: 10px 0;">
 												Sử dụng mã giảm giá <i class="fas fa-angle-double-right"></i>
 											</a>
 											<p id="collapseOne" class="panel-collapse collapse" style="margin-top: 5px;">
 												<input type="text" class="form-control" id="discount-code" placeholder="Mã giảm giá">
+												<div id="discount-message"></div>
 											</p>
 										</div>
 									</div>
 									<div style="text-align: center;">
 										<button type="button" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary" style="width: 80%;">
-											ĐẶT HÀNG
+											THANH TOÁN
 										</button>
 									</div>
 								</div>
@@ -571,6 +647,9 @@
 
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<!-- Menubar script -->
+	<script type="text/javascript" src="js/menubar.js"></script>
 
 	<!-- Login/Register script -->
 	<script type="text/javascript" src="js/user.js"></script>

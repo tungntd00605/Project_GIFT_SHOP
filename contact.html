@@ -4,20 +4,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
 	<title>Gift Shop</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-	<link rel="stylesheet" type="text/css" href="css/header.css">
+	<!-- Content CSS -->
 	<link rel="stylesheet" type="text/css" href="css/user.css">
-
+	<link rel="stylesheet" type="text/css" href="css/header.css">
+	<link rel="stylesheet" type="text/css" href="css/menubar.css">
+	<link rel="stylesheet" type="text/css" href="css/contract.css">
+	<link rel="stylesheet" type="text/css" href="css/footer.css">
 	<link href="img/logo.png" rel="shortcut icon" type="img/logo.png">
 	<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
-
-	<!-- Contact CSS -->
-	<link rel="stylesheet" type="text/css" href="css/contract.css">
-	<!-- Footer CSS -->
-	<link rel="stylesheet" type="text/css" href="css/footer.css">
 	
 </head>
 
@@ -148,7 +145,7 @@
 								<a href="#" class="forgotPass">Quên mật khẩu?</a>
 							</div>
 							<div class="modal-footer">
-								<button type="submit" class="btn btn-info" id="login-submit-btn">Đăng Nhập</button>
+								<button type="button" class="btn btn-info" id="login-submit-btn">Đăng Nhập</button>
 								<button type="reset" class="btn btn-default" id="login-reset-btn">Làm lại</button>
 							</div>
 						</form>
@@ -233,8 +230,76 @@
 	</div>
 	<!-- Kết thúc khung register. -->
 
-	<!-- Start contact main -->
-	<main class="container-fluid" >
+	<!-- Start Menu Bar -->
+	<div class="body-wrap" id="main-nav">
+		<nav class="navbar navbar-default" role="navigation" id="sticky-menu-bar">
+			<div class="container-fluid" style="background-image: url(img/bg-nav.png); padding: 0 50px;">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html" style="font-size: 20px; ">Trang chủ</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown">Dịch vụ</a>
+							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> In hình và chữ lên đồ (cốc, áo, v..v)</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Gói quà tặng</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="test" >Danh mục</a>
+							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Lắc Tay</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Dụng Cụ Học Tập</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Gấu Bông</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Đồ Trang Trí</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Quà tặng Tiện Ích</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="test" >Hãng</a>
+							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Burberry</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Tom Ford</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Louis Vuitton</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Prada, Gucci</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Paul Smith</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="">Giới thiệu</a>
+						</li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="ShopCart.html"> <i class="fa fa-shopping-cart" style="font-size: 20px;"></i> Giỏ Hàng</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle hidden" data-toggle="dropdown" id="user-name">Username</a>
+							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
+								<li><a href="#">Đăng nhập</a></li>
+								<li><a href="#">Đăng ký</a></li>
+								<li><a href="#">Liên hệ</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>	
+	</div>
+	<!-- End Menu Bar -->
+
+	<!-- Start Contact Us Main -->
+	<div class="container-fluid" >
 		<div class="row" id="main-contract" style="padding-bottom: 10px;">
 			<div class="col-xs-12 col-sm-12  col-md-4 col-md-offset-1">
 				<h2 >Liên hệ với chúng tôi</h2>
@@ -247,8 +312,8 @@
 					</div>
 					<div class="form-group">
 						<label >Địa chỉ email</label>
-						<input type="email" class="form-control" name="emailInput" placeholder="">
-						<div id="email_error" class="val_error"></div>
+						<input type="email" class="form-control" name="emailContactInput" placeholder="">
+						<div id="email_contact_error" class="val_error"></div>
 					</div>
 					<div class="form-group">
 						<label>Điện thoại</label>
@@ -262,17 +327,17 @@
 					</div>
 					<div style="text-align: right;">
 						<button type="button" class="btn btn-info" id="contact-submit-btn">Gửi đi</button>
-						<button type="reset" class="btn btn-default" id="contact-reset-btn">Làm lại</button>
+						<button type="reset" class="btn btn-default" id="contact-reset-btn"">Làm lại</button>
 					</div>
 				</form>
 			</div>
-			<div class="col-xs-12 col-sm-12 col-md-3 col-md-offset-1" style="" id="contact-hotline">
+			<div class="col-xs-12 col-sm-12 col-md-3 col-md-offset-1" style="font-size: 17px;" id="contact-hotline">
 				<h4>Số điện thoại liên hệ</h4>
 				<p>Gift Shop</p>
 				<p>Số 8 - Tôn Thất Thuyết - Mỹ Đình - Hà Nội</p>
 				<p>Số điện thoại: 01649555602</p>
 				<P>Số điện thoại: 0962127341</P>
-				<p>Email: giftshop@gmail.com</p>
+				<p>Gửi mail cho chúng tôi:<a href="mailto:shopgift@gmail.com"> giftshop@gmail.com</a></p>
 			</div>
 		</div>
 		<!-- Up top page -->
@@ -369,23 +434,30 @@
 				</div>
 			</div>
 		</div>
-	</main>
+	</div>
+	<!-- End Contact Us Main -->
 
-	<!-- Bootstrap core javascript-->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/contract.js"></script>
+    <!-- Bootstrap core JavaScript
+    	================================================== -->
+    	<!-- Placed at the end of the document so the pages load faster -->
+    	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-	<!-- Login/Register script -->
-	<script type="text/javascript" src="js/user.js"></script>
+    	<!-- Menubar script -->
+    	<script type="text/javascript" src="js/menubar.js"></script>
 
-	<!-- Footer script -->
-	<script type="text/javascript" src="js/footer.js"></script>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxm0k6cV3zMz_xd2xv7ICZV46d-jG8bUg&callback=initMap">
-	</script>
+    	<!-- Login/Register script -->
+    	<script type="text/javascript" src="js/user.js"></script>
 
-	<!-- scrollTop -->
-	<script type="text/javascript" src="js/scrollTop.js"></script>
-</body>
-</html>
+    	<!-- Footer script -->
+    	<script type="text/javascript" src="js/footer.js"></script>
+    	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxm0k6cV3zMz_xd2xv7ICZV46d-jG8bUg&callback=initMap">
+    	</script>
+
+
+
+    	<!-- scrollTop -->
+    	<script type="text/javascript" src="js/scrollTop.js"></script>
+    	<script type="text/javascript" src="js/contract.js"></script>
+    </body>
+    </html>
