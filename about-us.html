@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" style="height:100%;">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Gift Shop</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/header.css">
+	<link rel="stylesheet" type="text/css" href="css/user.css">
+	<link rel="stylesheet" type="text/css" href="css/menubar.css">
+	<link rel="stylesheet" href="css/about-us.css">
+	<link href="img/logo.png" rel="shortcut icon" type="img/logo.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Footer css -->
+	<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/footer.css">
+</head>
+
+<body>
+	<!-- Start header -->
+	<header id="top-header">
+		<div class="container-fluid">
+			<div class="row" id="header-content">
+				<!-- Start Logo -->
+				<div class="col-md-2 col-sm-3 col-xs-12">
+					<a href="index.html" class="thumbnail logo-thumbnail">
+						<img src="img/logo.png" width="100%">
+					</a>
+				</div>
+				<!-- End Logo -->
+
+				<div class="col-md-10 col-sm-9 col-xs-12">
+					<!-- Start Shopping Guide -->
+					<ul class="list-unstyled">
+						<li>
+							<span class="bIcon">1</span>
+							<span class="text-bicon">&nbsp;Chọn Sản Phẩm &nbsp;&nbsp;</span>
+							<span class="glyphicon glyphicon-chevron-right">&nbsp;&nbsp;</span>
+						</li>
+						<li>
+							<span class="bIcon">2</span>
+							<span class="text-bicon">&nbsp;Nhấn Mua Hàng &nbsp;&nbsp;</span>
+							<span class="glyphicon glyphicon-chevron-right">&nbsp;&nbsp;</span>
+						</li>
+						<li>
+							<span class="bIcon">3</span>
+							<span class="text-bicon">&nbsp;Bấm  Thanh toán &nbsp;&nbsp;</span>
+							<span class="glyphicon glyphicon-chevron-right">&nbsp;&nbsp;</span>
+						</li>
+						<li>
+							<span class="bIcon">4</span>
+							<span class="text-bicon">&nbsp;Shop sẽ  giao hàng ngay</span>
+						</li>
+						<!-- End Shopping Guide -->
+
+						<!-- Start Address and Shopping Cart (on hold) -->
+						<li>
+							<span class="andress col-md-12 col-sm-6">
+								08 Tôn Thất Thuyết - Mỹ Đình - Hà Nội
+								01469555602 - 0962127341
+							</span>
+						</li>
+						<!-- End Address and Shopping Cart (on hold) -->
+					</ul>
+
+					<div class="search-and-user">
+						<!-- Start Search Bar -->
+						<span class="col-md-5 col-sm-12 col-xs-12" style="float: left;">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Bạn muốn mua gì?">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button">
+										<span class="glyphicon glyphicon-search"></span>
+									</button>
+								</span>
+							</div>
+						</span>
+						<!-- End Search Bar -->
+
+						<!-- Start Social Network -->
+						<span class="contractIcon"> 
+							<a href="#">
+								<img src="img/facebook.png" class="img-rounded" title="Facebook" >
+							</a>
+						</span>
+						<span class="contractIcon">
+							<a href="#" >
+								<img src="img/gmail.png" class="img-rounded" title="Gmail">
+							</a>
+						</span>
+						<span class="contractIcon ">
+							<a href="#" >
+								<img src="img/Twitter.png" class="img-rounded " title="Twitter">
+							</a>
+						</span>
+						<span class="contractIcon ">
+							<a href="#" >
+								<img src="img/youtube_2.png" class="img-rounded " title="Youtube">
+							</a>
+						</span>
+						<!-- End Social Network -->
+
+						<!-- Start User Login/Signup Button Block -->
+						<span class="col-md-3 col-sm-6 col-xs-12 user-btn-block">
+							<a class="btn loginBtn" id="login" data-target="#Login" data-toggle="modal">
+								<img src="img/signin_icon.png" class="img-rounded">
+							</a>
+							<a class="btn registerBtn" id="register" data-target="#Register" data-toggle="modal">
+								<img src="img/signup_icon.png" class="img-rounded">
+							</a>
+						</span>
+						<!-- End User Login/Signup Button Block -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- End header -->
+
+	<!-- Bắt đầu khung đăng nhập. -->
+	<div class="container">
+		<div class="row">
+			<!-- Bắt đầu Modal -->
+			<div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content col-lg-9 col-md-9 col-sm-12 col-xs-12">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" id="close-form">&times;</span></button>
+							<h4 class="modal-title" id="gridSystemModalLabel">Đăng Nhập</h4>
+						</div>
+						<div id="loginForm" class="modal-body">
+							<form id="login_Form" class="contact" method="post" action="#" name="login-form">
+								<div class="form-group">
+									<label >Email <sup>*</sup></label>
+									<input type="email" class="form-control" name="emailInput" placeholder="Nhập tài khoản email của bạn">
+									<div id="email_error" class="val_error"></div>
+								</div>
+								<div class="form-group">
+									<label >Mật Khẩu <sup>*</sup></label>
+									<input type="password" class="form-control" name="passwordInput" placeholder="Nhập mật khẩu.">
+									<div id="password_error" class="val_error"></div>
+								</div>
+								<a href="#" class="forgotPass">Quên mật khẩu?</a>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-info" id="login-submit-btn">Đăng Nhập</button>
+								<button type="reset" class="btn btn-default" id="login-reset-btn">Làm lại</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- Kết thúc Modal. -->
+		</div>
+	</div>			
+	<!-- Kết thúc khung đăng nhập -->
+
+	<!-- Bắt đầu khung register. -->
+	<div class="container">
+		<div class="row">
+			<!-- Modal -->
+			<div class="modal fade" id="Register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content col-lg-12 col-md-12 col-sm-12 col-xs-12" id="fixScreen">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" id="close-form">&times;</span></button>
+							<h4 class="modal-title">Đăng Ký Tài Khoản</h4>
+						</div>
+						<div id="registerForm" class="modal-body">
+							<form id="register_Form" class="contact" method="post" action="#"  name="register_Form">
+								<div class="form-group re_group">
+									<label >Họ <sup>*</sup></label>
+									<input type="text" class="form-control inputRe" name="lastnameReInput" placeholder="Vui lòng nhập 'Họ' của bạn.">
+									<div id="lastnameRe_error" class="val_error re_error"></div>
+								</div>
+								<div class="form-group re_group">
+									<label >Tên <sup>*</sup></label>
+									<input type="text" class="form-control inputRe" name="firstnameReInput" placeholder="Vui lòng nhập 'Tên' của bạn.">
+									<div id="firstnameRe_error" class="val_error re_error"></div>
+								</div>
+								<div class="form-group re_group">
+									<label >Email <sup>*</sup></label>
+									<input type="email" class="form-control inputRe" name="emailReInput" placeholder="Vui lòng nhập tài khoản email.">
+									<div id="emailRe_error" class="val_error re_error"></div>
+								</div>
+								<div class="form-group re_group">
+									<label >Mật khẩu <sup>*</sup></label>
+									<input type="password" class="form-control inputRe" name="passwordReInput" placeholder="Mật khẩu phải từ 8 ký tự.">
+									<div id="passwordRe_error" class="val_error re_error"></div>
+								</div>
+
+								<div class="form-group re_group">
+									<label >Nhập lại mật khẩu <sup>*</sup></label>
+									<input type="password" class="form-control inputRe" name="confirmpasswordReInput" placeholder="Nhập lại mật khẩu.">
+									<div id="confirmpasswordRe_error" class="val_error re_error"></div>
+								</div>
+								<div class="form-group re_group">
+									<label >Số điện thoại <sup>*</sup></label>
+									<input type="text" class="form-control inputRe" name="phoneReInput" placeholder="Vui lòng nhập số điện thoại.">
+									<div id="phoneRe_error" class="val_error re_error"></div>
+								</div>
+								<div class="form-group re_group">
+									<label >Giới tính</label>
+									<div class="inputRe">
+										<input type="radio" name="genderReInput" value="0" checked="">&nbsp;Nữ &emsp;
+										<input type="radio" name="genderReInput" value="1">&nbsp;Nam
+									</div>
+								</div>
+								<div class="form-group re_group">
+									<label >Ngày sinh <sup>*</sup></label>
+									<input type="date" class="form-control inputRe" name="birthdayReInput" placeholder="">
+									<div id="birthdayRe_error" class="val_error re_error"></div>
+								</div>
+								<div class="form-group">
+									<input type="checkbox" class="" name="checkReInput" placeholder="">&ensp;Đồng ý điều khoản sử dụng<sup>*</sup></input>
+									<div id="checkRe_error" class="val_error"></div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-info" id="register-submit-btn">Đăng Ký</button>
+									<button type="reset" class="btn btn-default" id="register-reset-btn"">Làm lại</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Kết thúc khung register. -->
+
+	<!-- Start Menu Bar -->
+	<div class="body-wrap" id="main-nav">
+		<nav class="navbar navbar-default" role="navigation" id="sticky-menu-bar">
+			<div class="container-fluid" style="background-image: url(img/bg-nav.png); padding: 0 50px;">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html" style="font-size: 20px; ">Trang chủ</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown">Dịch vụ</a>
+							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> In hình và chữ lên đồ (cốc, áo, v..v)</a></li>
+								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Gói quà tặng</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="test" >Danh mục</a>
+							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
+								<li><a href="product-list.html"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Lắc Tay</a></li>
+								<li><a href="product-list.html"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Dụng Cụ Học Tập</a></li>
+								<li><a href="product-list.html"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Gấu Bông</a></li>
+								<li><a href="product-list.html"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Đồ Trang Trí</a></li>
+								<li><a href="product-list.html"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Quà tặng Tiện Ích</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="test" >Hãng</a>
+							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
+								<li><a href="product-list.html"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Burberry</a></li>
+								<li><a href="product-list.html"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Tom Ford</a></li>
+								<li><a href="product-list.html"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Louis Vuitton</a></li>
+								<li><a href="product-list.html"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Prada, Gucci</a></li>
+								<li><a href="product-list.html"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Paul Smith</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="">Giới thiệu</a>
+						</li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="shopCart.html"> <i class="fa fa-shopping-cart" style="font-size: 20px;"></i> Giỏ Hàng</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle hidden" data-toggle="dropdown" id="user-name">Username</a>
+							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
+								<li><a href="#">Đăng nhập</a></li>
+								<li><a href="#">Đăng ký</a></li>
+								<li><a href="#">Liên hệ</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>	
+	</div>
+	<!-- End Menu Bar -->
+
+	<!-- Start Main -->
+	<main class="container">
+		<div>
+			<h1>Giới Thiệu Gif-Shop</h1>
+			<p>Bạn là một người luôn quan tâm đến việc lưu giữ những kỷ niệm hay quan tâm đến bạn bè, gia đình, người mình yêu thương thì chắc hẳn bạn không thể thiếu những món quà mang ý nghĩa cho những sự kiện như vậy nhưng bạn chưa tìm được các món quà ưng ý ... thì trong thời buổi công nghệ thì internet luôn là lựa chọn tốt nhât và dễ dàng nhất có thể đáp ứng nhanh được nhu cầu cảu bạn.</p>
+			<p>Nắm bắt được nhu cầu đó, Website <a href="">"http://giftshop-user.appspot.com/"</a> đã được ra mắt và đang nỗ lực phát triển để trở thành kênh thông tin, tìm kiếm hàng đầu Việt Nam về quà tặng lưu niệm. Với lượng thông tin và số lượng các mặt hàng đa dạng được cập nhật và phong cách trình bày hợp lý, chuyên nghiệp và rất tiện sử dụng. Website cung cấp cho nguời xem những thông tin sản phẩm nổi bật về quà tặng liên quan đến nhu cầu của người xem giúp người xem có thể chọn lựa cho mình những món quà phù hợp cho mình.</p>
+			<p>Hãy khám phá những dịch vụ và tiện ích của <a href="http://giftshop-user.appspot.com/" target="_blank">"Gif-shop"</a> mang lại cho bạn.</p>
+			<p><strong>Mọi thông tin cần giải đáp hãy liên hệ với chúng tôi:</strong></p>
+			<p>Hotline: 0900xxxxx</p>
+			<p>Email:supportgifshop@gmail.com</p>
+			<p><a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Gửi Mail tại đây</a></p>
+
+		</div>
+	</main>
+	<!-- End Main -->
+	<!-- Start Footer -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12" style="background-image:url(img/bg-header.png); margin:0;">
+				<footer>
+					<div class="col-md-3 col-sm-4 col-xs-12">
+						<p class="title-footer">Hệ thống cửa hàng</p>
+						<br>
+						<p class="p-content-footer"> 08 Tôn Thất Thuyết, Mỹ Đình, Hà Nội</p>
+						<p class="p-content-footer"> 125 Phùng Hưng, Cửa Đông, Hoàn Kiếm, Hà Nội</p>
+						<p class="p-content-footer"> 252 Phúc Diễn, Hà Nội</p>
+						<p class="p-content-footer"> 10 Trần Hữu Dực, Mỹ Đình, Hà Nội</p>
+						<p class="p-content-footer"> 159 Ba Cu, TP. Vũng Tàu - 0254 6550 947</p>
+						<p class="p-content-footer"> 94 Thủ Khoa Huân,TP Phan Thiết - 0252 650 2059</p>
+						<p class="p-content-footer"> 130 Nguyễn Việt Hồng, TP Cần Thơ - 0292 653 9541</p>
+						<p class="p-content-footer"> 107 Nguyễn Trãi, P2, Q.5 - 0286 686 0947</p>
+					</div>
+					<div class="col-md-3 col-sm-4 col-xs-12">
+						<p class="title-footer">HỖ TRỢ KHÁCH HÀNG</p>
+						<br>
+						<p class="p-content-footer">
+							<a href="#">
+								Hướng dẫn mua hàng
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Chính sách vận chuyển
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Hình thức thanh toán
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Khuyến mãi
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Tin tức
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Gửi Mail tại đây</a>
+						</p>
+					</div>
+					<div class="col-md-2 col-sm-4 col-xs-12">
+						<p class="title-footer">THÔNG TIN</p>
+						<br>
+						<p class="p-content-footer">
+							<a href="#">
+								Giới thiệu
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Tuyển dụng
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#">
+								Video
+							</a>
+						</p>
+						<p class="p-content-footer">
+							<a href="#" class="col-md-3 col-sm-6 col-xs-6">
+								<img src="img/facebook.png">
+							</a>
+							<a href="#" class="col-md-3 col-sm-6 col-xs-6">
+								<img src="img/Twitter.png">
+							</a>
+							<a href="#" class="col-md-3 col-sm-6 col-xs-6">
+								<img src="img/youtube_2.png">
+							</a>
+							<a href="#" class="col-md-3 col-sm-6 col-xs-6">
+								<img src="img/gmail.png">
+							</a>
+						</p>
+					</div>
+					<div id="map" class="col-md-4 col-sm-12 col-xs-12" style="border: 1px solid black;"></div>
+				</footer>
+				<div class="col-xs-12 col-sm-12 col-md-12 text-center" style="font-size: 12px;">
+					<a href="#" style="color: white;">Gift Shop</a> &copy;CopyRight : <p style="color: green;">Nguyễn Tùng, Nguyễn Công, Công Đoàn, SlowV, Ngọc Thúy, Đặng Quảng, Ngọc Đại, Xuân Hùng, T1708E, Aptech FPT</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Footer -->
+
+	<!-- Up top page -->
+	<a id='noop-top' style=' position: fixed; bottom: 5px; right:1%; cursor:pointer;font:12px arial;'>
+		<img src='http://nhocgiftshop.com/tp/T0131/img/btTop.png'/>
+	</a>
+
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<!-- Menubar script -->
+	<script type="text/javascript" src="js/menubar.js"></script>
+
+	<!-- Login/Register script -->
+	<script type="text/javascript" src="js/user.js"></script>
+	<!-- Footer script -->
+	<script type="text/javascript" src="js/footer.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxm0k6cV3zMz_xd2xv7ICZV46d-jG8bUg&callback=initMap">
+	</script>
+
+	<!-- up to the top page -->
+	<script type="text/javascript" src="js/scrollTop.js"></script>
+</body>
+</html>

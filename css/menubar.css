@@ -1,0 +1,27 @@
+.content-dropdown>li>a:hover {
+	border-radius: 20px;
+}
+
+
+
+.content-dropdown {
+   background-image: url(../img/bg-nav.png);
+   background-size: cover;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index:10;
+  opacity: 0.8;
+}
+
+.sticky:hover {
+	opacity: 1;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+

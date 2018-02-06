@@ -1,0 +1,13 @@
+main{
+	background-image: url(http://nhocgiftshop.com/tp/T0131/img/gr.jpg);
+}
+h1{
+	text-align: center;
+	color:blue;
+	padding: 20px;
+}
+main p{
+	padding: 15px;
+	line-height: 20px;
+	word-spacing: 7px;
+}

@@ -1,0 +1,196 @@
+* {
+	box-sizing: border-box;
+}
+
+/*bắt đầu css login*/
+form.contact .val_error {
+	color: #ff1f1f;
+	font-style: italic;
+}
+
+sup {
+	color: red;
+}
+
+
+/*Bắt đầu xử lý modal*/
+.modal-content {
+	color: #666;
+	box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.46);
+	background-image: url(../img/loginbg.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.modal-sm {
+	font-family: tahoma;
+}
+
+.modal-title {
+	font-size: 26px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/*Bắt đầu quên mật khẩu*/
+.forgotPass {
+	margin-left: 5px;
+	color: #0764c5;
+	text-decoration: none;
+}
+.forgotPass:hover {
+	color: #0764c5;
+	text-decoration: underline;
+}
+/*Kết thúc quên mật khẩu*/
+
+
+/*Bắt đầu căn chỉnh khung đăng ký.*/
+.registerContent {
+	width: 800px;
+	margin: auto;
+}
+
+
+/*Kết thúc căn chỉnh khung đăng ký.*/
+
+
+/*Tạo responsive cho màn hình 360px trở lên*/
+@media screen and (max-width: 360px) {
+	
+	#register_Form>.form-group {
+		margin-bottom: 0;
+	}
+}
+
+/*Tạo responsive cho màn hình 768px trở lên*/
+@media screen and (min-width: 768px) {
+	form {
+		padding: 0px 15px;
+	}
+	
+	#register_Form > .re_group > label {
+		width: 40%;
+		float: left;
+	}
+	#register_Form > .re_group {
+		margin-bottom: 15px;	
+	}
+	#register_Form > .re_group > .inputRe {
+		width: 60%;
+		margin-bottom: 15px;
+		float: left;
+	}
+	#register_Form > .re_group > .re_error {
+		padding-left: 15px;
+		text-align: center;
+	}
+}
+
+
+/*Bắt đầu Header*/
+#top-header {
+	background-image: url(../img/bg-header.png);
+}
+
+#slide-show {
+	margin-top: 10px;
+}
+
+.thumbnail {
+	margin-top: 15px;
+	border: none;
+	box-shadow: 0 0px 0px rgba(0,0,0,0);
+	border-radius: 100%;
+}
+
+.thumbnail>img {
+	border-radius: 5%;
+}
+
+.bIcon {
+	background-image: url(../img/bicon.png);
+	padding: 9px 9px 0px 8px;
+	color: #fff;
+	font-size: 11px;
+	line-height: 60px;
+}
+
+.text-bicon {
+	font-family: sans-serif;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+.list-unstyled>li {
+	display: inline-block;
+}
+
+#header-content a {
+	color: #000;
+	padding-left: 5px;
+}
+
+.andress {
+	font-size: 18px;
+	color: red;
+	font-family: segoe script;
+	display: inline-block;
+	padding: 30px 0 30px 0;
+}
+
+.contractIcon>a>img:hover {
+	opacity: 0.8;
+}
+
+.contractIcon {
+	text-align: right;
+	margin-left: 20px;
+	float: left;
+}
+
+.search-and-user {
+	padding-top: 10px;
+}
+
+.user {
+	text-align: right;
+	margin-left: 90px;
+}
+
+@media only screen and (max-width: 500px) {
+	.andress {
+		display: none;
+	}
+	.user {
+		text-align: center;
+		margin-top: 10px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.andress {
+		display: none;
+	}
+	.user {
+		text-align: center;
+
+	}
+	.input-group{
+		margin-bottom: 10px;
+	}
+	.list-unstyled>li::last {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.andress {
+		padding: 0 0 0 0;
+	}
+	.user {
+		text-align: left;
+		margin-left: 13px;
+	}
+
+}
+/*Kết thúc Header*/
