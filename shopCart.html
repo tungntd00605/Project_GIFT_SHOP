@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="css/user.css">
 	<link rel="stylesheet" type="text/css" href="css/menubar.css">
+	<link rel="stylesheet" type="text/css" href="css/popup.css">
 	<link href="img/logo.png" rel="shortcut icon" type="img/logo.png">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -91,11 +92,6 @@
 								<img src="img/facebook.png" class="img-rounded" title="Facebook" >
 							</a>
 						</span>
-						<span class="contractIcon">
-							<a href="https://plus.google.com/u/0/114966863151354487392" >
-								<img src="img/gmail.png" class="img-rounded" title="Gmail">
-							</a>
-						</span>
 						<span class="contractIcon ">
 							<a href="https://twitter.com/MomijiGift_Shop" >
 								<img src="img/Twitter.png" class="img-rounded " title="Twitter">
@@ -104,6 +100,11 @@
 						<span class="contractIcon ">
 							<a href="https://www.youtube.com/channel/UCirlMlB-mEAYQ29GWlnoQIg" >
 								<img src="img/youtube_2.png" class="img-rounded " title="Youtube">
+							</a>
+						</span>
+						<span class="contractIcon">
+							<a href="https://plus.google.com/u/0/114966863151354487392" >
+								<img src="img/gmail.png" class="img-rounded" title="Gmail">
 							</a>
 						</span>
 						<!-- End Social Network -->
@@ -256,8 +257,8 @@
 						<li class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown">Dịch vụ</a>
 							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
-								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> In hình và chữ lên đồ (cốc, áo, v..v)</a></li>
-								<li><a href="#"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Gói quà tặng</a></li>
+								<li><a class="in-develope" href=""><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> In hình và chữ lên đồ (cốc, áo, v..v)</a></li>
+								<li><a class="in-develope" href=""><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Gói quà tặng</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -282,6 +283,9 @@
 						</li>
 						<li class="dropdown">
 							<a href="about-us.html">Giới thiệu</a>
+						</li>
+						<li class="dropdown">
+							<a href="contact.html">Liên hệ</a>
 						</li>
 					</ul>
 
@@ -447,9 +451,9 @@
 								<div class="col-md-5 col-lg-5" style="padding-top: 15px;">
 									<div style="padding-bottom: 10px; border-bottom: 1px solid #337ab7; margin-bottom: 10px;">
 										<h4 class="title-form-order">THÔNG TIN GIAO HÀNG</h4>
-										<a href="#">Đăng ký tài khoản mua hàng</a>
+										<a href="#" data-target="#Register" data-toggle="modal">Đăng ký tài khoản mua hàng</a>
 										<span> | </span>
-										<a href="#">Đăng nhập</a>
+										<a href="#" data-target="#Login" data-toggle="modal">Đăng nhập</a>
 									</div>
 									<div>
 										<h5 style="color: #337ab7;">Mua hàng không cần tài khoản</h5>
@@ -535,7 +539,7 @@
 										</div>
 									</div>
 									<div style="text-align: center;">
-										<button type="button" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary" style="width: 80%;">
+										<button type="button" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary in-develope" style="width: 80%;">
 											THANH TOÁN
 										</button>
 									</div>
@@ -570,27 +574,27 @@
 						<p class="title-footer">HỖ TRỢ KHÁCH HÀNG</p>
 						<br>
 						<p class="p-content-footer">
-							<a href="#">
+							<a class="in-develope" href="">
 								Hướng dẫn mua hàng
 							</a>
 						</p>
 						<p class="p-content-footer">
-							<a href="#">
+							<a class="in-develope" href="">
 								Chính sách vận chuyển
 							</a>
 						</p>
 						<p class="p-content-footer">
-							<a href="#">
+							<a class="in-develope" href="">
 								Hình thức thanh toán
 							</a>
 						</p>
 						<p class="p-content-footer">
-							<a href="#">
+							<a class="in-develope" href="">
 								Khuyến mãi
 							</a>
 						</p>
 						<p class="p-content-footer">
-							<a href="#">
+							<a class="in-develope" href="">
 								Tin tức
 							</a>
 						</p>
@@ -607,12 +611,12 @@
 							</a>
 						</p>
 						<p class="p-content-footer">
-							<a href="#">
+							<a class="in-develope" href="">
 								Tuyển dụng
 							</a>
 						</p>
 						<p class="p-content-footer">
-							<a href="#">
+							<a class="in-develope" href="">
 								Video
 							</a>
 						</p>
@@ -623,10 +627,10 @@
 							<a href="https://twitter.com/MomijiGift_Shop" class="col-md-3 col-sm-6 col-xs-6">
 								<img src="img/Twitter.png">
 							</a>
-							<a href="https://plus.google.com/u/0/114966863151354487392" class="col-md-3 col-sm-6 col-xs-6">
+							<a href="https://www.youtube.com/channel/UCirlMlB-mEAYQ29GWlnoQIg" class="col-md-3 col-sm-6 col-xs-6">
 								<img src="img/youtube_2.png">
 							</a>
-							<a href="https://www.youtube.com/channel/UCirlMlB-mEAYQ29GWlnoQIg" class="col-md-3 col-sm-6 col-xs-6">
+							<a href="https://plus.google.com/u/0/114966863151354487392" class="col-md-3 col-sm-6 col-xs-6">
 								<img src="img/gmail.png">
 							</a>
 						</p>
@@ -647,6 +651,13 @@
 		<img src='http://nhocgiftshop.com/tp/T0131/img/btTop.png'/>
 	</a>
 
+	<!-- Snackbar popup -->
+	<div id="snackbar">
+		<span class="content-popup">Chức năng này đang phát triển</span>
+		<img src="img/popup.png" height="120px" style="margin-top: 10px;">
+	</div>
+
+	<!-- Script -->
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
@@ -660,8 +671,11 @@
 	<script type="text/javascript" src="js/footer.js"></script>
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxm0k6cV3zMz_xd2xv7ICZV46d-jG8bUg&callback=initMap">
 	</script>
+
 	<!-- up to the top page -->
 	<script type="text/javascript" src="js/scrollTop.js"></script>
+	<!-- Snackbar popup script -->
+	<script type="text/javascript" src="js/popup.js"></script>
 
 	<!-- shop cart js -->
 	<script type="text/javascript" src="js/shopCart.js"></script>
