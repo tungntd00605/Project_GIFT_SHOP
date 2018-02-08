@@ -10,6 +10,8 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<link rel="stylesheet" type="text/css" href="css/user.css">
+	<link rel="stylesheet" type="text/css" href="css/menubar.css">
+	<link rel="stylesheet" type="text/css" href="css/popup.css">
 	<link href="img/logo.png" rel="shortcut icon" type="img/logo.png">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	
@@ -49,12 +51,12 @@
 						</li>
 						<li>
 							<span class="bIcon">3</span>
-							<span class="text-bicon">&nbsp;Bấm  Thanh Toán &nbsp;&nbsp;</span>
+							<span class="text-bicon">&nbsp;Bấm  Thanh toán &nbsp;&nbsp;</span>
 							<span class="glyphicon glyphicon-chevron-right">&nbsp;&nbsp;</span>
 						</li>
 						<li>
 							<span class="bIcon">4</span>
-							<span class="text-bicon">&nbsp;Shop Sẽ  Giao Hàng Ngay</span>
+							<span class="text-bicon">&nbsp;Shop sẽ  giao hàng ngay</span>
 						</li>
 						<!-- End Shopping Guide -->
 
@@ -84,23 +86,23 @@
 
 						<!-- Start Social Network -->
 						<span class="contractIcon"> 
-							<a href="#">
+							<a href="https://www.facebook.com/G%E1%BA%A5u-b%C3%B4ng-2039463219414231">
 								<img src="img/facebook.png" class="img-rounded" title="Facebook" >
 							</a>
 						</span>
-						<span class="contractIcon">
-							<a href="#" >
-								<img src="img/gmail.png" class="img-rounded" title="Gmail">
-							</a>
-						</span>
 						<span class="contractIcon ">
-							<a href="#" >
+							<a href="https://twitter.com/MomijiGift_Shop" >
 								<img src="img/Twitter.png" class="img-rounded " title="Twitter">
 							</a>
 						</span>
 						<span class="contractIcon ">
-							<a href="#" >
+							<a href="https://www.youtube.com/channel/UCirlMlB-mEAYQ29GWlnoQIg" >
 								<img src="img/youtube_2.png" class="img-rounded " title="Youtube">
+							</a>
+						</span>
+						<span class="contractIcon">
+							<a href="https://plus.google.com/u/0/114966863151354487392" >
+								<img src="img/gmail.png" class="img-rounded" title="Gmail">
 							</a>
 						</span>
 						<!-- End Social Network -->
@@ -134,7 +136,7 @@
 							<h4 class="modal-title" id="gridSystemModalLabel">Đăng Nhập</h4>
 						</div>
 						<div id="loginForm" class="modal-body">
-							<form id="login_Form" class="contact" method="post" action="#" onsubmit="return loginValidation()" name="login-form">
+							<form id="login_Form" class="contact" method="post" action="#" name="login-form">
 								<div class="form-group">
 									<label >Email <sup>*</sup></label>
 									<input type="email" class="form-control" name="emailInput" placeholder="Nhập tài khoản email của bạn">
@@ -148,8 +150,8 @@
 								<a href="#" class="forgotPass">Quên mật khẩu?</a>
 							</div>
 							<div class="modal-footer">
-								<button type="submit" class="btn btn-info" >Đăng Nhập</button>
-								<button type="reset" class="btn btn-default" onclick="resetLogin()">Làm lại</button>
+								<button type="button" class="btn btn-info" id="login-submit-btn">Đăng Nhập</button>
+								<button type="reset" class="btn btn-default" id="login-reset-btn">Làm lại</button>
 							</div>
 						</form>
 					</div>
@@ -172,55 +174,57 @@
 							<h4 class="modal-title">Đăng Ký Tài Khoản</h4>
 						</div>
 						<div id="registerForm" class="modal-body">
-							<form id="register_Form" class="contact" method="post" action="#" onsubmit="return registerValidation()" name="register_Form">
-								<div class="form-group">
+							<form id="register_Form" class="contact" method="post" action="#"  name="register_Form">
+								<div class="form-group re_group">
 									<label >Họ <sup>*</sup></label>
-									<input type="text" class="form-control" name="lastnameReInput" placeholder="Vui lòng nhập 'Họ' của bạn.">
-									<div id="lastnameRe_error" class="val_error"></div>
+									<input type="text" class="form-control inputRe" name="lastnameReInput" placeholder="Vui lòng nhập 'Họ' của bạn.">
+									<div id="lastnameRe_error" class="val_error re_error"></div>
 								</div>
-								<div class="form-group">
+								<div class="form-group re_group">
 									<label >Tên <sup>*</sup></label>
-									<input type="text" class="form-control" name="firstnameReInput" placeholder="Vui lòng nhập 'Tên' của bạn.">
-									<div id="firstnameRe_error" class="val_error"></div>
+									<input type="text" class="form-control inputRe" name="firstnameReInput" placeholder="Vui lòng nhập 'Tên' của bạn.">
+									<div id="firstnameRe_error" class="val_error re_error"></div>
 								</div>
-								<div class="form-group">
+								<div class="form-group re_group">
 									<label >Email <sup>*</sup></label>
-									<input type="email" class="form-control" name="emailReInput" placeholder="Vui lòng nhập tài khoản email.">
-									<div id="emailRe_error" class="val_error"></div>
+									<input type="email" class="form-control inputRe" name="emailReInput" placeholder="Vui lòng nhập tài khoản email.">
+									<div id="emailRe_error" class="val_error re_error"></div>
 								</div>
-								<div class="form-group">
+								<div class="form-group re_group">
 									<label >Mật khẩu <sup>*</sup></label>
-									<input type="password" class="form-control" name="passwordReInput" placeholder="Mật khẩu phải từ 8 ký tự.">
-									<div id="passwordRe_error" class="val_error"></div>
+									<input type="password" class="form-control inputRe" name="passwordReInput" placeholder="Mật khẩu phải từ 8 ký tự.">
+									<div id="passwordRe_error" class="val_error re_error"></div>
 								</div>
 
-								<div class="form-group">
+								<div class="form-group re_group">
 									<label >Nhập lại mật khẩu <sup>*</sup></label>
-									<input type="password" class="form-control" name="confirmpasswordReInput" placeholder="Nhập lại mật khẩu.">
-									<div id="confirmpasswordRe_error" class="val_error"></div>
+									<input type="password" class="form-control inputRe" name="confirmpasswordReInput" placeholder="Nhập lại mật khẩu.">
+									<div id="confirmpasswordRe_error" class="val_error re_error"></div>
 								</div>
-								<div class="form-group">
+								<div class="form-group re_group">
 									<label >Số điện thoại <sup>*</sup></label>
-									<input type="text" class="form-control" name="phoneReInput" placeholder="Vui lòng nhập số điện thoại.">
-									<div id="phoneRe_error" class="val_error"></div>
+									<input type="text" class="form-control inputRe" name="phoneReInput" placeholder="Vui lòng nhập số điện thoại.">
+									<div id="phoneRe_error" class="val_error re_error"></div>
 								</div>
-								<div class="form-group">
+								<div class="form-group re_group">
 									<label >Giới tính</label>
-									<input type="radio" name="gender" value="0" checked="">&nbsp;Nữ &emsp;
-									<input type="radio" name="gender" value="1">&nbsp;Nam
+									<div class="inputRe">
+										<input type="radio" name="genderReInput" value="0" checked="">&nbsp;Nữ &emsp;
+										<input type="radio" name="genderReInput" value="1">&nbsp;Nam
+									</div>
+								</div>
+								<div class="form-group re_group">
+									<label >Ngày sinh <sup>*</sup></label>
+									<input type="date" class="form-control inputRe" name="birthdayReInput" placeholder="">
+									<div id="birthdayRe_error" class="val_error re_error"></div>
 								</div>
 								<div class="form-group">
-									<label >Ngày sinh</label>
-									<input type="date" class="form-control" name="birthdayReInput" placeholder="">
-									<div id="birthdayRe_error" class="val_error"></div>
-								</div>
-								<div class="form-group">
-									<input type="checkbox" class="" name="checkReInput" placeholder="">&ensp;Đồng ý điều khoản sử dụng<sup>*</sup>
+									<input type="checkbox" class="" name="checkReInput" placeholder="">&ensp;Đồng ý điều khoản sử dụng<sup>*</sup></input>
 									<div id="checkRe_error" class="val_error"></div>
 								</div>
 								<div class="modal-footer">
-									<button type="submit" class="btn btn-info" >Đăng Ký</button>
-									<button type="reset" class="btn btn-default" onclick="resetRegister()">Làm lại</button>
+									<button type="button" class="btn btn-info" id="register-submit-btn">Đăng Ký</button>
+									<button type="reset" class="btn btn-default" id="register-reset-btn"">Làm lại</button>
 								</div>
 							</form>
 						</div>
@@ -230,6 +234,77 @@
 		</div>
 	</div>
 	<!-- Kết thúc khung register. -->
+
+	<!-- Start Menu Bar -->
+	<div class="body-wrap" id="main-nav">
+		<nav class="navbar navbar-default" role="navigation" id="sticky-menu-bar">
+			<div class="container-fluid" style="background-image: url(img/bg-nav.png); padding: 0 50px;">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html" style="font-size: 20px; ">Trang chủ</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown">Dịch vụ</a>
+							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
+								<li><a class="in-develope" href=""><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> In hình và chữ lên đồ (cốc, áo, v..v)</a></li>
+								<li><a class="in-develope" href=""><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Gói quà tặng</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="test" >Danh mục</a>
+							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
+								<li><a href="product-list.html"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Lắc Tay</a></li>
+								<li><a href="product-list.html"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Dụng Cụ Học Tập</a></li>
+								<li><a href="product-list.html"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Gấu Bông</a></li>
+								<li><a href="product-list.html"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Đồ Trang Trí</a></li>
+								<li><a href="product-list.html"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Quà tặng Tiện Ích</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="test" >Hãng</a>
+							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
+								<li><a href="product-list.html"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Burberry</a></li>
+								<li><a href="product-list.html"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Tom Ford</a></li>
+								<li><a href="product-list.html"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Louis Vuitton</a></li>
+								<li><a href="product-list.html"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Prada, Gucci</a></li>
+								<li><a href="product-list.html"><i class="fa fa-heart" style="font-size: 11px; color: #ff5353;"></i> Paul Smith</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="about-us.html">Giới thiệu</a>
+						</li>
+						<li class="dropdown">
+							<a href="contact.html">Liên hệ</a>
+						</li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="shopCart.html"> <i class="fa fa-shopping-cart" style="font-size: 20px;"></i> Giỏ Hàng</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle hidden" data-toggle="dropdown" id="user-name">Username</a>
+							<ul class="dropdown-menu content-dropdown" style="border-radius: 20px;">
+								<li><a href="#">Đăng nhập</a></li>
+								<li><a href="#">Đăng ký</a></li>
+								<li><a href="#">Liên hệ</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>	
+	</div>
+	<!-- End Menu Bar -->
 
 	<!-- Start Product Detail -->
 	<div class="container product-detail">
@@ -431,13 +506,13 @@
 				<!-- Lọc theo danh mục -->
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<h2 style="color: green; " >Danh Mục</h2>
+						<h2 style="color: green;" >Danh Mục</h2>
 						<ul class="list-group">
-							<li class="list-group-item"><a href="#">Gấu bông</a> <span class="badge">120</span></li>
-							<li class="list-group-item"><a href="#">Phụ kiện thời trang</a> <span class="badge">50</span></li>
-							<li class="list-group-item"><a href="#">Quà tặng</a> <span class="badge">269</span></li>
-							<li class="list-group-item"><a href="#">Phụ kiện Hi-Tech</a> <span class="badge">65</span></li>
-							<li class="list-group-item"><a href="#">Hộp quà</a> <span class="badge">32</span></li>
+							<li class="list-group-item"><a href="product-list.html">Gấu bông</a> <span class="badge">120</span></li>
+							<li class="list-group-item"><a href="product-list.html">Phụ kiện thời trang</a> <span class="badge">50</span></li>
+							<li class="list-group-item"><a href="product-list.html">Quà tặng</a> <span class="badge">269</span></li>
+							<li class="list-group-item"><a href="product-list.html">Phụ kiện Hi-Tech</a> <span class="badge">65</span></li>
+							<li class="list-group-item"><a href="product-list.html">Hộp quà</a> <span class="badge">32</span></li>
 						</ul>
 					</div>
 				</div>
@@ -446,13 +521,13 @@
 				<!-- lọc theo hãng -->
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<h2 style="color: green; " >Hãng Sản Phẩm</h2>
+						<h2 style="color: green;" >Hãng Sản Phẩm</h2>
 						<ul class="list-group">
-							<li class="list-group-item"><a href="#">Burberry</a> <span class="badge">112</span></li>
-							<li class="list-group-item"><a href="#">Tom Ford</a> <span class="badge">30</span></li>
-							<li class="list-group-item"><a href="#">Louis Vuitton</a> <span class="badge">279</span></li>
-							<li class="list-group-item"><a href="#">Prada, Gucci</a> <span class="badge">77</span></li>
-							<li class="list-group-item"><a href="">Paul Smith</a> <span class="badge">50</span></li>
+							<li class="list-group-item"><a href="product-list.html">Burberry</a> <span class="badge">112</span></li>
+							<li class="list-group-item"><a href="product-list.html">Tom Ford</a> <span class="badge">30</span></li>
+							<li class="list-group-item"><a href="product-list.html">Louis Vuitton</a> <span class="badge">279</span></li>
+							<li class="list-group-item"><a href="product-list.html">Prada, Gucci</a> <span class="badge">77</span></li>
+							<li class="list-group-item"><a href="product-list.html">Paul Smith</a> <span class="badge">50</span></li>
 						</ul>
 					</div>
 				</div>
@@ -565,63 +640,63 @@
 						<p class="title-footer">HỖ TRỢ KHÁCH HÀNG</p>
 						<br>
 						<p class="p-content-footer">
-							<a href="#">
+							<a class="in-develope" href="">
 								Hướng dẫn mua hàng
 							</a>
 						</p>
 						<p class="p-content-footer">
-							<a href="#">
+							<a class="in-develope" href="">
 								Chính sách vận chuyển
 							</a>
 						</p>
 						<p class="p-content-footer">
-							<a href="#">
+							<a class="in-develope" href="">
 								Hình thức thanh toán
 							</a>
 						</p>
 						<p class="p-content-footer">
-							<a href="#">
+							<a class="in-develope" href="">
 								Khuyến mãi
 							</a>
 						</p>
 						<p class="p-content-footer">
-							<a href="#">
+							<a class="in-develope" href="">
 								Tin tức
 							</a>
 						</p>
 						<p class="p-content-footer">
-							<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Gửi Mail tại đây</a>
+							<a href="mailto:giftshopfpt@gmail.com" target="_top">Gửi Mail tại đây</a>
 						</p>
 					</div>
 					<div class="col-md-2 col-sm-4 col-xs-12">
 						<p class="title-footer">THÔNG TIN</p>
 						<br>
 						<p class="p-content-footer">
-							<a href="#">
+							<a href="about-us.html">
 								Giới thiệu
 							</a>
 						</p>
 						<p class="p-content-footer">
-							<a href="#">
+							<a class="in-develope" href="">
 								Tuyển dụng
 							</a>
 						</p>
 						<p class="p-content-footer">
-							<a href="#">
+							<a class="in-develope" href="">
 								Video
 							</a>
 						</p>
 						<p class="p-content-footer">
-							<a href="#" class="col-md-3 col-sm-6 col-xs-6">
+							<a href="https://www.facebook.com/G%E1%BA%A5u-b%C3%B4ng-2039463219414231" class="col-md-3 col-sm-6 col-xs-6">
 								<img src="img/facebook.png">
 							</a>
-							<a href="#" class="col-md-3 col-sm-6 col-xs-6">
+							<a href="https://twitter.com/MomijiGift_Shop" class="col-md-3 col-sm-6 col-xs-6">
 								<img src="img/Twitter.png">
 							</a>
-							<a href="#" class="col-md-3 col-sm-6 col-xs-6">
+							<a href="https://www.youtube.com/channel/UCirlMlB-mEAYQ29GWlnoQIg" class="col-md-3 col-sm-6 col-xs-6">
 								<img src="img/youtube_2.png">
 							</a>
-							<a href="#" class="col-md-3 col-sm-6 col-xs-6">
+							<a href="https://plus.google.com/u/0/114966863151354487392" class="col-md-3 col-sm-6 col-xs-6">
 								<img src="img/gmail.png">
 							</a>
 						</p>
@@ -629,21 +704,31 @@
 					<div id="map" class="col-md-4 col-sm-12 col-xs-12" style="border: 1px solid black;"></div>
 				</footer>
 				<div class="col-xs-12 col-sm-12 col-md-12 text-center" style="font-size: 12px;">
-					<a href="#" style="color: white;">Gift Shop</a> &copy;CopyRight : <p style="color: green;">Nguyễn Tùng, Nguyễn Công, Công Đoàn, SlowV, Ngọc Thúy, Đặng Quảng, Ngọc Đại, Xuân Hùng, T1708E, Aptech FPT</p>
+					<a href="#" style="color: white;">Gift Shop</a> &copy;CopyRight : <p style="color: green;">Nguyễn Thanh Tùng, Nguyễn Quế Công, Nguyễn Công Đoàn, Trịnh Quốc Việt</p>
+					<p style="color: green;">With support from our adviser Đào Xuân Hùng - class T1708E, Aptech FPT</p>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- End Footer -->
 
 	<!-- Up top page -->
 	<a id='noop-top' style=' position: fixed; bottom: 5px; right:1%; cursor:pointer;font:12px arial;'>
 		<img src='http://nhocgiftshop.com/tp/T0131/img/btTop.png'/>
 	</a>
 
-	<!-- End Footer -->
+	<!-- Snackbar popup -->
+	<div id="snackbar">
+		<span class="content-popup">Chức năng này đang phát triển</span>
+		<img src="img/popup.png" height="120px" style="margin-top: 10px;">
+	</div>
 
+	<!-- Script -->
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<!-- Menubar script -->
+	<script type="text/javascript" src="js/menubar.js"></script>
 
 	<!-- Login/Register script -->
 	<script type="text/javascript" src="js/user.js"></script>
@@ -657,6 +742,9 @@
 	<script async defer
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxm0k6cV3zMz_xd2xv7ICZV46d-jG8bUg&callback=initMap">
 	</script>
+
+	<!-- Snackbar popup script -->
+	<script type="text/javascript" src="js/popup.js"></script>
 
 	<!-- up to the top page -->
 	<script type="text/javascript" src="js/scrollTop.js"></script>

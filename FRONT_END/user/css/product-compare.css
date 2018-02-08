@@ -26,7 +26,7 @@ body{
 	color: red;
 }
 
-.compare-thumbnail:hover {
+.list-img-proCompare>img:hover {
 	border: 1px solid #196c92;
 }
 

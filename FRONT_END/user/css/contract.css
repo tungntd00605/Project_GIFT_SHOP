@@ -1,0 +1,146 @@
+/** {
+	box-sizing: border-box;
+}
+
+#top-header {
+	background-image: url(../img/bg-header.png);
+}
+
+#slide-show {
+	margin-top: 10px;
+}
+
+.thumbnail {
+	margin-top: 15px;
+	border: none;
+	box-shadow: 0 0px 0px rgba(0,0,0,0);
+	border-radius: 100%;
+}
+
+.thumbnail>img {
+	border-radius: 5%;
+}
+
+.bIcon {
+	background-image: url(../img/bicon.png);
+	padding: 9px 9px 0px 8px;
+    color: #fff;
+    font-size: 11px;
+    line-height: 60px;
+}
+
+.text-bicon {
+	font-family: sans-serif;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+.list-unstyled>li {
+	display: inline-block;
+}
+
+#header-content a {
+	color: #000;
+	padding-left: 5px;
+}
+
+.andress {
+	font-size: 18px;
+	color: red;
+	font-family: segoe script;
+	display: inline-block;
+	padding: 30px 0 30px 0;
+}
+
+.contractIcon>a>img:hover {
+	opacity: 0.8;
+}
+
+.contractIcon {
+	text-align: right;
+	margin-left: 20px;
+	float: left;
+}
+
+.search-and-user {
+	padding-top: 10px;
+}
+
+.user {
+	text-align: right;
+}
+
+@media only screen and (max-width: 500px) {
+	.andress {
+		display: none;
+	}
+	.user {
+		text-align: center;
+		margin-top: 10px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.andress {
+		display: none;
+	}
+	.user {
+		text-align: center;
+
+	}
+	.input-group{
+		margin-bottom: 10px;
+	}
+	.list-unstyled>li::last {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.andress {
+		padding: 0 0 0 0;
+	}
+	.user {
+		text-align: left;
+		margin-left: 13px;
+	}
+
+	}*/
+
+	/*===================================START FORM STYLE(nnd2890}==========================================*/
+	/*=======================================================================================================*/
+	form.contact .val_error {
+		color: #ff1f1f;
+		font-style: italic;
+	}
+
+	#sticky-menu-bar{
+		margin-bottom: 1px;
+	}
+
+	#contract-form {
+		color: #797979;
+	}
+
+	#main-contract {
+		background-image: url(../img/bg_contract.png);
+		background-size: cover;
+	}
+
+	#contact-hotline{
+		padding: 100px 0 0 0;
+	}
+
+	#contactForm button:first-child {
+		width: 30%;
+	}
+
+
+	@media only screen and (max-width: 1024px) {
+		#contactForm button:first-child {
+			width: 50%;
+		}
+	}
+
+	/*===================================END FORM STYLE(nnd2890}=============================================*/
+	/*=======================================================================================================*/
