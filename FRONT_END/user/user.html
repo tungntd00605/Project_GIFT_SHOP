@@ -25,7 +25,7 @@
 			<div class="row" id="header-content">
 				<!-- Start Logo -->
 				<div class="col-md-2 col-sm-3 col-xs-12">
-					<a href="#" class="thumbnail">
+					<a href="index.html" class="thumbnail logo-thumbnail">
 						<img src="img/logo.png" width="100%">
 					</a>
 				</div>
@@ -41,12 +41,12 @@
 						</li>
 						<li>
 							<span class="bIcon">2</span>
-							<span class="text-bicon">&nbsp;Nhấn Mua Hàng &nbsp;&nbsp;;</span>
+							<span class="text-bicon">&nbsp;Nhấn Mua Hàng &nbsp;&nbsp;</span>
 							<span class="glyphicon glyphicon-chevron-right">&nbsp;&nbsp;</span>
 						</li>
 						<li>
 							<span class="bIcon">3</span>
-							<span class="text-bicon">&nbsp;Bấm  Thánh toán &nbsp;&nbsp;</span>
+							<span class="text-bicon">&nbsp;Bấm  Thanh toán &nbsp;&nbsp;</span>
 							<span class="glyphicon glyphicon-chevron-right">&nbsp;&nbsp;</span>
 						</li>
 						<li>
@@ -71,7 +71,9 @@
 							<div class="input-group">
 								<input type="text" class="form-control" placeholder="Bạn muốn mua gì?">
 								<span class="input-group-btn">
-									<button class="btn btn-default glyphicon glyphicon-search" type="button"></button>
+									<button class="btn btn-default" type="button">
+										<span class="glyphicon glyphicon-search"></span>
+									</button>
 								</span>
 							</div>
 						</span>
@@ -79,37 +81,37 @@
 
 						<!-- Start Social Network -->
 						<span class="contractIcon"> 
-							<a href="#">
+							<a href="https://www.facebook.com/G%E1%BA%A5u-b%C3%B4ng-2039463219414231">
 								<img src="img/facebook.png" class="img-rounded" title="Facebook" >
 							</a>
 						</span>
-						<span class="contractIcon">
-							<a href="#" >
-								<img src="img/gmail.png" class="img-rounded" title="Gmail">
-							</a>
-						</span>
 						<span class="contractIcon ">
-							<a href="#" >
+							<a href="https://twitter.com/MomijiGift_Shop" >
 								<img src="img/Twitter.png" class="img-rounded " title="Twitter">
 							</a>
 						</span>
 						<span class="contractIcon ">
-							<a href="#" >
+							<a href="https://www.youtube.com/channel/UCirlMlB-mEAYQ29GWlnoQIg" >
 								<img src="img/youtube_2.png" class="img-rounded " title="Youtube">
+							</a>
+						</span>
+						<span class="contractIcon">
+							<a href="https://plus.google.com/u/0/114966863151354487392" >
+								<img src="img/gmail.png" class="img-rounded" title="Gmail">
 							</a>
 						</span>
 						<!-- End Social Network -->
 
-						<!-- Start User Login/Signup -->
-						<span class="col-md-3 col-sm-6 col-xs-12 user">
-							<a href="#" class="btn loginBtn" id="login" data-target="#Login" data-toggle="modal">
+						<!-- Start User Login/Signup Button Block -->
+						<span class="col-md-3 col-sm-6 col-xs-12 user-btn-block">
+							<a class="btn loginBtn" id="login" data-target="#Login" data-toggle="modal">
 								<img src="img/signin_icon.png" class="img-rounded">
 							</a>
-							<a href="#" class="btn register" id="register" data-target="#Register" data-toggle="modal">
+							<a class="btn registerBtn" id="register" data-target="#Register" data-toggle="modal">
 								<img src="img/signup_icon.png" class="img-rounded">
 							</a>
 						</span>
-						<!-- End User Login/Signup -->
+						<!-- End User Login/Signup Button Block -->
 					</div>
 				</div>
 			</div>
@@ -117,11 +119,10 @@
 	</header>
 	<!-- End header -->
 
-
-	<!-- Bắt đầu khung đăng nhập. -->
+	<!-- Start login form -->
 	<div class="container">
 		<div class="row">
-			<!-- Bắt đầu Modal -->
+			<!-- Start login modal -->
 			<div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content col-lg-9 col-md-9 col-sm-12 col-xs-12">
@@ -144,22 +145,22 @@
 								<a href="#" class="forgotPass">Quên mật khẩu?</a>
 							</div>
 							<div class="modal-footer">
-								<button type="submit" class="btn btn-info" id="login-submit-btn">Đăng Nhập</button>
+								<button type="button" class="btn btn-info" id="login-submit-btn">Đăng Nhập</button>
 								<button type="reset" class="btn btn-default" id="login-reset-btn">Làm lại</button>
 							</div>
 						</form>
 					</div>
 				</div>
 			</div>
-			<!-- Kết thúc Modal. -->
+			<!-- End login modal -->
 		</div>
 	</div>			
-	<!-- Kết thúc khung đăng nhập -->
+	<!-- End login form -->
 
-	<!-- Bắt đầu khung register. -->
+	<!-- Start register form -->
 	<div class="container">
 		<div class="row">
-			<!-- Modal -->
+			<!-- Start register modal -->
 			<div class="modal fade" id="Register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content col-lg-12 col-md-12 col-sm-12 col-xs-12" id="fixScreen">
@@ -225,14 +226,11 @@
 					</div>
 				</div>
 			</div>
+			<!-- End register modal -->
 		</div>
 	</div>
-	<!-- Kết thúc khung register. -->
+	<!-- End register form -->
 
-
-	<footer>
-		<p>nguyencong</p>
-	</footer>
 	<div class="modal modal-success fade" id="modal-success">
 		<div class="modal-dialog modal-sm">
 			<div class="modal-content">
@@ -248,9 +246,6 @@
 		<!-- /.modal-dialog -->
 	</div>
 	<!-- /.modal -->
-
-
-
 
 	<!-- Start link js -->
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
